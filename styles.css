@@ -959,6 +959,39 @@ h4 {
     transform: translateY(-2px);
 }
 
+/* Section CTA Button (used throughout) */
+.section-cta-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.section-cta-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.4s var(--ease-smooth);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.section-cta-button:hover {
+    background-color: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* Mission section CTA */
+.mission-cta-wrapper {
+    text-align: center;
+    margin-top: 2.5rem;
+}
 
 .who-its-for-list {
     display: flex;
