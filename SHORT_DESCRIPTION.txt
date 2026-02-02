@@ -1,0 +1,16 @@
+Aurelian Air - Premium Private Aviation Landing Page
+
+A sophisticated single-page landing page for a private aviation company featuring:
+
+• Ultra-premium dark theme (charcoal/gold palette)
+• Cinematic jet fly-across animation on page load
+• Smooth scroll-triggered animations throughout
+• Professional form with Google Sheets integration
+• Automatic dark-themed sheet formatting
+• Four detailed service sections with smooth navigation
+• Fully responsive design
+• No external dependencies (pure HTML/CSS/JS)
+
+Form submissions are automatically saved to Google Sheets with professional formatting that matches the website's dark aesthetic. The site emphasizes discretion, luxury, and aviation authority with carefully curated private jet imagery.
+
+Technical Stack: HTML5, CSS3, JavaScript, Google Apps Script, Google Sheets API
