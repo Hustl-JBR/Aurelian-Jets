@@ -30,11 +30,14 @@
             </button>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
-                    <a href="#what-we-do" class="header-link">Company</a>
-                    <a href="#mission" class="header-link">Our Mission</a>
+                    <a href="#what-we-do" class="header-link">What We Do</a>
                     <a href="#how-it-works" class="header-link">How It Works</a>
                     <a href="#the-difference" class="header-link">The Difference</a>
-                    <a href="#early-access" class="header-link">Early Access</a>
+                    <a href="about.html" class="header-link">About Us</a>
+                    <a href="#charter" class="header-link">Charter</a>
+                    <a href="#empty-leg" class="header-link">Empty-Leg</a>
+                    <a href="#guaranteed" class="header-link">Guaranteed Arrival</a>
+                    <a href="#early-access" class="header-link">Request Access</a>
                 </nav>
             </div>
         </div>
@@ -150,22 +153,6 @@
         </div>
     </section>
 
-    <!-- MISSION STATEMENT -->
-    <section class="section mission" id="mission">
-        <div class="mission-bg-pattern"></div>
-        <div class="container">
-            <div class="mission-statement" data-aos="fade-up">
-                <div class="mission-quote-mark">"</div>
-                <p class="mission-text">
-                    To bring certainty to private aviation by eliminating risk, complexity, and unpredictability.
-                </p>
-                <div class="mission-cta-wrapper">
-                    <a href="#early-access" class="section-cta-button">Request Access</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- SERVICES SECTIONS -->
     
     <!-- CHARTER SERVICES -->
@@ -215,32 +202,9 @@
         </div>
     </section>
 
-    <!-- FIRST-CLASS BACKUP -->
-    <section class="section service-section" id="first-class">
-        <div class="service-hero-image" style="background-image: url('images/istockphoto-2103032687-1024x1024.jpg'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
-        <div class="container">
-            <h2 class="service-headline">First-Class Backup</h2>
-            <p class="service-subline">A private alternative when commercial travel fails.</p>
-            <div class="service-content-wrapper">
-                <p class="service-copy">
-                    Designed for moments when delays or cancellations are not an option. First-Class Backup provides rapid access to private aviation when commercial travel breaks down.
-                </p>
-                <ul class="service-points">
-                    <li>Protection against delays and cancellations</li>
-                    <li>Priority access during disruptions</li>
-                    <li>Ideal for time-sensitive travel</li>
-                    <li>Rapid coordination</li>
-                </ul>
-                <div class="service-cta-wrapper">
-                    <a href="#early-access" class="service-cta-button">Request Access</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GUARANTEED ARRIVAL -->
+    <!-- GUARANTEED ARRIVAL (with image — wording switched from First-Class) -->
     <section class="section service-section" id="guaranteed">
-        <div class="service-hero-image" style="background-image: url('images/pexels-rama-febryan-1351711115-25724429.jpg'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
+        <div class="service-hero-image" style="background-image: url('images/ChatGPT%20Image%20Feb%201%2C%202026%2C%2011_01_15%20PM.png'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
         <div class="container">
             <h2 class="service-headline">Guaranteed Arrival</h2>
             <p class="service-subline">When timing is non-negotiable.</p>
@@ -278,33 +242,16 @@
                             <input type="email" class="form-input" name="email" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Primary Route (City to City) *</label>
-                            <input type="text" class="form-input" name="route" placeholder="e.g., New York to Los Angeles" required>
+                            <label class="form-label">City (optional)</label>
+                            <input type="text" class="form-input" name="city" placeholder="City">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Preferred Travel Window</label>
-                            <select class="form-select" name="window">
-                                <option value="">Select travel window</option>
-                                <option value="immediate">Immediate (Within 30 days)</option>
-                                <option value="q1-2024">Q1 2024</option>
-                                <option value="q2-2024">Q2 2024</option>
-                                <option value="q3-2024">Q3 2024</option>
-                                <option value="q4-2024">Q4 2024</option>
-                                <option value="2025">2025</option>
-                                <option value="flexible">Flexible</option>
-                            </select>
+                            <label class="form-label">State (optional)</label>
+                            <input type="text" class="form-input" name="state" placeholder="State">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Number of Passengers</label>
-                            <select class="form-select" name="passengers">
-                                <option value="">Select number of passengers</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3-4">3-4</option>
-                                <option value="5-6">5-6</option>
-                                <option value="7-8">7-8</option>
-                                <option value="9+">9+</option>
-                            </select>
+                            <label class="form-label">Phone Number (optional)</label>
+                            <input type="tel" class="form-input" name="phone" placeholder="Phone number">
                         </div>
                         <button type="submit" class="form-submit">Request Access</button>
                     </form>
@@ -335,7 +282,6 @@
                         <ul class="footer-links">
                             <li><a href="#charter" class="footer-link">Charter Services</a></li>
                             <li><a href="#empty-leg" class="footer-link">Empty-Leg Flights</a></li>
-                            <li><a href="#first-class" class="footer-link">First-Class Backup</a></li>
                             <li><a href="#guaranteed" class="footer-link">Guaranteed Arrival</a></li>
                         </ul>
                     </div>
@@ -343,10 +289,11 @@
                     <div class="footer-column">
                         <h4 class="footer-heading">Company</h4>
                         <ul class="footer-links">
-                            <li><span class="footer-link">Our Mission</span></li>
-                            <li><span class="footer-link">How It Works</span></li>
-                            <li><span class="footer-link">The Difference</span></li>
-                            <li><span class="footer-link">Early Access</span></li>
+                            <li><a href="#what-we-do" class="footer-link">What We Do</a></li>
+                            <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
+                            <li><a href="#the-difference" class="footer-link">The Difference</a></li>
+                            <li><a href="about.html" class="footer-link">About Us</a></li>
+                            <li><a href="#early-access" class="footer-link">Request Access</a></li>
                         </ul>
                     </div>
                     
@@ -355,7 +302,6 @@
                         <ul class="footer-links">
                             <li><a href="mailto:contact@aurelianjets.com" class="footer-link footer-email-link">contact@aurelianjets.com</a></li>
                             <li><span class="footer-link">Available 24/7</span></li>
-                            <li><span class="footer-link">Discrete Service</span></li>
                         </ul>
                     </div>
                 </div>
@@ -365,7 +311,14 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="legal-text">Subject to availability. Terms apply. All flights operated by certified Part 135 operators.</p>
+                    <p class="legal-text">Subject to availability. Not an air carrier. All flights operated by independent FAA-certified Part 135 operators.</p>
+                    <div class="footer-legal-links">
+                        <a href="about.html" class="footer-legal-link">About Us</a>
+                        <span class="footer-legal-separator">·</span>
+                        <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+                        <span class="footer-legal-separator">·</span>
+                        <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+                    </div>
                     <p class="copyright">© 2025 Aurelian Jets. All rights reserved.</p>
                 </div>
             </div>
@@ -594,13 +547,13 @@
                 const formData = new FormData(form);
                 const name = formData.get('name')?.trim();
                 const email = formData.get('email')?.trim();
-                const route = formData.get('route')?.trim();
-                const window = formData.get('window')?.trim() || '';
-                const passengers = formData.get('passengers')?.trim() || '';
+                const city = formData.get('city')?.trim() || '';
+                const state = formData.get('state')?.trim() || '';
+                const phone = formData.get('phone')?.trim() || '';
                 
-                // Validation
-                if (!name || !email || !route) {
-                    alert('Please fill in all required fields.');
+                // Validation — only Full Name and Email required
+                if (!name || !email) {
+                    alert('Please enter your full name and email address.');
                     return;
                 }
                 
@@ -618,13 +571,19 @@
                 }
                 
                 // Prepare data for Google Sheets
+                // Format date as readable: "Feb 1, 2026 at 3:45 PM"
+                const now = new Date();
+                const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+                const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
+                const formattedDate = now.toLocaleDateString('en-US', dateOptions) + ' at ' + now.toLocaleTimeString('en-US', timeOptions);
+                
                 const data = {
-                    timestamp: new Date().toISOString(),
+                    timestamp: formattedDate,
                     name: name,
                     email: email,
-                    route: route,
-                    window: window,
-                    passengers: passengers,
+                    city: city,
+                    state: state,
+                    phone: phone,
                     source: 'AurelianJets.com',
                     status: ''
                 };
