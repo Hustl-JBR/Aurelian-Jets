@@ -293,7 +293,7 @@ function formatSheet(sheet) {
  */
 function sendInternalNotification(data) {
   try {
-    var recipientEmail = 'your-email@example.com'; // CHANGE THIS TO YOUR EMAIL
+    var recipientEmail = 'charter@aurelianjets.com'; // CHANGE THIS TO YOUR EMAIL
     
     if (!recipientEmail || recipientEmail === 'your-email@example.com') {
       return; // Skip if email not configured
