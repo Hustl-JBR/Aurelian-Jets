@@ -3,9 +3,9 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const CANONICAL_DOMAIN = 'https://aurelianjets.com';
+const CANONICAL_DOMAIN = 'https://www.aurelianjets.com';
 
-// 301 redirect Railway URL to custom domain so Google and users see aurelianjets.com
+// 301 redirect Railway URL to custom domain so Google and users see www.aurelianjets.com
 app.use((req, res, next) => {
   const host = (req.headers.host || '').toLowerCase();
   if (host.includes('railway.app')) {
