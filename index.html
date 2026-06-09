@@ -3,337 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Aurelian Jets | Private Aviation</title>
-    <meta name="description" content="Designed for critical travel, Aurelian Jets plans proactively with redundancies, priority coordination, and optimized aircraft availability, so your trip stays on track.">
-    <link rel="canonical" href="https://www.aurelianjets.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.aurelianjets.com/">
-    <meta property="og:title" content="Aurelian Jets | Private Aviation">
-    <meta property="og:description" content="Designed for critical travel, Aurelian Jets plans proactively with redundancies, priority coordination, and optimized aircraft availability, so your trip stays on track.">
-    <meta property="og:image" content="https://www.aurelianjets.com/images/Aurelian%20Jets%20Logo-Official.png">
-    <meta property="og:site_name" content="Aurelian Jets">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Aurelian Jets | Private Aviation">
-    <meta name="twitter:description" content="Designed for critical travel, Aurelian Jets plans proactively with redundancies, priority coordination, and optimized aircraft availability, so your trip stays on track.">
-    <meta name="twitter:image" content="https://www.aurelianjets.com/images/Aurelian%20Jets%20Logo-Official.png">
-    <link rel="icon" type="image/png" href="images/Aurelian Jets Logo-Official.png" sizes="48x48">
-    <link rel="apple-touch-icon" href="images/Aurelian Jets Logo-Official.png" sizes="180x180">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Aurelian Jets — Private Charter &amp; Empty Leg Flights</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preload" href="images/jakob-rosen-Emvf_emPMdY-unsplash.jpg?v=2" as="image">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="canonical" href="https://www.aurelianjets.com/">
+    <meta name="description" content="On-demand private jet charter and empty leg flights worldwide. Book online or request a quote in minutes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css">
+    <script>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
 </head>
-<body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress"></div>
+<body class="page-home">
 
-    <!-- Header with logo and hamburger nav -->
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <div class="header-inner">
-            <a href="#" class="header-brand">
+            <a href="index.html" class="header-brand">
                 <span class="header-logo" aria-hidden="true">A</span>
                 <span class="header-name">Aurelian Jets</span>
             </a>
-            <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
+            <nav class="header-nav-desktop" aria-label="Main navigation">
+                <a href="charter.html" class="header-link-desktop">Charter</a>
+                <a href="empty-legs.html" class="header-link-desktop">Empty Legs</a>
+                <a href="fleet.html" class="header-link-desktop">Fleet</a>
+                <a href="about.html" class="header-link-desktop">About</a>
+            </nav>
+            <div class="header-right">
+                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
-                    <a href="#what-we-do" class="header-link">What We Do</a>
-                    <a href="#how-it-works" class="header-link">How It Works</a>
-                    <a href="#the-difference" class="header-link">The Difference</a>
+                    <a href="charter.html" class="header-link">Charter a Flight</a>
+                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
+                    <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
-                    <a href="#charter" class="header-link">Charter</a>
-                    <a href="#empty-leg" class="header-link">Empty-Leg</a>
-                    <a href="#guaranteed" class="header-link">Arrival Priority</a>
-                    <a href="#early-access" class="header-link">Request Access</a>
+                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-vignette"></div>
-        <div class="hero-content">
-            <h1 class="hero-brand">Aurelian Jets</h1>
-            <p class="hero-tagline">A Higher Standard of Private Aviation.</p>
-            <a href="#early-access" class="hero-cta">Request Access</a>
-        </div>
-        <div class="hero-fade-edge"></div>
-    </section>
+    <!-- ── Hero Search ──────────────────────────────────────────────────────────── -->
+    <section class="home-hero">
+        <div class="home-hero-bg" style="background-image:url('images/jakob-rosen-Emvf_emPMdY-unsplash.jpg')"></div>
+        <div class="home-hero-overlay"></div>
+        <div class="home-hero-content">
+            <p class="home-hero-eyebrow">Private Aviation, Simplified</p>
+            <h1 class="home-hero-heading">Where Are You Flying?</h1>
+            <p class="home-hero-sub">Search routes, choose your aircraft, and request a quote in minutes.</p>
 
-    <div class="section-divider" aria-hidden="true"></div>
-
-    <!-- WHAT WE DO (Company) -->
-    <section class="section what-we-do" id="what-we-do">
-        <div class="what-we-do-bg" aria-hidden="true"></div>
-        <div class="what-we-do-overlay" aria-hidden="true"></div>
-        <div class="what-we-do-inner">
-            <div class="what-we-do-content">
-                <h2 class="what-we-do-title" data-aos="fade-up">What We Do</h2>
-                <div class="what-we-do-underline" data-aos="fade-up"></div>
-                <div class="what-we-do-text" data-aos="fade-up" data-aos-delay="100">
-                    <p class="what-we-do-body">Aurelian Jets is a private jet charter brokerage specializing in efficient, reliable lift through carefully vetted FAA Part 135 operators. We do not operate aircraft. We source, structure, and manage charter flights on behalf of our clients by leveraging strong relationships with certified operators who meet our safety, performance, and service standards. Every trip is coordinated with operational discipline and clear communication from request to arrival.</p>
-                    <p class="what-we-do-body what-we-do-accent">Effortless travel. Exceptional standards.</p>
-                    <div class="section-cta-wrapper" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#early-access" class="section-cta-button">Request Access</a>
+            <form class="home-search-form" id="home-search-form" novalidate>
+                <div class="hsf-fields">
+                    <div class="hsf-field hsf-field--from">
+                        <label class="hsf-label" for="hsf-from">From</label>
+                        <input class="hsf-input" id="hsf-from" type="text" placeholder="Departure city or airport" autocomplete="off" spellcheck="false">
+                        <div class="hsf-dropdown" id="hsf-from-drop"></div>
+                    </div>
+                    <div class="hsf-swap" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9h8M10 6l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="hsf-field hsf-field--to">
+                        <label class="hsf-label" for="hsf-to">To</label>
+                        <input class="hsf-input" id="hsf-to" type="text" placeholder="Destination city or airport" autocomplete="off" spellcheck="false">
+                        <div class="hsf-dropdown" id="hsf-to-drop"></div>
+                    </div>
+                    <div class="hsf-field hsf-field--date">
+                        <label class="hsf-label" for="hsf-date">Date</label>
+                        <input class="hsf-input" id="hsf-date" type="date">
+                    </div>
+                    <div class="hsf-field hsf-field--pax">
+                        <label class="hsf-label" for="hsf-pax">Passengers</label>
+                        <select class="hsf-input hsf-select" id="hsf-pax">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                        </select>
                     </div>
                 </div>
+                <button class="hsf-btn" type="submit">Find Aircraft</button>
+                <p class="hsf-error hidden" id="hsf-error">Please select both a departure and destination airport.</p>
+
+                <div class="home-hero-quick">
+                    <span class="hhq-label">Popular routes:</span>
+                    <button class="hhq-route" data-from="JFK" data-to="MIA">New York → Miami</button>
+                    <button class="hhq-route" data-from="LAX" data-to="LAS">LA → Las Vegas</button>
+                    <button class="hhq-route" data-from="TEB" data-to="ASE">New York → Aspen</button>
+                    <button class="hhq-route" data-from="MIA" data-to="SBH">Miami → St. Barts</button>
+                </div>
+            </form>
+
+            <div class="hsf-or-divider">
+                <span class="hsf-or-line"></span>
+                <span class="hsf-or-text">OR</span>
+                <span class="hsf-or-line"></span>
+            </div>
+            <div class="hsf-contact-row">
+                <button class="hsf-btn hsf-contact-btn" type="button" id="hsf-contact-btn">Contact for Booking</button>
             </div>
         </div>
     </section>
 
-    <div class="section-divider" aria-hidden="true"></div>
+    <!-- ── Globe + Aircraft (revealed on search) ──────────────────────────────────── -->
+    <div class="home-planner hidden" id="home-planner">
+        <!-- Canvas sits behind everything as a full-height background layer.
+             Two viewports are rendered: globe (upper 740px) and tilted star
+             continuation (aircraft section below) — giving true 3D continuity. -->
+        <canvas id="globe-canvas"></canvas>
 
-    <!-- HOW IT WORKS -->
-    <section class="section how-it-works" id="how-it-works">
-        <div class="how-it-works-bg" aria-hidden="true"></div>
-        <div class="how-it-works-overlay" aria-hidden="true"></div>
-        <div class="container how-it-works-inner">
-            <h2 class="how-it-works-title" data-aos="fade-up">How It Works</h2>
-            <div class="how-it-works-underline" data-aos="fade-up"></div>
-            <div class="steps-grid">
-                <div class="step-card" data-aos="fade-up" data-aos-delay="0">
-                    <span class="step-card-num">I</span>
-                    <h3 class="step-card-title">Submit</h3>
-                    <div class="step-card-line"></div>
-                    <p class="step-card-copy">Provide your routing, dates, passenger count, and any mission-specific requirements.</p>
+        <!-- Hidden compat inputs for planner.js -->
+        <div style="display:none" aria-hidden="true">
+            <input id="origin-input" type="text" autocomplete="off">
+            <div id="origin-dropdown"></div>
+            <input id="dest-input" type="text" autocomplete="off">
+            <div id="dest-dropdown"></div>
+            <button id="plan-btn"></button>
+        </div>
+
+        <!-- Globe overlay (watermark + route label) — canvas is behind this -->
+        <div class="globe-wrapper" id="globe-wrapper">
+            <span class="globe-watermark" aria-hidden="true">A</span>
+            <div class="globe-route-overlay hidden" id="globe-route-header">
+                <div class="gro-cities">
+                    <span class="gro-city" id="globe-origin-label"></span>
+                    <span class="gro-arrow">→</span>
+                    <span class="gro-city" id="globe-dest-label"></span>
                 </div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
-                    <span class="step-card-num">II</span>
-                    <h3 class="step-card-title">Source & Structure</h3>
-                    <div class="step-card-line"></div>
-                    <p class="step-card-copy">We solicit and evaluate options exclusively from vetted Part 135 operators, assessing safety records, aircraft suitability, crew standards, and logistical fit.</p>
-                </div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
-                    <span class="step-card-num">III</span>
-                    <h3 class="step-card-title">Execute</h3>
-                    <div class="step-card-line"></div>
-                    <p class="step-card-copy">We coordinate directly with the operator and crew to ensure efficient departure, reliable performance, and real-time oversight through completion of the flight.</p>
-                </div>
-            </div>
-            <div class="section-cta-wrapper" data-aos="fade-up" data-aos-delay="300">
-                <a href="#early-access" class="section-cta-button">Request Access</a>
+                <div class="gro-dist" id="globe-distance"></div>
             </div>
         </div>
-    </section>
 
-    <!-- THE DIFFERENCE -->
-    <section class="section the-difference" id="the-difference">
-        <div class="container difference-container">
-            <h2 class="difference-title-main" data-aos="fade-up">The Difference</h2>
-            <div class="difference-underline" data-aos="fade-up"></div>
-            <div class="difference-grid">
-                <div class="difference-column" data-aos="fade-up" data-aos-delay="0">
-                    <div class="difference-image-frame">
-                        <div class="difference-image" style="background-image: url('images/ChatGPT%20Image%20Feb%201%2C%202026%2C%2009_39_43%20PM.png?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=85');"></div>
+        <!-- Aircraft cards below globe -->
+        <div class="charter-aircraft-section">
+            <div class="container">
+                <div class="jet-results" id="jet-results">
+                    <div class="jet-results-header">
+                        <h2 class="jet-results-title">Available Aircraft</h2>
+                        <p class="jet-results-sub" id="jet-results-route"></p>
                     </div>
-                    <div class="difference-title-box">
-                        <h3 class="difference-column-title">Typical Charters</h3>
-                        <ul class="difference-list">
-                            <li>Open marketplace sourcing with inconsistent vetting</li>
-                            <li>Limited operational oversight</li>
-                            <li>Reactive communication</li>
-                            <li>Pricing variability without structured review</li>
-                        </ul>
-                    </div>
+                    <div class="jet-results-grid" id="jet-results-grid"></div>
                 </div>
-                <div class="difference-column" data-aos="fade-up" data-aos-delay="100">
-                    <div class="difference-image-frame">
-                        <div class="difference-image" style="background-image: url('images/pexels-alisson-michel-45762740-7739666.jpg?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=85');"></div>
-                    </div>
-                    <div class="difference-title-box">
-                        <h3 class="difference-column-title">Aurelian Jets</h3>
-                        <ul class="difference-list">
-                            <li>Flights arranged exclusively through vetted FAA Part 135 operators</li>
-                            <li>Structured sourcing process focused on aircraft and crew suitability</li>
-                            <li>Active coordination before, during, and after each mission</li>
-                            <li>Clear pricing with defined scope and expectations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta-wrapper" data-aos="fade-up" data-aos-delay="200">
-                <a href="#early-access" class="section-cta-button">Request Access</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- SERVICES SECTIONS -->
-    
-    <!-- CHARTER SERVICES -->
-    <section class="section service-section" id="charter">
-        <div class="service-hero-image" style="background-image: url('images/pexels-katie-cerami-110690626-20562278.jpg?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
+    <!-- Quote modal (same as charter.html) -->
+    <div class="quote-modal-overlay hidden" id="quote-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="qm-title">
+        <div class="quote-modal">
+            <button class="quote-modal-close" id="quote-modal-close" aria-label="Close">&times;</button>
+            <div class="quote-modal-header">
+                <h2 class="quote-modal-title" id="qm-title">Request a Quote</h2>
+                <p class="quote-modal-route" id="quote-modal-route"></p>
+            </div>
+            <form class="quote-form" id="quote-form" novalidate>
+                <input type="hidden" id="qf-aircraft" name="aircraft">
+                <input type="hidden" id="qf-route"    name="route">
+                <input type="hidden" id="qf-date"     name="date">
+                <input type="hidden" id="qf-pax"      name="passengers">
+                <input type="hidden" name="source"     value="homepage">
+                <div class="qf-row">
+                    <div class="qf-field">
+                        <label class="qf-label" for="qf-first">First Name *</label>
+                        <input class="qf-input" id="qf-first" name="firstName" type="text" required autocomplete="given-name">
+                    </div>
+                    <div class="qf-field">
+                        <label class="qf-label" for="qf-last">Last Name *</label>
+                        <input class="qf-input" id="qf-last" name="lastName" type="text" required autocomplete="family-name">
+                    </div>
+                </div>
+                <div class="qf-row">
+                    <div class="qf-field">
+                        <label class="qf-label" for="qf-email">Email *</label>
+                        <input class="qf-input" id="qf-email" name="email" type="email" required autocomplete="email">
+                    </div>
+                    <div class="qf-field">
+                        <label class="qf-label" for="qf-phone">Phone *</label>
+                        <input class="qf-input" id="qf-phone" name="phone" type="tel" required autocomplete="tel">
+                    </div>
+                </div>
+                <div class="qf-field qf-field--full">
+                    <label class="qf-label" for="qf-notes">Special Requests</label>
+                    <textarea class="qf-input qf-textarea" id="qf-notes" name="notes" rows="3"></textarea>
+                </div>
+                <div class="qf-selected-summary" id="qf-selected-summary"></div>
+                <div class="qf-actions">
+                    <button class="qf-submit" type="submit" id="qf-submit">Submit Request</button>
+                    <p class="qf-assurance">We respond within 2 hours. No commitment required.</p>
+                </div>
+                <div class="qf-success hidden" id="qf-success">
+                    <span class="qf-success-icon">✓</span>
+                    <p>Request received. We'll be in touch within 2 hours.</p>
+                </div>
+                <div class="qf-form-error hidden" id="qf-form-error">Please fill out all required fields.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── Trust Strip ──────────────────────────────────────────────────────────── -->
+    <div class="trust-strip">
         <div class="container">
-            <h2 class="service-headline">Charter Services</h2>
-            <p class="service-subline">Precision-arranged private jet charter.</p>
-            <div class="service-content-wrapper">
-                <p class="service-copy">
-                    We arrange domestic and international private jet flights through trusted Part 135 operators, matching each mission to the appropriate aircraft category and operator capability. Our role is to ensure operational alignment — from runway requirements to crew legality — so your flight performs exactly as planned.
-                </p>
-                <ul class="service-points">
-                    <li>On-demand domestic and international charter</li>
-                    <li>Light, midsize, super-midsize, and heavy jets</li>
-                    <li>Direct coordination with certified operators</li>
-                    <li>End-to-end flight oversight</li>
-                </ul>
-                <div class="service-cta-wrapper">
-                    <a href="#early-access" class="service-cta-button">Request Access</a>
+            <div class="trust-strip-inner">
+                <div class="trust-item">
+                    <span class="trust-icon">✦</span>
+                    <span>FAA Part 135 Certified Operators</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item">
+                    <span class="trust-icon">✦</span>
+                    <span>10,000+ Aircraft Worldwide</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item">
+                    <span class="trust-icon">✦</span>
+                    <span>Quotes in Under 2 Hours</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item">
+                    <span class="trust-icon">✦</span>
+                    <span>24 / 7 Concierge Support</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- EMPTY-LEG FLIGHTS -->
-    <section class="section service-section" id="empty-leg">
-        <div class="service-hero-image" style="background-image: url('images/pexels-babix-20640898.jpg?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
+    <!-- ── Empty Legs Preview ───────────────────────────────────────────────────── -->
+    <section class="home-section">
         <div class="container">
-            <h2 class="service-headline">Empty-Leg Flights</h2>
-            <p class="service-subline">Occasional repositioning opportunities.</p>
-            <div class="service-content-wrapper">
-                <p class="service-copy">
-                    From time to time, our operator partners may offer repositioning segments at adjusted pricing. While not central to our service model, we make these available to clients when they align with routing and schedule requirements. *Availability is limited and dependent on operator scheduling.
-                </p>
-                <ul class="service-points">
-                    <li>Operator-sourced repositioning flights</li>
-                    <li>Reduced pricing when routing aligns</li>
-                    <li>Same vetted Part 135 standards</li>
-                </ul>
-                <p class="service-disclaimer">Routes and availability subject to change.</p>
-                <div class="service-cta-wrapper">
-                    <a href="#early-access" class="service-cta-button">Request Access</a>
+            <div class="home-section-header">
+                <div>
+                    <p class="home-section-eyebrow">Fly for Less</p>
+                    <h2 class="home-section-title">Empty Legs Available Now</h2>
+                    <p class="home-section-sub">Pre-positioned aircraft flying at a fraction of charter cost. Limited availability.</p>
                 </div>
+                <a href="empty-legs.html" class="section-text-link">View All <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="leg-cards-preview" id="legs-preview"></div>
+            <div class="home-section-cta">
+                <a href="empty-legs.html" class="section-cta-button">Browse All Empty Legs</a>
             </div>
         </div>
     </section>
 
-    <!-- GUARANTEED ARRIVAL (with image — wording switched from First-Class) -->
-    <section class="section service-section" id="guaranteed">
-        <div class="service-hero-image" style="background-image: url('images/ChatGPT%20Image%20Feb%201%2C%202026%2C%2011_01_15%20PM.png?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
+    <!-- ── How It Works ─────────────────────────────────────────────────────────── -->
+    <section class="home-section home-section--alt">
         <div class="container">
-            <h2 class="service-headline">Arrival Priority</h2>
-            <p class="service-subline">When every minute counts. </p>
-            <div class="service-content-wrapper">
-                <p class="service-copy">
-                    Designed for critical travel, Aurelian Jets plans proactively with redundancies, priority coordination, and optimized aircraft availability, so your trip stays on track no matter the challenge.
-                </p>
-                <ul class="service-points">
-                    <li>Expert aircraft sourcing</li>
-                    <li>Optimized availability</li>
-                    <li>White-glove service</li>
-                    <li>Operational peace of mind</li>
-                </ul>
-                <div class="service-cta-wrapper">
-                    <a href="#early-access" class="service-cta-button">Request Access</a>
+            <div class="home-section-header home-section-header--center">
+                <div>
+                    <p class="home-section-eyebrow">The Process</p>
+                    <h2 class="home-section-title">Book in Three Steps</h2>
+                </div>
+            </div>
+            <div class="how-steps">
+                <div class="how-step">
+                    <span class="how-step-num">01</span>
+                    <h3 class="how-step-title">Enter Your Route</h3>
+                    <p class="how-step-desc">Search any city pair or airport code. Depart from private terminals and skip commercial security entirely.</p>
+                </div>
+                <div class="how-step-connector" aria-hidden="true"></div>
+                <div class="how-step">
+                    <span class="how-step-num">02</span>
+                    <h3 class="how-step-title">Choose Your Aircraft</h3>
+                    <p class="how-step-desc">Select from Light, Midsize, or Heavy Jets based on range, passenger count, and budget. See estimated costs instantly.</p>
+                </div>
+                <div class="how-step-connector" aria-hidden="true"></div>
+                <div class="how-step">
+                    <span class="how-step-num">03</span>
+                    <h3 class="how-step-title">We Handle Everything</h3>
+                    <p class="how-step-desc">Receive a confirmed quote within 2 hours. Catering, ground transport, and FBO handling arranged on request.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WAITLIST SECTION -->
-    <section class="section waitlist" id="early-access">
+    <!-- ── Fleet Preview ────────────────────────────────────────────────────────── -->
+    <section class="home-section">
         <div class="container">
-            <h2 class="section-title">Request Access</h2>
-            <p class="waitlist-subtext">Cleared for takeoff very soon</p>
-            <div class="form-container">
-                <div class="custom-form" id="waitlist-form-container">
-                    <form id="waitlist-form">
-                        <div class="form-group">
-                            <label class="form-label">Full Name *</label>
-                            <input type="text" class="form-input" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Email Address *</label>
-                            <input type="email" class="form-input" name="email" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">City (optional)</label>
-                            <input type="text" class="form-input" name="city" placeholder="City">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">State (optional)</label>
-                            <input type="text" class="form-input" name="state" placeholder="State">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Phone Number (optional)</label>
-                            <input type="tel" class="form-input" name="phone" placeholder="Phone number">
-                        </div>
-                        <button type="submit" class="form-submit">Request Access</button>
-                    </form>
+            <div class="home-section-header">
+                <div>
+                    <p class="home-section-eyebrow">Aircraft Categories</p>
+                    <h2 class="home-section-title">The Right Jet for Every Route</h2>
                 </div>
-                <div class="form-confirmation" id="form-confirmation">
-                    <p class="confirmation-message">Request received.</p>
-                    <p class="confirmation-subtext">Access is reviewed manually.</p>
-                    <p class="confirmation-subtext">Get ready to fly with Aurelian.</p>
-                </div>
+                <a href="fleet.html" class="section-text-link">Full Fleet <span aria-hidden="true">→</span></a>
             </div>
+            <div class="fleet-preview-grid" id="fleet-preview"></div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
     <footer class="footer">
         <div class="footer-top">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <h3 class="footer-title">Aurelian Jets</h3>
-                        <p class="footer-tagline">Highest tier of private aviation.</p>
-                        <div class="footer-divider"></div>
-                        <p class="footer-description">Where luxury meets efficiency.</p>
+                <div class="footer-cols">
+                    <div class="footer-col footer-col--brand">
+                        <div class="footer-logo">
+                            <span class="footer-logo-mark">A</span>
+                            Aurelian Jets
+                        </div>
+                        <p class="footer-tagline">Private aviation arranged with precision. Available 24 hours a day, 7 days a week.</p>
+                        <a href="mailto:charter@aurelianjets.com" class="footer-email">charter@aurelianjets.com</a>
                     </div>
-                    
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Services</h4>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Book</h4>
                         <ul class="footer-links">
-                            <li><a href="#charter" class="footer-link">Charter Services</a></li>
-                            <li><a href="#empty-leg" class="footer-link">Empty-Leg Flights</a></li>
-                            <li><a href="#guaranteed" class="footer-link">Arrival Priority</a></li>
+                            <li><a href="charter.html" class="footer-link">Charter a Flight</a></li>
+                            <li><a href="empty-legs.html" class="footer-link">Empty Legs</a></li>
+                            <li><a href="fleet.html" class="footer-link">Our Fleet</a></li>
                         </ul>
                     </div>
-                    
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Company</h4>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Company</h4>
                         <ul class="footer-links">
-                            <li><a href="#what-we-do" class="footer-link">What We Do</a></li>
-                            <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
-                            <li><a href="#the-difference" class="footer-link">The Difference</a></li>
                             <li><a href="about.html" class="footer-link">About Us</a></li>
-                            <li><a href="#early-access" class="footer-link">Request Access</a></li>
+                            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+                            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
                         </ul>
                     </div>
-                    
-                    <div class="footer-column">
-                        <h4 class="footer-heading">Contact</h4>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Contact</h4>
                         <ul class="footer-links">
-                            <li><a href="mailto:charter@aurelianjets.com" class="footer-link footer-email-link">charter@aurelianjets.com</a></li>
-                            <li><span class="footer-link">Available 24/7</span></li>
+                            <li><a href="mailto:charter@aurelianjets.com" class="footer-link">charter@aurelianjets.com</a></li>
+                            <li><span class="footer-link-plain">Available 24 / 7</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="legal-text">Subject to availability. Not an air carrier. All flights operated by independent FAA-certified Part 135 operators.</p>
+                    <p class="legal-text">Not an air carrier. All flights operated by independent FAA-certified Part 135 operators. Subject to availability.</p>
                     <div class="footer-legal-links">
-                        <a href="about.html" class="footer-legal-link">About Us</a>
+                        <a href="about.html" class="footer-legal-link">About</a>
                         <span class="footer-legal-separator">·</span>
-                        <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+                        <a href="terms.html" class="footer-legal-link">Terms</a>
                         <span class="footer-legal-separator">·</span>
-                        <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+                        <a href="privacy.html" class="footer-legal-link">Privacy</a>
                     </div>
                     <p class="copyright">© 2026 Aurelian Jets. All rights reserved.</p>
                 </div>
@@ -341,351 +359,277 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
+    <script src="airports.js" defer></script>
+    <script src="planner.js" defer></script>
+
     <script>
-        // Clear any service worker caches on load
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for(let registration of registrations) {
-                    registration.unregister();
-                }
-            });
+    // Quote modal logic (mirrors charter.html)
+    (function() {
+        var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2bgGQRN3Kwjr1RVDH0FBrRX1CCFF5mubnA55meGOYfN84C8KuKrFEOObgKlICTKn6w/exec';
+
+        window.openQuoteModal = function(jetType, routeStr, dateVal, paxVal) {
+            var overlay = document.getElementById('quote-modal-overlay');
+            document.getElementById('qf-aircraft').value = jetType;
+            document.getElementById('qf-route').value    = routeStr;
+            document.getElementById('qf-date').value     = dateVal;
+            document.getElementById('qf-pax').value      = paxVal;
+            document.getElementById('quote-modal-route').textContent = jetType + ' · ' + routeStr;
+            document.getElementById('qf-selected-summary').innerHTML =
+                '<div class="qf-summary-row"><span>Aircraft</span><strong>' + jetType + '</strong></div>' +
+                '<div class="qf-summary-row"><span>Route</span><strong>' + routeStr + '</strong></div>' +
+                (dateVal ? '<div class="qf-summary-row"><span>Date</span><strong>' + dateVal + '</strong></div>' : '') +
+                (paxVal  ? '<div class="qf-summary-row"><span>Passengers</span><strong>' + paxVal + '</strong></div>' : '');
+            document.getElementById('qf-success').classList.add('hidden');
+            document.getElementById('qf-form-error').classList.add('hidden');
+            document.getElementById('quote-form').reset();
+            document.getElementById('qf-aircraft').value = jetType;
+            document.getElementById('qf-route').value    = routeStr;
+            document.getElementById('qf-date').value     = dateVal;
+            document.getElementById('qf-pax').value      = paxVal;
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(function() { overlay.classList.add('visible'); }, 10);
+        };
+
+        function closeModal() {
+            var overlay = document.getElementById('quote-modal-overlay');
+            overlay.classList.remove('visible');
+            setTimeout(function() { overlay.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
         }
-        
-        // Clear browser cache for images
-        if ('caches' in window) {
-            caches.keys().then(function(names) {
-                for (let name of names) {
-                    caches.delete(name);
-                }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('quote-modal-close').addEventListener('click', closeModal);
+            document.getElementById('quote-modal-overlay').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+            document.getElementById('quote-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var errEl = document.getElementById('qf-form-error');
+                var first = document.getElementById('qf-first').value.trim();
+                var last  = document.getElementById('qf-last').value.trim();
+                var email = document.getElementById('qf-email').value.trim();
+                var phone = document.getElementById('qf-phone').value.trim();
+                if (!first || !last || !email || !phone) { errEl.classList.remove('hidden'); return; }
+                errEl.classList.add('hidden');
+                var btn = document.getElementById('qf-submit');
+                btn.disabled = true; btn.textContent = 'Sending…';
+                var data = {
+                    firstName: first, lastName: last, email: email, phone: phone,
+                    aircraft: document.getElementById('qf-aircraft').value,
+                    route:    document.getElementById('qf-route').value,
+                    date:     document.getElementById('qf-date').value,
+                    passengers: document.getElementById('qf-pax').value,
+                    notes:    document.getElementById('qf-notes').value.trim(),
+                    source:   'homepage'
+                };
+                fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) })
+                    .then(function() {
+                        document.getElementById('qf-success').classList.remove('hidden');
+                        btn.style.display = 'none';
+                        setTimeout(function() { closeModal(); btn.disabled = false; btn.textContent = 'Submit Request'; btn.style.display = ''; }, 3000);
+                    })
+                    .catch(function() {
+                        btn.disabled = false; btn.textContent = 'Submit Request';
+                        errEl.textContent = 'Something went wrong. Email charter@aurelianjets.com.';
+                        errEl.classList.remove('hidden');
+                    });
+            });
+        });
+    })();
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+        var AIRPORTS = window.AIRPORTS || [];
+        var JETS     = window.JETS     || [];
+        var LEGS     = window.EMPTY_LEGS || [];
+
+        var fromAirport = null;
+        var toAirport   = null;
+
+        function searchAirports(q) {
+            if (!q || q.length < 2) return [];
+            q = q.toLowerCase();
+            return AIRPORTS.filter(function(a) {
+                return a[0].toLowerCase().startsWith(q) ||
+                       a[1].toLowerCase().includes(q) ||
+                       a[2].toLowerCase().includes(q);
+            }).slice(0, 7);
+        }
+
+        function buildDrop(drop, results, onSelect) {
+            drop.innerHTML = '';
+            if (!results.length) { drop.classList.remove('open'); return; }
+            results.forEach(function(a) {
+                var item = document.createElement('div');
+                item.className = 'hsf-drop-item';
+                item.innerHTML = '<span class="hsf-drop-code">' + a[0] + '</span><span class="hsf-drop-city">' + a[2] + '</span>';
+                item.addEventListener('mousedown', function(e) {
+                    e.preventDefault();
+                    onSelect(a);
+                    drop.classList.remove('open');
+                });
+                drop.appendChild(item);
+            });
+            drop.classList.add('open');
+        }
+
+        function wireInput(inputEl, dropEl, setter) {
+            inputEl.addEventListener('input', function() {
+                buildDrop(dropEl, searchAirports(inputEl.value), function(a) {
+                    inputEl.value = a[2] + ' (' + a[0] + ')';
+                    setter(a);
+                });
+            });
+            inputEl.addEventListener('blur', function() {
+                setTimeout(function() { dropEl.classList.remove('open'); }, 160);
             });
         }
 
-        // Hamburger dropdown
-        (function () {
-            var btn = document.getElementById('hamburger-btn');
-            var dropdown = document.getElementById('nav-dropdown');
-            var header = document.querySelector('.site-header');
-            if (!btn || !dropdown) return;
+        wireInput(document.getElementById('hsf-from'), document.getElementById('hsf-from-drop'), function(a) { fromAirport = a; });
+        wireInput(document.getElementById('hsf-to'),   document.getElementById('hsf-to-drop'),   function(a) { toAirport   = a; });
 
-            function openMenu() {
-                btn.setAttribute('aria-expanded', 'true');
-                dropdown.setAttribute('aria-hidden', 'false');
-                header.classList.add('is-open');
+        document.querySelectorAll('.hhq-route').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var fc = btn.dataset.from, tc = btn.dataset.to;
+                var fa = AIRPORTS.filter(function(a) { return a[0] === fc; })[0];
+                var ta = AIRPORTS.filter(function(a) { return a[0] === tc; })[0];
+                if (fa && ta) {
+                    fromAirport = fa; toAirport = ta;
+                    document.getElementById('hsf-from').value = fa[2] + ' (' + fa[0] + ')';
+                    document.getElementById('hsf-to').value   = ta[2] + ' (' + ta[0] + ')';
+                    triggerPlanner();
+                }
+            });
+        });
+
+        document.getElementById('hsf-contact-btn').addEventListener('click', function() {
+            window.location.href = 'contact.html';
+        });
+
+        function easedScrollTo(targetY, duration) {
+            var startY = window.scrollY;
+            var dist   = targetY - startY;
+            var t0     = null;
+            function step(ts) {
+                if (!t0) t0 = ts;
+                var t = Math.min((ts - t0) / duration, 1);
+                // Sine ease-in-out: zero velocity at both ends, no inflection points
+                var ease = -(Math.cos(Math.PI * t) - 1) / 2;
+                window.scrollTo(0, startY + dist * ease);
+                if (t < 1) requestAnimationFrame(step);
             }
-            function closeMenu() {
+            requestAnimationFrame(step);
+        }
+
+        function triggerPlanner() {
+            var planner = document.getElementById('home-planner');
+            planner.classList.remove('hidden');
+            var dateVal = document.getElementById('hsf-date').value;
+            var paxVal  = document.getElementById('hsf-pax').value;
+            setTimeout(function() {
+                var targetY = planner.getBoundingClientRect().top + window.scrollY;
+                // Slow scroll (1.4s). Globe starts immediately so it renders + zooms in during the descent.
+                // The globe's 1.5s pre-anim delay means the line starts ~100ms after the user arrives.
+                easedScrollTo(targetY, 1800);
+                if (typeof window.aurelianPlanRoute === 'function') {
+                    window.aurelianPlanRoute(fromAirport, toAirport, dateVal, paxVal);
+                }
+            }, 60);
+        }
+
+        document.getElementById('home-search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var errEl = document.getElementById('hsf-error');
+            if (!fromAirport || !toAirport) { errEl.classList.remove('hidden'); return; }
+            errEl.classList.add('hidden');
+            triggerPlanner();
+        });
+
+        // Default date: tomorrow
+        var d = new Date(); d.setDate(d.getDate() + 1);
+        document.getElementById('hsf-date').value = d.toISOString().split('T')[0];
+
+        // Empty legs preview
+        var legContainer = document.getElementById('legs-preview');
+        LEGS.slice(0, 3).forEach(function(leg) {
+            var dateObj = new Date(leg.date + 'T12:00:00');
+            var dateFmt = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            var card = document.createElement('div');
+            card.className = 'leg-card-preview';
+            card.innerHTML =
+                '<div class="lcp-route">' +
+                    '<span class="lcp-code">' + leg.from + '</span>' +
+                    '<span class="lcp-arrow">→</span>' +
+                    '<span class="lcp-code">' + leg.to + '</span>' +
+                '</div>' +
+                '<div class="lcp-cities">' + leg.fromCity + ' → ' + leg.toCity + '</div>' +
+                '<div class="lcp-meta">' +
+                    '<span>' + dateFmt + ' · ' + leg.time + '</span>' +
+                    '<span class="lcp-aircraft">' + leg.aircraft + '</span>' +
+                '</div>' +
+                '<div class="lcp-footer">' +
+                    '<span class="lcp-seats">' + leg.seats + ' seats</span>' +
+                    '<span class="lcp-price">From $' + leg.price.toLocaleString() + '</span>' +
+                '</div>' +
+                '<a href="empty-legs.html" class="lcp-cta">View Details</a>';
+            legContainer.appendChild(card);
+        });
+
+        // Fleet preview
+        var fp = document.getElementById('fleet-preview');
+        JETS.forEach(function(jet) {
+            var card = document.createElement('div');
+            card.className = 'fleet-preview-card';
+            card.innerHTML =
+                '<div class="fpc-image" style="background-image:url(\'' + jet.image + '\')"></div>' +
+                '<div class="fpc-body">' +
+                    '<h3 class="fpc-type">' + jet.type + '</h3>' +
+                    '<div class="fpc-specs">' +
+                        '<span>' + jet.passengers + ' pax</span>' +
+                        '<span>·</span>' +
+                        '<span>' + jet.range.toLocaleString() + ' nm</span>' +
+                    '</div>' +
+                    '<p class="fpc-desc">' + jet.desc + '</p>' +
+                    '<a href="charter.html" class="fpc-link">Charter Now →</a>' +
+                '</div>';
+            fp.appendChild(card);
+        });
+    });
+    </script>
+
+    <script>
+    (function() {
+        var btn = document.getElementById('hamburger-btn');
+        var dropdown = document.getElementById('nav-dropdown');
+        var header = document.querySelector('.site-header');
+        if (!btn || !dropdown) return;
+        btn.addEventListener('click', function() {
+            var isOpen = header.classList.contains('is-open');
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            dropdown.setAttribute('aria-hidden', String(isOpen));
+            header.classList.toggle('is-open', !isOpen);
+        });
+        dropdown.querySelectorAll('.header-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                btn.setAttribute('aria-expanded', 'false');
+                dropdown.setAttribute('aria-hidden', 'true');
+                header.classList.remove('is-open');
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (header.classList.contains('is-open') && !header.contains(e.target)) {
                 btn.setAttribute('aria-expanded', 'false');
                 dropdown.setAttribute('aria-hidden', 'true');
                 header.classList.remove('is-open');
             }
-
-            btn.addEventListener('click', function () {
-                if (header.classList.contains('is-open')) closeMenu();
-                else openMenu();
-            });
-
-            dropdown.querySelectorAll('.header-link').forEach(function (link) {
-                link.addEventListener('click', closeMenu);
-            });
-
-            document.addEventListener('click', function (e) {
-                if (header.classList.contains('is-open') && !header.contains(e.target)) closeMenu();
-            });
-        })();
-
-        // Scroll Progress Indicator
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.querySelector('.scroll-progress');
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
         });
-
-        // Fade in on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(36px)';
-            el.style.transition = 'opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            observer.observe(el);
-        });
-
-        // Jet Gallery Animation
-        const jetImages = document.querySelectorAll('.jet-image');
-        const jetObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.2 });
-
-        jetImages.forEach((img, index) => {
-            img.style.transitionDelay = `${index * 0.15}s`;
-            jetObserver.observe(img);
-        });
-
-        // Step card animations on scroll
-        const steps = document.querySelectorAll('.step-card');
-        const stepObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
-
-        steps.forEach(step => {
-            stepObserver.observe(step);
-        });
-
-        // Interior grid animation
-        const interiorItems = document.querySelectorAll('.interior-item');
-        const interiorObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, index * 150);
-                }
-            });
-        }, { threshold: 0.2 });
-
-        interiorItems.forEach(item => {
-            interiorObserver.observe(item);
-        });
-
-        // Smooth scroll with offset for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const target = document.querySelector(targetId);
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Service sections fade-in on scroll
-        const serviceSections = document.querySelectorAll('.service-section');
-        const serviceObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-
-        serviceSections.forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(40px)';
-            section.style.transition = 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)';
-            serviceObserver.observe(section);
-        });
-
-        // Alternative submission method using hidden form (for better Google Apps Script compatibility)
-        function submitViaHiddenForm(url, data) {
-            const hiddenForm = document.createElement('form');
-            hiddenForm.method = 'POST';
-            hiddenForm.action = url;
-            hiddenForm.target = 'hidden_iframe';
-            hiddenForm.style.display = 'none';
-            
-            // Add all fields
-            Object.keys(data).forEach(key => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = data[key];
-                hiddenForm.appendChild(input);
-            });
-            
-            // Create hidden iframe
-            let iframe = document.getElementById('hidden_iframe');
-            if (!iframe) {
-                iframe = document.createElement('iframe');
-                iframe.id = 'hidden_iframe';
-                iframe.name = 'hidden_iframe';
-                iframe.style.display = 'none';
-                document.body.appendChild(iframe);
-            }
-            
-            document.body.appendChild(hiddenForm);
-            hiddenForm.submit();
-            setTimeout(() => document.body.removeChild(hiddenForm), 1000);
-        }
-
-        // Form submission to Google Sheets
-        const form = document.getElementById('waitlist-form');
-        const formContainer = document.getElementById('waitlist-form-container');
-        const confirmation = document.getElementById('form-confirmation');
-        const submitButton = form ? form.querySelector('.form-submit') : null;
-        let isSubmitting = false;
-
-        // Email validation
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-        if (form) {
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Prevent duplicate submissions
-                if (isSubmitting) return;
-                
-                // Get form data
-                const formData = new FormData(form);
-                const name = formData.get('name')?.trim();
-                const email = formData.get('email')?.trim();
-                const city = formData.get('city')?.trim() || '';
-                const state = formData.get('state')?.trim() || '';
-                const phone = formData.get('phone')?.trim() || '';
-                
-                // Validation — only Full Name and Email required
-                if (!name || !email) {
-                    alert('Please enter your full name and email address.');
-                    return;
-                }
-                
-                if (!validateEmail(email)) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-                
-                // Disable form during submission
-                isSubmitting = true;
-                if (submitButton) {
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Submitting...';
-                    submitButton.style.opacity = '0.6';
-                }
-                
-                // Prepare data for Google Sheets
-                // Format date as readable: "Feb 1, 2026 at 3:45 PM"
-                const now = new Date();
-                const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-                const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
-                const formattedDate = now.toLocaleDateString('en-US', dateOptions) + ' at ' + now.toLocaleTimeString('en-US', timeOptions);
-                
-                const data = {
-                    timestamp: formattedDate,
-                    name: name,
-                    email: email,
-                    city: city,
-                    state: state,
-                    phone: phone,
-                    source: 'www.aurelianjets.com',
-                    status: ''
-                };
-                
-                try {
-                    // Replace with your Google Apps Script Web App URL
-                    // Get this URL after deploying the Apps Script (see GOOGLE_SHEETS_SETUP.md)
-                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2bgGQRN3Kwjr1RVDH0FBrRX1CCFF5mubnA55meGOYfN84C8KuKrFEOObgKlICTKn6w/exec';
-                    
-                    // Check if URL is configured
-                    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-                        // URL not configured - show confirmation anyway for testing
-                        console.warn('Google Apps Script URL not configured. Form data:', data);
-                        
-                        // Clear form
-                        form.reset();
-                        
-                        // Show confirmation, hide form
-                        formContainer.style.display = 'none';
-                        confirmation.classList.add('active');
-                        
-                        // Scroll to confirmation smoothly
-                        setTimeout(() => {
-                            confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        }, 100);
-                        
-                        // Reset submission state
-                        isSubmitting = false;
-                        if (submitButton) {
-                            submitButton.disabled = false;
-                            submitButton.textContent = 'Request Access';
-                            submitButton.style.opacity = '1';
-                        }
-                        return;
-                    }
-                    
-                    // Submit to Google Sheets via Apps Script
-                    // Send as form-urlencoded so script receives all fields (city, state, phone)
-                    try {
-                        console.log('Submitting form data:', data);
-                        const formBody = new URLSearchParams(data).toString();
-                        const response = await fetch(GOOGLE_SCRIPT_URL, {
-                            method: 'POST',
-                            mode: 'no-cors',
-                            headers: {
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                            },
-                            body: formBody
-                        });
-                        
-                        console.log('Form submitted successfully');
-                        // With no-cors, we can't verify success, but wait a bit
-                        await new Promise(resolve => setTimeout(resolve, 1500));
-                    } catch (fetchError) {
-                        // If fetch fails, try alternative method using hidden form
-                        console.log('Fetch method failed, trying alternative...', fetchError);
-                        submitViaHiddenForm(GOOGLE_SCRIPT_URL, data);
-                        await new Promise(resolve => setTimeout(resolve, 1500));
-                    }
-                    
-                    // Clear form
-                    form.reset();
-                    
-                    // Show confirmation, hide form
-                    formContainer.style.display = 'none';
-                    confirmation.classList.add('active');
-                    
-                    // Scroll to confirmation smoothly
-                    setTimeout(() => {
-                        confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 100);
-                    
-                } catch (error) {
-                    console.error('Submission error:', error);
-                    // Reset submission state
-                    isSubmitting = false;
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Request Access';
-                        submitButton.style.opacity = '1';
-                    }
-                    // Show error message
-                    alert('There was an error submitting your request. Please try again.');
-                }
-            });
-        }
+    })();
     </script>
 </body>
 </html>
