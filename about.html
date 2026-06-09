@@ -19,6 +19,33 @@
                 <span class="header-logo" aria-hidden="true">A</span>
                 <span class="header-name">Aurelian Jets</span>
             </a>
+            <nav class="header-nav-desktop" aria-label="Main navigation">
+                <a href="index.html#charter" class="header-link-desktop">Charter</a>
+                <a href="index.html#empty-leg" class="header-link-desktop">Empty-Leg</a>
+                <a href="index.html#fleet" class="header-link-desktop">Fleet</a>
+                <a href="about.html" class="header-link-desktop" aria-current="page">About</a>
+            </nav>
+            <div class="header-right">
+                <a href="index.html#early-access" class="header-cta-desktop">Request Access</a>
+                <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
+                <nav class="header-nav">
+                    <a href="index.html#what-we-do" class="header-link">What We Do</a>
+                    <a href="index.html#how-it-works" class="header-link">How It Works</a>
+                    <a href="index.html#the-difference" class="header-link">The Difference</a>
+                    <a href="about.html" class="header-link">About Us</a>
+                    <a href="index.html#charter" class="header-link">Charter</a>
+                    <a href="index.html#empty-leg" class="header-link">Empty-Leg</a>
+                    <a href="index.html#fleet" class="header-link">Fleet</a>
+                    <a href="index.html#guaranteed" class="header-link">Arrival Priority</a>
+                    <a href="index.html#early-access" class="header-link">Request Access</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -97,5 +124,33 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburger-btn');
+            var dropdown = document.getElementById('nav-dropdown');
+            var header = document.querySelector('.site-header');
+            if (!btn || !dropdown) return;
+            function openMenu() {
+                btn.setAttribute('aria-expanded', 'true');
+                dropdown.setAttribute('aria-hidden', 'false');
+                header.classList.add('is-open');
+            }
+            function closeMenu() {
+                btn.setAttribute('aria-expanded', 'false');
+                dropdown.setAttribute('aria-hidden', 'true');
+                header.classList.remove('is-open');
+            }
+            btn.addEventListener('click', function () {
+                if (header.classList.contains('is-open')) closeMenu();
+                else openMenu();
+            });
+            dropdown.querySelectorAll('.header-link').forEach(function (link) {
+                link.addEventListener('click', closeMenu);
+            });
+            document.addEventListener('click', function (e) {
+                if (header.classList.contains('is-open') && !header.contains(e.target)) closeMenu();
+            });
+        })();
+    </script>
 </body>
 </html>

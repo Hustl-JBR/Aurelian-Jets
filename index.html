@@ -33,27 +33,37 @@
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress"></div>
 
-    <!-- Header with logo and hamburger nav -->
     <header class="site-header">
         <div class="header-inner">
             <a href="#" class="header-brand">
                 <span class="header-logo" aria-hidden="true">A</span>
                 <span class="header-name">Aurelian Jets</span>
             </a>
-            <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
+            <nav class="header-nav-desktop" aria-label="Main navigation">
+                <a href="#charter" class="header-link-desktop">Charter</a>
+                <a href="#empty-leg" class="header-link-desktop">Empty-Leg</a>
+                <a href="#fleet" class="header-link-desktop">Fleet</a>
+                <a href="#plan" class="header-link-desktop">Plan</a>
+                <a href="about.html" class="header-link-desktop">About</a>
+            </nav>
+            <div class="header-right">
+                <a href="#early-access" class="header-cta-desktop">Request Access</a>
+                <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
                     <a href="#what-we-do" class="header-link">What We Do</a>
                     <a href="#how-it-works" class="header-link">How It Works</a>
-                    <a href="#the-difference" class="header-link">The Difference</a>
-                    <a href="about.html" class="header-link">About Us</a>
                     <a href="#charter" class="header-link">Charter</a>
                     <a href="#empty-leg" class="header-link">Empty-Leg</a>
+                    <a href="#fleet" class="header-link">Fleet</a>
+                    <a href="#the-difference" class="header-link">Why Us</a>
                     <a href="#guaranteed" class="header-link">Arrival Priority</a>
+                    <a href="about.html" class="header-link">About Us</a>
                     <a href="#early-access" class="header-link">Request Access</a>
                 </nav>
             </div>
@@ -72,6 +82,31 @@
         </div>
         <div class="hero-fade-edge"></div>
     </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="trust-strip-inner">
+            <div class="trust-item">
+                <span class="trust-icon" aria-hidden="true">—</span>
+                <span class="trust-text">FAA Part 135 Operators</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+                <span class="trust-icon" aria-hidden="true">—</span>
+                <span class="trust-text">24/7 Availability</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+                <span class="trust-icon" aria-hidden="true">—</span>
+                <span class="trust-text">Expert Operator Vetting</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+                <span class="trust-icon" aria-hidden="true">—</span>
+                <span class="trust-text">End-to-End Coordination</span>
+            </div>
+        </div>
+    </div>
 
     <div class="section-divider" aria-hidden="true"></div>
 
@@ -129,49 +164,6 @@
         </div>
     </section>
 
-    <!-- THE DIFFERENCE -->
-    <section class="section the-difference" id="the-difference">
-        <div class="container difference-container">
-            <h2 class="difference-title-main" data-aos="fade-up">The Difference</h2>
-            <div class="difference-underline" data-aos="fade-up"></div>
-            <div class="difference-grid">
-                <div class="difference-column" data-aos="fade-up" data-aos-delay="0">
-                    <div class="difference-image-frame">
-                        <div class="difference-image" style="background-image: url('images/ChatGPT%20Image%20Feb%201%2C%202026%2C%2009_39_43%20PM.png?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=85');"></div>
-                    </div>
-                    <div class="difference-title-box">
-                        <h3 class="difference-column-title">Typical Charters</h3>
-                        <ul class="difference-list">
-                            <li>Open marketplace sourcing with inconsistent vetting</li>
-                            <li>Limited operational oversight</li>
-                            <li>Reactive communication</li>
-                            <li>Pricing variability without structured review</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="difference-column" data-aos="fade-up" data-aos-delay="100">
-                    <div class="difference-image-frame">
-                        <div class="difference-image" style="background-image: url('images/pexels-alisson-michel-45762740-7739666.jpg?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=85');"></div>
-                    </div>
-                    <div class="difference-title-box">
-                        <h3 class="difference-column-title">Aurelian Jets</h3>
-                        <ul class="difference-list">
-                            <li>Flights arranged exclusively through vetted FAA Part 135 operators</li>
-                            <li>Structured sourcing process focused on aircraft and crew suitability</li>
-                            <li>Active coordination before, during, and after each mission</li>
-                            <li>Clear pricing with defined scope and expectations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta-wrapper" data-aos="fade-up" data-aos-delay="200">
-                <a href="#early-access" class="section-cta-button">Request Access</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTIONS -->
-    
     <!-- CHARTER SERVICES -->
     <section class="section service-section" id="charter">
         <div class="service-hero-image" style="background-image: url('images/pexels-katie-cerami-110690626-20562278.jpg?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
@@ -218,12 +210,114 @@
         </div>
     </section>
 
-    <!-- GUARANTEED ARRIVAL (with image — wording switched from First-Class) -->
+    <!-- FLEET SECTION -->
+    <section class="section fleet-section" id="fleet">
+        <div class="container fleet-inner">
+            <h2 class="fleet-title" data-aos="fade-up">The Fleet</h2>
+            <div class="fleet-underline" data-aos="fade-up"></div>
+            <p class="fleet-subtitle" data-aos="fade-up" data-aos-delay="50">Every mission matched to the right aircraft category, sourced exclusively from certified Part 135 operators.</p>
+            <div class="fleet-grid">
+                <div class="fleet-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="fleet-card-image" style="background-image: url('images/pexels-katie-cerami-110690626-12820604.jpg')"></div>
+                    <div class="fleet-card-body">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-card-title">Light Jet</h3>
+                            <span class="fleet-card-range">Up to 2,000 nm</span>
+                        </div>
+                        <p class="fleet-card-desc">Efficient and nimble for domestic routes. Accesses smaller airports unavailable to larger aircraft.</p>
+                        <ul class="fleet-card-specs">
+                            <li>4–7 passengers</li>
+                            <li>Shorter runway capability</li>
+                            <li>Regional routes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fleet-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="fleet-card-image" style="background-image: url('images/pexels-babix-20640897.jpg')"></div>
+                    <div class="fleet-card-body">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-card-title">Midsize Jet</h3>
+                            <span class="fleet-card-range">Up to 3,500 nm</span>
+                        </div>
+                        <p class="fleet-card-desc">Versatile performance for domestic and short international routes. Stand-up cabins with full amenities.</p>
+                        <ul class="fleet-card-specs">
+                            <li>6–9 passengers</li>
+                            <li>Stand-up cabin</li>
+                            <li>Transcontinental range</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fleet-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="fleet-card-image" style="background-image: url('images/pexels-rama-febryan-1351711115-25724429.jpg')"></div>
+                    <div class="fleet-card-body">
+                        <div class="fleet-card-header">
+                            <h3 class="fleet-card-title">Heavy Jet</h3>
+                            <span class="fleet-card-range">Up to 7,000 nm</span>
+                        </div>
+                        <p class="fleet-card-desc">Maximum range, cabin space, and amenities for intercontinental missions and larger parties.</p>
+                        <ul class="fleet-card-specs">
+                            <li>8–19 passengers</li>
+                            <li>Full stand-up cabin</li>
+                            <li>Intercontinental range</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <a href="#early-access" class="section-cta-button">Request Access</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- THE DIFFERENCE -->
+    <section class="section the-difference" id="the-difference">
+        <div class="container difference-container">
+            <h2 class="difference-title-main" data-aos="fade-up">The Difference</h2>
+            <div class="difference-underline" data-aos="fade-up"></div>
+            <div class="difference-grid">
+                <div class="difference-column" data-aos="fade-up" data-aos-delay="0">
+                    <div class="difference-image-frame">
+                        <div class="difference-image" style="background-image: url('images/ChatGPT%20Image%20Feb%201%2C%202026%2C%2009_39_43%20PM.png?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=85');"></div>
+                    </div>
+                    <div class="difference-title-box">
+                        <h3 class="difference-column-title">Typical Charters</h3>
+                        <ul class="difference-list">
+                            <li>Open marketplace sourcing with inconsistent vetting</li>
+                            <li>Limited operational oversight</li>
+                            <li>Reactive communication</li>
+                            <li>Pricing variability without structured review</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="difference-column" data-aos="fade-up" data-aos-delay="100">
+                    <div class="difference-image-frame">
+                        <div class="difference-image" style="background-image: url('images/pexels-alisson-michel-45762740-7739666.jpg?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=85');"></div>
+                    </div>
+                    <div class="difference-title-box">
+                        <h3 class="difference-column-title">Aurelian Jets</h3>
+                        <ul class="difference-list">
+                            <li>Flights arranged exclusively through vetted FAA Part 135 operators</li>
+                            <li>Structured sourcing process focused on aircraft and crew suitability</li>
+                            <li>Active coordination before, during, and after each mission</li>
+                            <li>Clear pricing with defined scope and expectations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <a href="#early-access" class="section-cta-button">Request Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARRIVAL PRIORITY -->
     <section class="section service-section" id="guaranteed">
         <div class="service-hero-image" style="background-image: url('images/ChatGPT%20Image%20Feb%201%2C%202026%2C%2011_01_15%20PM.png?v=2'), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=85');"></div>
         <div class="container">
             <h2 class="service-headline">Arrival Priority</h2>
-            <p class="service-subline">When every minute counts. </p>
+            <p class="service-subline">When every minute counts.</p>
             <div class="service-content-wrapper">
                 <p class="service-copy">
                     Designed for critical travel, Aurelian Jets plans proactively with redundancies, priority coordination, and optimized aircraft availability, so your trip stays on track no matter the challenge.
@@ -240,6 +334,63 @@
             </div>
         </div>
     </section>
+
+    <!-- FLIGHT PLANNER -->
+    <section class="section flight-planner" id="plan">
+        <div class="container">
+            <h2 class="planner-title" data-aos="fade-up">Plan Your Flight</h2>
+            <div class="planner-underline" data-aos="fade-up"></div>
+            <p class="planner-subtitle" data-aos="fade-up">Enter your route to explore available aircraft, estimated pricing, and flight time.</p>
+
+            <div class="route-form" data-aos="fade-up">
+                <div class="route-field">
+                    <label class="route-label" for="origin-input">From</label>
+                    <div class="route-input-wrap">
+                        <input type="text" id="origin-input" class="route-input" placeholder="City or airport code" autocomplete="off">
+                        <div id="origin-dropdown" class="route-dropdown"></div>
+                    </div>
+                </div>
+                <div class="route-separator" aria-hidden="true">
+                    <div class="route-sep-line"></div>
+                    <svg class="route-sep-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                    </svg>
+                    <div class="route-sep-line"></div>
+                </div>
+                <div class="route-field">
+                    <label class="route-label" for="dest-input">To</label>
+                    <div class="route-input-wrap">
+                        <input type="text" id="dest-input" class="route-input" placeholder="City or airport code" autocomplete="off">
+                        <div id="dest-dropdown" class="route-dropdown"></div>
+                    </div>
+                </div>
+                <button id="plan-btn" class="plan-btn" disabled>Calculate Route</button>
+            </div>
+
+            <div id="globe-wrapper" class="globe-wrapper hidden">
+                <span class="globe-watermark" aria-hidden="true">A</span>
+                <canvas id="globe-canvas"></canvas>
+                <div class="globe-info">
+                    <div class="globe-route-display">
+                        <span id="globe-origin-label">—</span>
+                        <span class="globe-route-arrow">→</span>
+                        <span id="globe-dest-label">—</span>
+                    </div>
+                    <div>
+                        <span class="globe-stat-label">Distance</span>
+                        <span class="globe-stat-value" id="globe-distance">—</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="jet-results" class="jet-results hidden">
+                <h3 class="jet-results-title">Available Aircraft</h3>
+                <div class="jet-results-grid" id="jet-results-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
 
     <!-- WAITLIST SECTION -->
     <section class="section waitlist" id="early-access">
@@ -340,6 +491,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
+    <script src="planner.js" defer></script>
 
     <script>
         // Clear any service worker caches on load
