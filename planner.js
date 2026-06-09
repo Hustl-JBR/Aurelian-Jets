@@ -139,11 +139,20 @@
     var camFinalTarget    = null;
     var camChoreography   = true;
     var postAnimTimer     = 0;
+    var preAnimDelay      = 0;   // seconds to hold before line starts drawing
+    var scrollFired       = false;
     var directionArrow    = null;
     var originLabelEl     = null;
     var destLabelEl       = null;
     var originLabelPos    = null;
     var destLabelPos      = null;
+    var _plannerDate      = '';
+    var _plannerPax       = '';
+    var starGroup         = null;
+    var aircraftCamera    = null;   // second camera for the aircraft-section viewport
+    var _H_globe          = 740;    // CSS height of the globe section (fixed)
+    var _H_aircraft       = 0;      // CSS height of the aircraft section (set after cards render)
+    var _W                = 0;      // CSS width of the canvas (updated on resize)
 
     // ── DOM ────────────────────────────────────────────────────────────────────
     var originInput     = document.getElementById('origin-input');
@@ -159,7 +168,7 @@
     var globeDestLbl    = document.getElementById('globe-dest-label');
     var globeDistEl     = document.getElementById('globe-distance');
 
-    if (!originInput) return; // planner not on this page
+    if (!document.getElementById('globe-canvas')) return; // planner not on this page
 
     // ── Autocomplete ───────────────────────────────────────────────────────────
     function searchAirports(q) {
@@ -204,15 +213,33 @@
         });
     }
 
-    wireAutocomplete(originInput, originDrop, function(a) { originAirport = a; });
-    wireAutocomplete(destInput,   destDrop,   function(a) { destAirport   = a; });
+    if (originInput && destInput) {
+        wireAutocomplete(originInput, originDrop, function(a) { originAirport = a; });
+        wireAutocomplete(destInput,   destDrop,   function(a) { destAirport   = a; });
+    }
 
     function checkReady() {
-        planBtn.disabled = !(originAirport && destAirport);
+        if (planBtn) planBtn.disabled = !(originAirport && destAirport);
         if (originAirport && destAirport) calculateRoute();
     }
 
-    planBtn.addEventListener('click', calculateRoute);
+    if (planBtn) planBtn.addEventListener('click', calculateRoute);
+
+    // ── URL param auto-init (charter.html) ────────────────────────────────────
+    (function autoInit() {
+        var params = new URLSearchParams(window.location.search);
+        var fc = params.get('from'), tc = params.get('to');
+        if (!fc || !tc) return;
+        var fa = AIRPORTS.filter(function(a) { return a[0] === fc; })[0];
+        var ta = AIRPORTS.filter(function(a) { return a[0] === tc; })[0];
+        if (!fa || !ta) return;
+        originAirport = fa;
+        destAirport   = ta;
+        originInput.value = fa[2] + ' (' + fa[0] + ')';
+        destInput.value   = ta[2] + ' (' + ta[0] + ')';
+        planBtn.disabled  = false;
+        calculateRoute();
+    })();
 
     // ── Haversine (nautical miles) ─────────────────────────────────────────────
     function haversineNm(lat1, lng1, lat2, lng2) {
@@ -239,15 +266,20 @@
         globeWrapper.classList.remove('hidden');
         jetResults.classList.remove('hidden');
 
+        // Charter page: show route header, hide placeholder prompt, update sub-heading
+        var routeHeader = document.getElementById('globe-route-header');
+        var prompt      = document.getElementById('charter-prompt');
+        var routeEl     = document.getElementById('jet-results-route');
+        if (routeHeader) routeHeader.classList.remove('hidden');
+        if (prompt)      prompt.classList.add('hidden');
+        if (routeEl)     routeEl.textContent = (originAirport ? originAirport[2] : '') + ' → ' + (destAirport ? destAirport[2] : '');
 
         if (!globeReady) initGlobe();
 
         drawPath({ lat: oLat, lng: oLng }, { lat: dLat, lng: dLng });
         renderJetCards(nm);
-
-        setTimeout(function() {
-            globeWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 120);
+        // Let browser flush layout so home-planner.offsetHeight includes the aircraft cards
+        setTimeout(resizeToHomePlanner, 100);
     }
 
     // ── Three.js Globe ─────────────────────────────────────────────────────────
@@ -263,17 +295,20 @@
 
     function initGlobe() {
         globeReady = true;
-        var W = globeCanvas.offsetWidth  || 800;
-        var H = globeCanvas.offsetHeight || 500;
+        // On the home page the canvas is absolute-positioned (no intrinsic dimensions),
+        // so measure from the globe-wrapper which always has the right width.
+        var globeWrapper = document.getElementById('globe-wrapper');
+        _W = (globeWrapper ? globeWrapper.offsetWidth : globeCanvas.offsetWidth) || window.innerWidth || 800;
+        var H = _H_globe;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0x050308);
 
-        camera = new THREE.PerspectiveCamera(22, W / H, 0.1, 1000);
+        camera = new THREE.PerspectiveCamera(22, _W / H, 0.1, 1000);
         camera.position.set(0, 0, 11);
 
         renderer = new THREE.WebGLRenderer({ canvas: globeCanvas, antialias: true });
-        renderer.setSize(W, H);
+        renderer.setSize(_W, H);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         // Lighting
@@ -314,30 +349,63 @@
         );
         scene.add(glowMesh);
 
-        // Stars — two layers for depth
-        function makeStarField(count, rMin, rMax, size, opacity, color) {
-            var pos = new Float32Array(count * 3);
-            for (var i = 0; i < count; i++) {
-                var th = Math.random() * Math.PI * 2;
-                var ph = Math.acos(2 * Math.random() - 1);
-                var r  = rMin + Math.random() * (rMax - rMin);
-                pos[i*3]   = r * Math.sin(ph) * Math.cos(th);
-                pos[i*3+1] = r * Math.cos(ph);
-                pos[i*3+2] = r * Math.sin(ph) * Math.sin(th);
-            }
-            var geo = new THREE.BufferGeometry();
-            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-            scene.add(new THREE.Points(geo,
-                new THREE.PointsMaterial({ color: color, size: size, transparent: true, opacity: opacity, sizeAttenuation: true })
-            ));
-        }
-        makeStarField(7000, 80, 350, 0.30, 0.80, 0xffffff);   // main field — dense, crisp
-        makeStarField(600,  60, 200, 0.70, 0.65, 0xd8e8ff);   // brighter foreground stars, slight blue tint
-        makeStarField(200,  50, 150, 1.10, 0.45, 0xfff5e0);   // handful of bright warm highlight stars
+        // Stars — two layers for depth, all parented to starGroup so they rotate together.
+        // Rotating starGroup around Y makes the Earth appear to spin west→east.
+        starGroup = new THREE.Group();
+        scene.add(starGroup);
 
-        // Orbit controls — no auto-spin
+        // Soft circular texture: bright core fading to transparent — gives the round
+        // shape and a subtle glow without a hard edge.
+        (function() {
+            var sz  = 64;
+            var c   = document.createElement('canvas');
+            c.width = c.height = sz;
+            var ctx = c.getContext('2d');
+            var g   = ctx.createRadialGradient(sz/2, sz/2, 0, sz/2, sz/2, sz/2);
+            g.addColorStop(0.00, 'rgba(255,255,255,1.0)');
+            g.addColorStop(0.15, 'rgba(255,255,255,0.85)');
+            g.addColorStop(0.40, 'rgba(255,255,255,0.25)');
+            g.addColorStop(0.70, 'rgba(255,255,255,0.06)');
+            g.addColorStop(1.00, 'rgba(255,255,255,0.0)');
+            ctx.fillStyle = g;
+            ctx.fillRect(0, 0, sz, sz);
+            var starTex = new THREE.CanvasTexture(c);
+
+            function makeStarField(count, rMin, rMax, size, opacity, color) {
+                var pos = new Float32Array(count * 3);
+                for (var i = 0; i < count; i++) {
+                    var th = Math.random() * Math.PI * 2;
+                    var ph = Math.acos(2 * Math.random() - 1);
+                    var r  = rMin + Math.random() * (rMax - rMin);
+                    pos[i*3]   = r * Math.sin(ph) * Math.cos(th);
+                    pos[i*3+1] = r * Math.cos(ph);
+                    pos[i*3+2] = r * Math.sin(ph) * Math.sin(th);
+                }
+                var geo = new THREE.BufferGeometry();
+                geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+                starGroup.add(new THREE.Points(geo, new THREE.PointsMaterial({
+                    color:          color,
+                    size:           size,
+                    map:            starTex,
+                    transparent:    true,
+                    opacity:        opacity,
+                    sizeAttenuation: true,
+                    depthWrite:     false,
+                    blending:       THREE.AdditiveBlending
+                })));
+            }
+
+            makeStarField(7000, 80, 350, 0.55, 0.75, 0xffffff);   // main field — dense
+            makeStarField(600,  60, 200, 1.10, 0.60, 0xd8e8ff);   // blue-tinted mid-layer
+            makeStarField(200,  50, 150, 1.80, 0.40, 0xfff5e0);   // warm highlight stars
+        })();
+
+
+        // Orbit controls attached to the globe-wrapper so dragging is restricted to the
+        // globe area and doesn't interfere with aircraft card clicks below.
         if (typeof THREE.OrbitControls !== 'undefined') {
-            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            var orbitTarget = document.getElementById('globe-wrapper') || renderer.domElement;
+            controls = new THREE.OrbitControls(camera, orbitTarget);
             controls.enableDamping    = true;
             controls.dampingFactor    = 0.07;
             controls.autoRotate       = false;
@@ -354,11 +422,15 @@
 
         window.addEventListener('resize', function() {
             if (!renderer) return;
-            var nW = globeCanvas.offsetWidth;
-            var nH = globeCanvas.offsetHeight;
-            camera.aspect = nW / nH;
-            camera.updateProjectionMatrix();
-            renderer.setSize(nW, nH);
+            if (_H_aircraft > 0) {
+                resizeToHomePlanner();
+            } else {
+                var gw = document.getElementById('globe-wrapper');
+                _W = (gw ? gw.offsetWidth : 0) || window.innerWidth || 800;
+                camera.aspect = _W / _H_globe;
+                camera.updateProjectionMatrix();
+                renderer.setSize(_W, _H_globe);
+            }
         });
 
         loop();
@@ -374,7 +446,13 @@
         if (delta < 0) delta = 0.016;
         if (animClock) animClock.last = ts;
 
-        if (pathCurve && pathProgress < 1) {
+        // Burn down the pre-animation delay before the line starts drawing.
+        // Camera zooms to the departure airport during this window.
+        if (preAnimDelay > 0) {
+            preAnimDelay = Math.max(0, preAnimDelay - delta);
+        }
+
+        if (pathCurve && preAnimDelay <= 0 && pathProgress < 1) {
             pathProgress = Math.min(pathProgress + delta * 0.143, 1);
 
             // Reveal flight tube and ground trace together
@@ -408,31 +486,92 @@
                 var nt = Math.min(postAnimTimer / 3.2, 1);
                 var nte = nt * nt * (3 - 2 * nt); // smoothstep
                 camTarget = new THREE.Vector3().lerpVectors(camDestTarget, camFinalTarget, nte);
-            } else if (pp < 0.18) {
-                // Hold tight on departure
+                if (nt >= 1 && !scrollFired) {
+                    scrollFired = true;
+                    setTimeout(function () {
+                        var grid = document.getElementById('jet-results-grid');
+                        if (!grid) return;
+                        var gridBottom = grid.getBoundingClientRect().bottom + window.pageYOffset;
+                        var target = Math.max(0, gridBottom - window.innerHeight + 32);
+                        var start  = window.pageYOffset;
+                        var dist   = target - start;
+                        if (Math.abs(dist) < 2) return;
+                        var duration = 3200;
+                        var t0 = null;
+                        function step(ts) {
+                            if (!t0) t0 = ts;
+                            var elapsed = ts - t0;
+                            var p = Math.min(elapsed / duration, 1);
+                            // ease in-out cubic
+                            var e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+                            window.scrollTo(0, start + dist * e);
+                            if (p < 1) requestAnimationFrame(step);
+                        }
+                        requestAnimationFrame(step);
+                    }, 1500);
+                }
+            } else if (preAnimDelay > 0 || pp < 0.20) {
+                // Pre-anim delay + departure hold: settle on departure airport
                 camTarget = camOriginTarget;
-            } else if (pp < 0.60) {
-                // Pull back to show path forming
-                var nt = (pp - 0.18) / 0.42;
-                var nte = nt * nt * (3 - 2 * nt);
-                camTarget = new THREE.Vector3().lerpVectors(camOriginTarget, camMidTarget, nte);
             } else if (pp < 0.80) {
-                // Drift toward arrival
-                var nt = (pp - 0.60) / 0.20;
-                var nte = nt * nt * (3 - 2 * nt);
-                camTarget = new THREE.Vector3().lerpVectors(camMidTarget, camDestTarget, nte);
+                // Single quadratic Bézier: origin → mid (control point) → dest.
+                // Unlike two joined smoothstep lerps, a Bézier has non-zero velocity at the
+                // midpoint so there's no stall in the middle of the flight arc.
+                var t_raw = (pp - 0.20) / 0.60;
+                var t     = t_raw * t_raw * (3 - 2 * t_raw); // smoothstep for smooth ease in/out
+                var inv   = 1 - t;
+                camTarget = new THREE.Vector3()
+                    .addScaledVector(camOriginTarget, inv * inv)
+                    .addScaledVector(camMidTarget,    2 * inv * t)
+                    .addScaledVector(camDestTarget,   t * t);
             } else {
-                // Zoom in tight on arrival airport
+                // Hold zoomed in on arrival airport
                 camTarget = camDestTarget;
             }
 
-            camera.position.lerp(camTarget, 0.018);
+            // Exponential smoothing — frame-rate independent and drift-free.
+            // k controls the "tightness": higher k = faster convergence.
+            // During pre-anim delay we want the camera fully settled before the line starts.
+            var k     = preAnimDelay > 0 ? 6.0 : 3.0;
+            var alpha = 1 - Math.exp(-k * delta);
+            camera.position.lerp(camTarget, alpha);
             camera.lookAt(0, 0, 0);
         }
 
         updatePulseRings(delta);
         updateLabels();
-        renderer.render(scene, camera);
+
+        // Slowly drift the star field right-to-left so the Earth appears to spin west→east.
+        // ~0.35°/sec → one full revolution every ~17 minutes, very subtle ambient motion.
+        if (starGroup) starGroup.rotation.y -= 0.006 * delta;
+
+        if (aircraftCamera && _H_aircraft > 50) {
+            // Two-viewport render: globe scene in upper portion, star continuation below.
+            // The second camera is tilted downward by exactly the angle that places the top
+            // of its frustum at the bottom of the globe camera's frustum, so stars flow
+            // seamlessly from one section to the next.
+            updateAircraftCamera();
+
+            renderer.autoClear = false;
+
+            // Globe pass (upper _H_globe px)
+            renderer.setScissorTest(true);
+            renderer.setViewport(0, _H_aircraft, _W, _H_globe);
+            renderer.setScissor(0, _H_aircraft, _W, _H_globe);
+            renderer.clear();
+            renderer.render(scene, camera);
+
+            // Star continuation pass (lower _H_aircraft px)
+            renderer.setViewport(0, 0, _W, _H_aircraft);
+            renderer.setScissor(0, 0, _W, _H_aircraft);
+            renderer.clear();
+            renderer.render(scene, aircraftCamera);
+
+            renderer.setScissorTest(false);
+            renderer.autoClear = true;
+        } else {
+            renderer.render(scene, camera);
+        }
     }
 
     function drawPath(origin, dest) {
@@ -448,6 +587,7 @@
         PULSE_RINGS      = [];
         landingFired     = false;
         postAnimTimer    = 0;
+        preAnimDelay     = 1.5;
         camChoreography  = true;
 
         var R  = 2;
@@ -463,6 +603,7 @@
             pathPoints.push(p);
         }
         pathProgress = 0;
+        scrollFired  = false;
         pathCurve    = new THREE.CatmullRomCurve3(pathPoints);
 
         arcTubeGeo  = new THREE.TubeGeometry(pathCurve, TUBE_SEGS, 0.011, RADIAL_SEGS, false);
@@ -540,10 +681,35 @@
         var dDir = dV.clone().normalize();
         var mDir = oDir.clone().add(dDir).normalize();
 
-        camOriginTarget = oDir.clone().add(new THREE.Vector3(0,  0.70, 0)).normalize().multiplyScalar(7.5);
-        camMidTarget    = mDir.clone().add(new THREE.Vector3(0, -0.10, 0)).normalize().multiplyScalar(13.5);
-        camDestTarget   = dDir.clone().add(new THREE.Vector3(0,  0.70, 0)).normalize().multiplyScalar(7.5);
-        camFinalTarget  = mDir.clone().add(new THREE.Vector3(0,  0.05, 0)).normalize().multiplyScalar(12.5);
+        // Scale all camera distances to the angular separation of the two airports.
+        // This keeps the arc filling the same screen area regardless of route length —
+        // NY→MIA zooms in tight; NY→LHR pulls back to show the Atlantic crossing.
+        // Formula: finalDist ≈ 3 + 8.5 * angularRadians, clamped to [5, 16].
+        var angularDist = Math.acos(Math.max(-1, Math.min(1, oDir.dot(dDir))));
+        var finalDist   = Math.max(5.0,  Math.min(16.0, 3.0 + 8.5 * angularDist));
+        var originDist  = Math.max(4.0,  Math.min(9.0,  finalDist * 0.60));
+        // Mild pull-back in the middle: just enough to reveal the arc without a jarring zoom-out.
+        // Keep midDist close to finalDist so the zoom-out amplitude matches the zoom-in.
+        var midDist     = Math.max(originDist + 1.0, finalDist * 0.85);
+
+        // The glow mesh has radius 2.22. At FOV=22° (half=11°) the glow silhouette
+        // fits inside the canvas only when d > 2.22/sin(11°) ≈ 11.64.
+        // Clamp the RESTING view to ≥ 13 so there is always ~40 px of clear starfield
+        // below the earth before the canvas edge — that's what makes the background feel
+        // continuous into the aircraft section. The animated close-ups still scale freely.
+        var restDist = Math.max(13.0, finalDist);
+
+        // No y-lift on origin/dest: camera axis passes through the airport → centered on screen.
+        camOriginTarget = oDir.clone().multiplyScalar(originDist);
+        camMidTarget    = mDir.clone().add(new THREE.Vector3(0, -0.10, 0)).normalize().multiplyScalar(midDist);
+        camDestTarget   = dDir.clone().multiplyScalar(originDist);
+        camFinalTarget  = mDir.clone().add(new THREE.Vector3(0,  0.05, 0)).normalize().multiplyScalar(restDist);
+
+        // Start camera at the centered full-route position so the globe is never off-center
+        if (camera) {
+            camera.position.copy(camFinalTarget);
+            camera.lookAt(0, 0, 0);
+        }
     }
 
     function buildJetInto(g) {
@@ -673,8 +839,8 @@
 
     function updateLabels() {
         if (!renderer || !camera) return;
-        var W = globeCanvas.offsetWidth;
-        var H = globeCanvas.offsetHeight;
+        var W = _W || globeCanvas.offsetWidth;
+        var H = _H_globe; // always use the globe-section height, not the full extended canvas
         [[originLabelEl, originLabelPos], [destLabelEl, destLabelPos]].forEach(function(pair) {
             var el = pair[0], pos3d = pair[1];
             if (!el || !pos3d) return;
@@ -704,6 +870,11 @@
     // ── Jet Cards ──────────────────────────────────────────────────────────────
     function renderJetCards(nm) {
         jetGrid.innerHTML = '';
+        var params   = new URLSearchParams(window.location.search);
+        var dateVal  = _plannerDate || params.get('date') || '';
+        var paxVal   = _plannerPax  || params.get('pax')  || '';
+        var routeStr = (originAirport ? originAirport[2] : '') + ' → ' + (destAirport ? destAirport[2] : '');
+
         JETS.forEach(function(jet) {
             var hours     = nm / jet.speed;
             var totalMins = Math.round(hours * 60);
@@ -715,10 +886,9 @@
             var outRange  = nm > jet.range;
 
             var card = document.createElement('div');
-            card.className = 'jet-result-card' + (outRange ? ' out-of-range' : '');
+            card.className = 'jet-result-card';
             card.innerHTML =
                 '<div class="jrc-image" style="background-image:url(\'' + jet.image + '\')">' +
-                    (outRange ? '<div class="jrc-badge">Extended Range Route</div>' : '') +
                 '</div>' +
                 '<div class="jrc-body">' +
                     '<h4 class="jrc-type">' + jet.type + '</h4>' +
@@ -729,10 +899,88 @@
                         '<div class="jrc-stat"><span class="jrc-stat-label">Passengers</span><span class="jrc-stat-val">' + jet.passengers + '</span></div>' +
                     '</div>' +
                     '<p class="jrc-desc">' + jet.desc + '</p>' +
-                    '<a href="#early-access" class="jrc-cta">Request This Aircraft</a>' +
+                    '<button class="jrc-cta" data-jet="' + jet.type + '" data-route="' + routeStr + '" data-date="' + dateVal + '" data-pax="' + paxVal + '">Request This Aircraft</button>' +
                 '</div>';
             jetGrid.appendChild(card);
         });
+
+        // Wire request buttons
+        jetGrid.querySelectorAll('.jrc-cta').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (typeof window.openQuoteModal === 'function') {
+                    window.openQuoteModal(btn.dataset.jet, btn.dataset.route, btn.dataset.date, btn.dataset.pax);
+                }
+            });
+        });
     }
+
+    // ── Dual-viewport support for seamless star continuation ─────────────────
+    // After aircraft cards are rendered, resize the Three.js canvas to cover the
+    // full .home-planner height and activate the second viewport.
+    function resizeToHomePlanner() {
+        var hp = document.getElementById('home-planner');
+        if (!hp || !renderer || !camera) return;
+        _W           = hp.offsetWidth  || _W || window.innerWidth || 800;
+        _H_aircraft  = Math.max(0, hp.offsetHeight - _H_globe);
+        if (_H_aircraft < 50) return; // aircraft section not laid out yet
+
+        renderer.setSize(_W, _H_globe + _H_aircraft);
+        camera.aspect = _W / _H_globe;
+        camera.updateProjectionMatrix();
+
+        if (!aircraftCamera) {
+            aircraftCamera = new THREE.PerspectiveCamera(
+                _H_aircraft / _H_globe * 22,
+                _W / _H_aircraft,
+                0.1, 1000
+            );
+        } else {
+            aircraftCamera.fov    = _H_aircraft / _H_globe * 22;
+            aircraftCamera.aspect = _W / _H_aircraft;
+            aircraftCamera.updateProjectionMatrix();
+        }
+    }
+
+    // Point the aircraft camera so its top frustum edge aligns exactly with the
+    // main camera's bottom frustum edge — the star field flows without a seam.
+    function updateAircraftCamera() {
+        if (!aircraftCamera || _H_aircraft < 50 || !camera) return;
+
+        aircraftCamera.position.copy(camera.position);
+
+        // Camera's right axis in world space (used as the tilt axis)
+        var right = new THREE.Vector3();
+        right.setFromMatrixColumn(camera.matrixWorld, 0);
+
+        var fwd = new THREE.Vector3();
+        camera.getWorldDirection(fwd);
+
+        // Angle from main camera's aim to the center of the aircraft camera's view:
+        //   main half-FOV (11°) to reach the seam + half the aircraft section's FOV
+        var halfMainRad = 11 * Math.PI / 180;
+        var acHalfRad   = (_H_aircraft / _H_globe) * 11 * Math.PI / 180;
+        var tiltAngle   = halfMainRad + acHalfRad;
+
+        // Tilt forward downward (negative rotation around camera right in screen space)
+        var acFwd = fwd.clone();
+        acFwd.applyAxisAngle(right, -tiltAngle);
+
+        aircraftCamera.up.set(0, 1, 0);
+        var lp = aircraftCamera.position.clone().add(acFwd);
+        aircraftCamera.lookAt(lp.x, lp.y, lp.z);
+
+        aircraftCamera.fov    = _H_aircraft / _H_globe * 22;
+        aircraftCamera.aspect = _W / _H_aircraft;
+        aircraftCamera.updateProjectionMatrix();
+    }
+
+    // ── Public API ─────────────────────────────────────────────────────────────
+    window.aurelianPlanRoute = function(fromA, toA, dateVal, paxVal) {
+        originAirport = fromA;
+        destAirport   = toA;
+        _plannerDate  = dateVal || '';
+        _plannerPax   = paxVal  || '';
+        calculateRoute();
+    };
 
 })();

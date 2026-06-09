@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Leg Flights | Aurelian Jets</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="canonical" href="https://www.aurelianjets.com/empty-legs.html">
+    <meta name="description" content="Browse available empty leg flights. Private jets flying at a fraction of full charter cost.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-inner">
+
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="header-brand">
+                <span class="header-logo" aria-hidden="true">A</span>
+                <span class="header-name">Aurelian Jets</span>
+            </a>
+            <nav class="header-nav-desktop" aria-label="Main navigation">
+                <a href="charter.html" class="header-link-desktop">Charter</a>
+                <a href="empty-legs.html" class="header-link-desktop is-active">Empty Legs</a>
+                <a href="fleet.html" class="header-link-desktop">Fleet</a>
+                <a href="about.html" class="header-link-desktop">About</a>
+            </nav>
+            <div class="header-right">
+                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
+                <nav class="header-nav">
+                    <a href="charter.html" class="header-link">Charter a Flight</a>
+                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
+                    <a href="fleet.html" class="header-link">Our Fleet</a>
+                    <a href="about.html" class="header-link">About Us</a>
+                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Page Hero ────────────────────────────────────────────────────────────── -->
+    <div class="page-hero-sm">
+        <div class="container">
+            <p class="page-hero-eyebrow">Exclusive Availability</p>
+            <h1 class="page-hero-title">Empty Leg Flights</h1>
+            <p class="page-hero-sub">Pre-positioned aircraft flying on fixed routes. Book a seat at significantly reduced cost — available on a first-come basis.</p>
+        </div>
+    </div>
+
+    <!-- ── What Is an Empty Leg ─────────────────────────────────────────────────── -->
+    <div class="el-explainer">
+        <div class="container">
+            <div class="el-explainer-inner">
+                <div class="el-explainer-item">
+                    <span class="el-explainer-icon">↗</span>
+                    <div>
+                        <strong>What is an empty leg?</strong>
+                        <p>When a private jet is chartered one-way, the aircraft must reposition empty. We offer these seats at a fraction of the standard charter price.</p>
+                    </div>
+                </div>
+                <div class="el-explainer-item">
+                    <span class="el-explainer-icon">⚡</span>
+                    <div>
+                        <strong>Act quickly.</strong>
+                        <p>Empty legs are first-come, first-served and may be withdrawn if the originating charter changes or cancels.</p>
+                    </div>
+                </div>
+                <div class="el-explainer-item">
+                    <span class="el-explainer-icon">✦</span>
+                    <div>
+                        <strong>Same aircraft, lower price.</strong>
+                        <p>You fly on the identical aircraft that would otherwise return empty — same crew, same service, same standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Filter Bar ────────────────────────────────────────────────────────────── -->
+    <div class="el-filter-bar">
+        <div class="container">
+            <div class="el-filters">
+                <div class="el-filter-group">
+                    <label class="el-filter-label" for="filter-category">Aircraft</label>
+                    <select class="el-filter-select" id="filter-category">
+                        <option value="all">All Categories</option>
+                        <option value="light">Light Jet</option>
+                        <option value="midsize">Midsize Jet</option>
+                        <option value="heavy">Heavy Jet</option>
+                    </select>
+                </div>
+                <div class="el-filter-group">
+                    <label class="el-filter-label" for="filter-region">Region</label>
+                    <select class="el-filter-select" id="filter-region">
+                        <option value="all">All Regions</option>
+                        <option value="us">United States</option>
+                        <option value="europe">Europe</option>
+                        <option value="caribbean">Caribbean</option>
+                        <option value="international">International</option>
+                    </select>
+                </div>
+                <div class="el-filter-results" id="filter-results-count"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Legs Board ────────────────────────────────────────────────────────────── -->
+    <section class="el-board">
+        <div class="container">
+            <div class="el-grid" id="el-grid"></div>
+            <div class="el-empty hidden" id="el-empty">
+                <p>No flights match your filters. <button class="el-clear-btn" id="el-clear-btn">Clear filters</button></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA Banner ────────────────────────────────────────────────────────────── -->
+    <div class="el-cta-banner">
+        <div class="container">
+            <div class="el-cta-inner">
+                <div>
+                    <h3 class="el-cta-title">Don't see your route?</h3>
+                    <p class="el-cta-sub">Request a full charter and we'll find the best aircraft for your itinerary.</p>
+                </div>
+                <a href="charter.html" class="section-cta-button">Charter a Flight</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Leg Claim Modal ───────────────────────────────────────────────────────── -->
+    <div class="quote-modal-overlay hidden" id="leg-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="leg-modal-title">
+        <div class="quote-modal">
+            <button class="quote-modal-close" id="leg-modal-close" aria-label="Close">&times;</button>
+            <div class="quote-modal-header">
+                <h2 class="quote-modal-title" id="leg-modal-title">Claim This Empty Leg</h2>
+                <p class="quote-modal-route" id="leg-modal-route"></p>
+            </div>
+            <form class="quote-form" id="leg-claim-form" novalidate>
+                <input type="hidden" id="lcf-leg-id"  name="legId">
+                <input type="hidden" id="lcf-route"   name="route">
+                <input type="hidden" id="lcf-aircraft" name="aircraft">
+                <input type="hidden" id="lcf-date"    name="date">
+                <input type="hidden" name="source"     value="empty-legs-page">
+
+                <div class="qf-row">
+                    <div class="qf-field">
+                        <label class="qf-label" for="lcf-first">First Name <span aria-hidden="true">*</span></label>
+                        <input class="qf-input" id="lcf-first" name="firstName" type="text" required autocomplete="given-name">
+                    </div>
+                    <div class="qf-field">
+                        <label class="qf-label" for="lcf-last">Last Name <span aria-hidden="true">*</span></label>
+                        <input class="qf-input" id="lcf-last" name="lastName" type="text" required autocomplete="family-name">
+                    </div>
+                </div>
+                <div class="qf-row">
+                    <div class="qf-field">
+                        <label class="qf-label" for="lcf-email">Email <span aria-hidden="true">*</span></label>
+                        <input class="qf-input" id="lcf-email" name="email" type="email" required autocomplete="email">
+                    </div>
+                    <div class="qf-field">
+                        <label class="qf-label" for="lcf-phone">Phone <span aria-hidden="true">*</span></label>
+                        <input class="qf-input" id="lcf-phone" name="phone" type="tel" required autocomplete="tel">
+                    </div>
+                </div>
+                <div class="qf-field qf-field--full">
+                    <label class="qf-label" for="lcf-notes">Notes</label>
+                    <textarea class="qf-input qf-textarea" id="lcf-notes" name="notes" rows="2" placeholder="Passenger count, special requests…"></textarea>
+                </div>
+
+                <div class="qf-selected-summary" id="lcf-summary"></div>
+
+                <div class="qf-actions">
+                    <button class="qf-submit" type="submit" id="lcf-submit">Claim This Leg</button>
+                    <p class="qf-assurance">We'll confirm availability and send pricing within 1 hour.</p>
+                </div>
+                <div class="qf-success hidden" id="lcf-success">
+                    <span class="qf-success-icon">✓</span>
+                    <p>Request received. We'll confirm availability within the hour.</p>
+                </div>
+                <div class="qf-form-error hidden" id="lcf-form-error">Please fill out all required fields.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="legal-text">Not an air carrier. All flights operated by independent FAA-certified Part 135 operators. Subject to availability.</p>
+                    <div class="footer-legal-links">
+                        <a href="about.html" class="footer-legal-link">About</a>
+                        <span class="footer-legal-separator">·</span>
+                        <a href="terms.html" class="footer-legal-link">Terms</a>
+                        <span class="footer-legal-separator">·</span>
+                        <a href="privacy.html" class="footer-legal-link">Privacy</a>
+                    </div>
+                    <p class="copyright">© 2026 Aurelian Jets. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="airports.js"></script>
+    <script>
+    (function() {
+        var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2bgGQRN3Kwjr1RVDH0FBrRX1CCFF5mubnA55meGOYfN84C8KuKrFEOObgKlICTKn6w/exec';
+        var LEGS = window.EMPTY_LEGS || [];
+
+        var US_CODES     = ['JFK','TEB','LAX','VNY','ORD','MDW','MIA','OPF','SFO','SJC','LAS','BOS','BED','DFW','DAL','ATL','SEA','DEN','ASE','EGE','HTO','ACK','MVY','PBI','TPA','SDL','PHX','HNL','SAN','PDX','MSY','IAD','DCA','PHL','DTW','MSP','CLT'];
+        var EU_CODES     = ['LHR','LCY','CDG','LBG','FRA','AMS','ZRH','GVA','FCO','MAD','BCN','MXP','NCE','JMK','ATH'];
+        var CARIB_CODES  = ['NAS','SBH','STT','CUN','MBJ','PUJ','SXM'];
+
+        function getRegion(code) {
+            if (US_CODES.indexOf(code)    > -1) return 'us';
+            if (EU_CODES.indexOf(code)    > -1) return 'europe';
+            if (CARIB_CODES.indexOf(code) > -1) return 'caribbean';
+            return 'international';
+        }
+
+        var currentCategory = 'all';
+        var currentRegion   = 'all';
+
+        function renderLegs() {
+            var grid     = document.getElementById('el-grid');
+            var emptyEl  = document.getElementById('el-empty');
+            var countEl  = document.getElementById('filter-results-count');
+            grid.innerHTML = '';
+
+            var filtered = LEGS.filter(function(leg) {
+                var catOk = currentCategory === 'all' || leg.category === currentCategory;
+                var regOk = currentRegion   === 'all' || getRegion(leg.from) === currentRegion || getRegion(leg.to) === currentRegion;
+                return catOk && regOk;
+            });
+
+            countEl.textContent = filtered.length + ' flight' + (filtered.length !== 1 ? 's' : '') + ' available';
+
+            if (!filtered.length) {
+                emptyEl.classList.remove('hidden');
+                return;
+            }
+            emptyEl.classList.add('hidden');
+
+            filtered.forEach(function(leg) {
+                var dateObj = new Date(leg.date + 'T12:00:00');
+                var dateFmt = dateObj.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
+                var catLabel = leg.category === 'light' ? 'Light Jet' : leg.category === 'midsize' ? 'Midsize Jet' : 'Heavy Jet';
+
+                var card = document.createElement('div');
+                card.className = 'el-card';
+                card.dataset.legId = leg.id;
+                card.innerHTML =
+                    '<div class="el-card-top">' +
+                        '<div class="el-card-route">' +
+                            '<div class="el-card-airport">' +
+                                '<span class="el-card-code">' + leg.from + '</span>' +
+                                '<span class="el-card-city">' + leg.fromCity + '</span>' +
+                            '</div>' +
+                            '<div class="el-card-route-line">' +
+                                '<span class="el-card-route-dot"></span>' +
+                                '<span class="el-card-route-track"></span>' +
+                                '<svg class="el-card-plane" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>' +
+                                '<span class="el-card-route-track"></span>' +
+                                '<span class="el-card-route-dot"></span>' +
+                            '</div>' +
+                            '<div class="el-card-airport el-card-airport--right">' +
+                                '<span class="el-card-code">' + leg.to + '</span>' +
+                                '<span class="el-card-city">' + leg.toCity + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="el-card-body">' +
+                        '<div class="el-card-meta">' +
+                            '<span class="el-card-badge el-card-badge--' + leg.category + '">' + catLabel + '</span>' +
+                            '<span class="el-card-date">' + dateFmt + ' · ' + leg.time + '</span>' +
+                        '</div>' +
+                        '<div class="el-card-details">' +
+                            '<span class="el-card-aircraft">' + leg.aircraft + '</span>' +
+                            '<span class="el-card-seats">' + leg.seats + ' seats</span>' +
+                        '</div>' +
+                        '<div class="el-card-footer">' +
+                            '<span class="el-card-price">From $' + leg.price.toLocaleString() + '</span>' +
+                            '<button class="el-card-claim" data-id="' + leg.id + '">Claim This Leg</button>' +
+                        '</div>' +
+                    '</div>';
+                grid.appendChild(card);
+            });
+
+            // Wire claim buttons
+            grid.querySelectorAll('.el-card-claim').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var id  = parseInt(btn.dataset.id, 10);
+                    var leg = LEGS.filter(function(l) { return l.id === id; })[0];
+                    if (!leg) return;
+                    openLegModal(leg);
+                });
+            });
+        }
+
+        document.getElementById('filter-category').addEventListener('change', function() {
+            currentCategory = this.value; renderLegs();
+        });
+        document.getElementById('filter-region').addEventListener('change', function() {
+            currentRegion = this.value; renderLegs();
+        });
+        document.getElementById('el-clear-btn').addEventListener('click', function() {
+            currentCategory = 'all'; currentRegion = 'all';
+            document.getElementById('filter-category').value = 'all';
+            document.getElementById('filter-region').value   = 'all';
+            renderLegs();
+        });
+
+        // ── Claim modal ───────────────────────────────────────────────────────────
+        function openLegModal(leg) {
+            var dateObj = new Date(leg.date + 'T12:00:00');
+            var dateFmt = dateObj.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+            var routeStr = leg.fromCity + ' → ' + leg.toCity;
+            document.getElementById('lcf-leg-id').value   = leg.id;
+            document.getElementById('lcf-route').value    = routeStr;
+            document.getElementById('lcf-aircraft').value = leg.aircraft;
+            document.getElementById('lcf-date').value     = leg.date;
+            document.getElementById('leg-modal-route').textContent = routeStr + ' · ' + leg.from + '→' + leg.to;
+            document.getElementById('lcf-summary').innerHTML =
+                '<div class="qf-summary-row"><span>Route</span><strong>' + routeStr + '</strong></div>' +
+                '<div class="qf-summary-row"><span>Date</span><strong>' + dateFmt + ' at ' + leg.time + '</strong></div>' +
+                '<div class="qf-summary-row"><span>Aircraft</span><strong>' + leg.aircraft + '</strong></div>' +
+                '<div class="qf-summary-row"><span>Seats</span><strong>' + leg.seats + ' available</strong></div>' +
+                '<div class="qf-summary-row"><span>Price</span><strong>From $' + leg.price.toLocaleString() + '</strong></div>';
+            document.getElementById('lcf-success').classList.add('hidden');
+            document.getElementById('lcf-form-error').classList.add('hidden');
+            document.getElementById('leg-claim-form').reset();
+            ['lcf-leg-id','lcf-route','lcf-aircraft','lcf-date'].forEach(function(id) {
+                // restore hidden fields after reset
+            });
+            document.getElementById('lcf-leg-id').value   = leg.id;
+            document.getElementById('lcf-route').value    = routeStr;
+            document.getElementById('lcf-aircraft').value = leg.aircraft;
+            document.getElementById('lcf-date').value     = leg.date;
+
+            var overlay = document.getElementById('leg-modal-overlay');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(function() { overlay.classList.add('visible'); }, 10);
+        }
+
+        function closeLegModal() {
+            var overlay = document.getElementById('leg-modal-overlay');
+            overlay.classList.remove('visible');
+            setTimeout(function() { overlay.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
+        }
+
+        document.getElementById('leg-modal-close').addEventListener('click', closeLegModal);
+        document.getElementById('leg-modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeLegModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLegModal();
+        });
+
+        document.getElementById('leg-claim-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var errEl = document.getElementById('lcf-form-error');
+            var first = document.getElementById('lcf-first').value.trim();
+            var last  = document.getElementById('lcf-last').value.trim();
+            var email = document.getElementById('lcf-email').value.trim();
+            var phone = document.getElementById('lcf-phone').value.trim();
+            if (!first || !last || !email || !phone) { errEl.classList.remove('hidden'); return; }
+            errEl.classList.add('hidden');
+            var btn = document.getElementById('lcf-submit');
+            btn.disabled = true; btn.textContent = 'Sending…';
+            var data = {
+                firstName: first, lastName: last, email: email, phone: phone,
+                legId:     document.getElementById('lcf-leg-id').value,
+                route:     document.getElementById('lcf-route').value,
+                aircraft:  document.getElementById('lcf-aircraft').value,
+                date:      document.getElementById('lcf-date').value,
+                notes:     document.getElementById('lcf-notes').value.trim(),
+                source:    'empty-legs-page'
+            };
+            fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) })
+                .then(function() {
+                    document.getElementById('lcf-success').classList.remove('hidden');
+                    btn.style.display = 'none';
+                    setTimeout(function() { closeLegModal(); btn.disabled = false; btn.textContent = 'Claim This Leg'; btn.style.display = ''; }, 3000);
+                })
+                .catch(function() {
+                    btn.disabled = false; btn.textContent = 'Claim This Leg';
+                    errEl.textContent = 'Something went wrong. Email charter@aurelianjets.com.';
+                    errEl.classList.remove('hidden');
+                });
+        });
+
+        renderLegs();
+    })();
+    </script>
+
+    <script>
+    (function() {
+        var btn = document.getElementById('hamburger-btn');
+        var dropdown = document.getElementById('nav-dropdown');
+        var header = document.querySelector('.site-header');
+        if (!btn || !dropdown) return;
+        btn.addEventListener('click', function() {
+            var isOpen = header.classList.contains('is-open');
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            dropdown.setAttribute('aria-hidden', String(isOpen));
+            header.classList.toggle('is-open', !isOpen);
+        });
+        dropdown.querySelectorAll('.header-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                btn.setAttribute('aria-expanded', 'false');
+                dropdown.setAttribute('aria-hidden', 'true');
+                header.classList.remove('is-open');
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (header.classList.contains('is-open') && !header.contains(e.target)) {
+                btn.setAttribute('aria-expanded', 'false');
+                dropdown.setAttribute('aria-hidden', 'true');
+                header.classList.remove('is-open');
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

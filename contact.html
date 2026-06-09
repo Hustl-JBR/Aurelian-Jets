@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Aurelian Jets</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="canonical" href="https://www.aurelianjets.com/contact.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="header-brand">
+                <span class="header-logo" aria-hidden="true">A</span>
+                <span class="header-name">Aurelian Jets</span>
+            </a>
+            <nav class="header-nav-desktop" aria-label="Main navigation">
+                <a href="charter.html" class="header-link-desktop">Charter</a>
+                <a href="empty-legs.html" class="header-link-desktop">Empty Legs</a>
+                <a href="fleet.html" class="header-link-desktop">Fleet</a>
+                <a href="about.html" class="header-link-desktop">About</a>
+            </nav>
+            <div class="header-right">
+                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
+                <nav class="header-nav">
+                    <a href="charter.html" class="header-link">Charter a Flight</a>
+                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
+                    <a href="fleet.html" class="header-link">Our Fleet</a>
+                    <a href="about.html" class="header-link">About Us</a>
+                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="legal-hero about-hero">
+        <div class="legal-hero-bg"></div>
+        <div class="container">
+            <div class="legal-hero-content">
+                <span class="legal-badge">Get in Touch</span>
+                <h1 class="legal-title">Contact for Booking</h1>
+                <p class="legal-subtitle">Reach us directly or send a message and we'll respond promptly.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="legal-page">
+        <div class="container">
+            <div class="legal-card">
+                <div class="legal-content">
+
+                    <div class="legal-section">
+                        <div class="legal-section-header">
+                            <span class="legal-section-number">01</span>
+                            <h2>Call Us</h2>
+                        </div>
+                        <p>Available 24/7 for charter inquiries, quotes, and trip support.</p>
+                        <p>
+                            <a href="tel:+15550000000" class="contact-phone-link">+1 (555) 000-0000</a>
+                        </p>
+                        <p>
+                            <a href="mailto:charter@aurelianjets.com">charter@aurelianjets.com</a>
+                        </p>
+                    </div>
+
+                    <div class="legal-section">
+                        <div class="legal-section-header">
+                            <span class="legal-section-number">02</span>
+                            <h2>Send a Message</h2>
+                        </div>
+
+                        <form id="contact-form" novalidate>
+                            <div class="contact-form-grid">
+                                <div class="qf-field">
+                                    <label class="qf-label" for="cf-first">First Name <span aria-hidden="true">*</span></label>
+                                    <input class="qf-input" id="cf-first" type="text" autocomplete="given-name">
+                                </div>
+                                <div class="qf-field">
+                                    <label class="qf-label" for="cf-last">Last Name <span aria-hidden="true">*</span></label>
+                                    <input class="qf-input" id="cf-last" type="text" autocomplete="family-name">
+                                </div>
+                                <div class="qf-field">
+                                    <label class="qf-label" for="cf-email">Email <span aria-hidden="true">*</span></label>
+                                    <input class="qf-input" id="cf-email" type="email" autocomplete="email">
+                                </div>
+                                <div class="qf-field">
+                                    <label class="qf-label" for="cf-phone">Phone</label>
+                                    <input class="qf-input" id="cf-phone" type="tel" autocomplete="tel">
+                                </div>
+                                <div class="qf-field qf-field--full">
+                                    <label class="qf-label" for="cf-message">Message <span aria-hidden="true">*</span></label>
+                                    <textarea class="qf-input qf-textarea contact-textarea" id="cf-message" placeholder="Where can we help you go?"></textarea>
+                                </div>
+                            </div>
+                            <p class="qf-form-error hidden" id="cf-error">Please fill in all required fields.</p>
+                            <div class="qf-success hidden" id="cf-success">
+                                <span class="qf-success-icon">✓</span>
+                                Message sent. We'll be in touch shortly.
+                            </div>
+                            <button class="qf-submit" type="submit" id="cf-submit">Send Message</button>
+                            <p class="qf-assurance" style="margin-top:0.75rem;text-align:center;">We typically respond within a few hours.</p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="legal-back">
+                <a href="index.html" class="section-cta-button">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="legal-text">Not an air carrier. All flights operated by independent FAA-certified Part 135 operators. Subject to availability.</p>
+                    <div class="footer-legal-links">
+                        <a href="about.html" class="footer-legal-link">About</a>
+                        <span class="footer-legal-separator">·</span>
+                        <a href="terms.html" class="footer-legal-link">Terms</a>
+                        <span class="footer-legal-separator">·</span>
+                        <a href="privacy.html" class="footer-legal-link">Privacy</a>
+                    </div>
+                    <p class="copyright">© 2026 Aurelian Jets. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2bgGQRN3Kwjr1RVDH0FBrRX1CCFF5mubnA55meGOYfN84C8KuKrFEOObgKlICTKn6w/exec';
+
+        (function () {
+            // Pre-fill message from URL param
+            var params = new URLSearchParams(window.location.search);
+            var msg = params.get('message');
+            if (msg) {
+                var ta = document.getElementById('cf-message');
+                if (ta) ta.value = msg;
+            }
+
+            // Hamburger nav
+            var btn = document.getElementById('hamburger-btn');
+            var dropdown = document.getElementById('nav-dropdown');
+            var header = document.querySelector('.site-header');
+            if (btn && dropdown) {
+                function openMenu() { btn.setAttribute('aria-expanded','true'); dropdown.setAttribute('aria-hidden','false'); header.classList.add('is-open'); }
+                function closeMenu() { btn.setAttribute('aria-expanded','false'); dropdown.setAttribute('aria-hidden','true'); header.classList.remove('is-open'); }
+                btn.addEventListener('click', function() { header.classList.contains('is-open') ? closeMenu() : openMenu(); });
+                dropdown.querySelectorAll('.header-link').forEach(function(link) { link.addEventListener('click', closeMenu); });
+                document.addEventListener('click', function(e) { if (header.classList.contains('is-open') && !header.contains(e.target)) closeMenu(); });
+            }
+
+            // Form submission
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var errEl  = document.getElementById('cf-error');
+                var first  = document.getElementById('cf-first').value.trim();
+                var last   = document.getElementById('cf-last').value.trim();
+                var email  = document.getElementById('cf-email').value.trim();
+                var message = document.getElementById('cf-message').value.trim();
+                if (!first || !last || !email || !message) { errEl.classList.remove('hidden'); return; }
+                errEl.classList.add('hidden');
+                var submitBtn = document.getElementById('cf-submit');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+                var data = {
+                    firstName: first,
+                    lastName:  last,
+                    email:     email,
+                    phone:     document.getElementById('cf-phone').value.trim(),
+                    notes:     message,
+                    source:    'contact-page'
+                };
+                fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) })
+                    .then(function() {
+                        document.getElementById('cf-success').classList.remove('hidden');
+                        submitBtn.style.display = 'none';
+                    })
+                    .catch(function() {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                        errEl.textContent = 'Something went wrong. Email charter@aurelianjets.com directly.';
+                        errEl.classList.remove('hidden');
+                    });
+            });
+        })();
+    </script>
+</body>
+</html>
