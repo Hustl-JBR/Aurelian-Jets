@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-inner">
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html" class="header-brand">
@@ -21,12 +21,11 @@
             </a>
             <nav class="header-nav-desktop" aria-label="Main navigation">
                 <a href="charter.html" class="header-link-desktop">Charter</a>
-                <a href="empty-legs.html" class="header-link-desktop">Empty Legs</a>
                 <a href="fleet.html" class="header-link-desktop">Fleet</a>
                 <a href="about.html" class="header-link-desktop">About</a>
             </nav>
             <div class="header-right">
-                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <a href="charter.html" class="header-cta-desktop">Request a Charter</a>
                 <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -36,89 +35,97 @@
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
                     <a href="charter.html" class="header-link">Charter a Flight</a>
-                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
                     <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
-                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                    <a href="contact.html" class="header-link">Contact</a>
+                    <a href="charter.html" class="header-link header-link--cta">Request a Charter</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <div class="legal-hero about-hero">
-        <div class="legal-hero-bg"></div>
+    <!-- ── Contact Hero ───────────────────────────────────────────────────────────── -->
+    <section class="contact-hero">
         <div class="container">
-            <div class="legal-hero-content">
-                <span class="legal-badge">Get in Touch</span>
-                <h1 class="legal-title">Contact for Booking</h1>
-                <p class="legal-subtitle">Reach us directly or send a message and we'll respond promptly.</p>
-            </div>
+            <p class="contact-hero-eyebrow">Speak to an Advisor</p>
+            <h1 class="contact-hero-heading">Let's arrange your flight</h1>
+            <p class="contact-hero-sub">Whether you have a specific route in mind or just know you need to be somewhere — reach out. We typically respond within a few hours.</p>
         </div>
-    </div>
+    </section>
 
-    <section class="legal-page">
+    <!-- ── Contact Layout ─────────────────────────────────────────────────────────── -->
+    <section class="contact-page">
         <div class="container">
-            <div class="legal-card">
-                <div class="legal-content">
+            <div class="contact-layout">
 
-                    <div class="legal-section">
-                        <div class="legal-section-header">
-                            <span class="legal-section-number">01</span>
-                            <h2>Call Us</h2>
-                        </div>
-                        <p>Available 24/7 for charter inquiries, quotes, and trip support.</p>
-                        <p>
-                            <a href="tel:+15550000000" class="contact-phone-link">+1 (555) 000-0000</a>
-                        </p>
-                        <p>
+                <!-- Left column: contact info -->
+                <div class="contact-info">
+                    <div class="contact-info-block">
+                        <p class="contact-info-label">Email</p>
+                        <div class="contact-info-value">
                             <a href="mailto:charter@aurelianjets.com">charter@aurelianjets.com</a>
-                        </p>
-                    </div>
-
-                    <div class="legal-section">
-                        <div class="legal-section-header">
-                            <span class="legal-section-number">02</span>
-                            <h2>Send a Message</h2>
                         </div>
-
-                        <form id="contact-form" novalidate>
-                            <div class="contact-form-grid">
-                                <div class="qf-field">
-                                    <label class="qf-label" for="cf-first">First Name <span aria-hidden="true">*</span></label>
-                                    <input class="qf-input" id="cf-first" type="text" autocomplete="given-name">
-                                </div>
-                                <div class="qf-field">
-                                    <label class="qf-label" for="cf-last">Last Name <span aria-hidden="true">*</span></label>
-                                    <input class="qf-input" id="cf-last" type="text" autocomplete="family-name">
-                                </div>
-                                <div class="qf-field">
-                                    <label class="qf-label" for="cf-email">Email <span aria-hidden="true">*</span></label>
-                                    <input class="qf-input" id="cf-email" type="email" autocomplete="email">
-                                </div>
-                                <div class="qf-field">
-                                    <label class="qf-label" for="cf-phone">Phone</label>
-                                    <input class="qf-input" id="cf-phone" type="tel" autocomplete="tel">
-                                </div>
-                                <div class="qf-field qf-field--full">
-                                    <label class="qf-label" for="cf-message">Message <span aria-hidden="true">*</span></label>
-                                    <textarea class="qf-input qf-textarea contact-textarea" id="cf-message" placeholder="Where can we help you go?"></textarea>
-                                </div>
-                            </div>
-                            <p class="qf-form-error hidden" id="cf-error">Please fill in all required fields.</p>
-                            <div class="qf-success hidden" id="cf-success">
-                                <span class="qf-success-icon">✓</span>
-                                Message sent. We'll be in touch shortly.
-                            </div>
-                            <button class="qf-submit" type="submit" id="cf-submit">Send Message</button>
-                            <p class="qf-assurance" style="margin-top:0.75rem;text-align:center;">We typically respond within a few hours.</p>
-                        </form>
                     </div>
 
-                </div>
-            </div>
+                    <!-- PHONE -->
+                    <!-- Uncomment and replace when phone number is ready:
+                    <div class="contact-info-block">
+                        <p class="contact-info-label">Phone</p>
+                        <div class="contact-info-value">
+                            <a href="tel:+1XXXXXXXXXX" class="contact-phone-link">+1 (XXX) XXX-XXXX</a>
+                        </div>
+                    </div>
+                    -->
 
-            <div class="legal-back">
-                <a href="index.html" class="section-cta-button">Back to Home</a>
+                    <div class="contact-info-block">
+                        <p class="contact-info-label">Availability</p>
+                        <div class="contact-info-value">Available 24/7 for charter inquiries, quotes, and trip support.</div>
+                    </div>
+
+                    <div class="contact-response-note">
+                        <strong>What happens next</strong>
+                        When you send a message, one of our advisors reviews your request and responds with aircraft options, estimated pricing, and any follow-up questions — usually within a few hours.
+                    </div>
+                </div>
+
+                <!-- Right column: contact form -->
+                <div class="contact-form-panel">
+                    <h2 class="contact-form-heading">Send a message</h2>
+                    <p class="contact-form-sub">No commitment required. We'll follow up with options.</p>
+
+                    <form id="contact-form" novalidate>
+                        <div class="contact-form-grid">
+                            <div class="qf-field">
+                                <label class="qf-label" for="cf-first">First Name <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="cf-first" type="text" autocomplete="given-name">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="cf-last">Last Name <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="cf-last" type="text" autocomplete="family-name">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="cf-email">Email <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="cf-email" type="email" autocomplete="email">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="cf-phone">Phone</label>
+                                <input class="qf-input" id="cf-phone" type="tel" autocomplete="tel">
+                            </div>
+                            <div class="qf-field qf-field--full">
+                                <label class="qf-label" for="cf-message">How can we help? <span aria-hidden="true">*</span></label>
+                                <textarea class="qf-input qf-textarea contact-textarea" id="cf-message" placeholder="Tell us your route, dates, passenger count, or anything else helpful."></textarea>
+                            </div>
+                        </div>
+                        <p class="qf-form-error hidden" id="cf-error">Please fill in all required fields.</p>
+                        <div class="qf-success hidden" id="cf-success">
+                            <span class="qf-success-icon">✓</span>
+                            Message received. We'll be in touch shortly.
+                        </div>
+                        <button class="qf-submit" type="submit" id="cf-submit">Send Message</button>
+                        <p class="qf-assurance" style="margin-top:0.75rem;text-align:center;">We typically respond within a few hours.</p>
+                    </form>
+                </div>
+
             </div>
         </div>
     </section>

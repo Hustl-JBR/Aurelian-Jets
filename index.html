@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurelian Jets — Private Charter &amp; Empty Leg Flights</title>
+    <title>Aurelian Jets — Private Jet Charter Brokerage</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="canonical" href="https://www.aurelianjets.com/">
-    <meta name="description" content="On-demand private jet charter and empty leg flights worldwide. Book online or request a quote in minutes.">
+    <meta name="description" content="Private jet charter arranged with precision. We source the right aircraft from vetted Part 135 operators and handle every detail of your trip.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,12 +24,11 @@
             </a>
             <nav class="header-nav-desktop" aria-label="Main navigation">
                 <a href="charter.html" class="header-link-desktop">Charter</a>
-                <a href="empty-legs.html" class="header-link-desktop">Empty Legs</a>
                 <a href="fleet.html" class="header-link-desktop">Fleet</a>
                 <a href="about.html" class="header-link-desktop">About</a>
             </nav>
             <div class="header-right">
-                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <a href="charter.html" class="header-cta-desktop">Request a Charter</a>
                 <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -39,23 +38,23 @@
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
                     <a href="charter.html" class="header-link">Charter a Flight</a>
-                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
                     <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
-                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                    <a href="contact.html" class="header-link">Contact</a>
+                    <a href="charter.html" class="header-link header-link--cta">Request a Charter</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ── Hero Search ──────────────────────────────────────────────────────────── -->
+    <!-- ── Hero ──────────────────────────────────────────────────────────────────── -->
     <section class="home-hero">
         <div class="home-hero-bg" style="background-image:url('images/jakob-rosen-Emvf_emPMdY-unsplash.jpg')"></div>
         <div class="home-hero-overlay"></div>
         <div class="home-hero-content">
-            <p class="home-hero-eyebrow">Private Aviation, Simplified</p>
-            <h1 class="home-hero-heading">Where Are You Flying?</h1>
-            <p class="home-hero-sub">Search routes, choose your aircraft, and request a quote in minutes.</p>
+            <p class="home-hero-eyebrow">Private Jet Charter Brokerage</p>
+            <h1 class="home-hero-heading">Private aviation,<br>arranged around you.</h1>
+            <p class="home-hero-sub">Tell us where you're going. We source the right aircraft, negotiate on your behalf, and handle every detail.</p>
 
             <form class="home-search-form" id="home-search-form" novalidate>
                 <div class="hsf-fields">
@@ -113,16 +112,13 @@
                 <span class="hsf-or-line"></span>
             </div>
             <div class="hsf-contact-row">
-                <button class="hsf-btn hsf-contact-btn" type="button" id="hsf-contact-btn">Contact for Booking</button>
+                <button class="hsf-btn hsf-contact-btn" type="button" id="hsf-contact-btn">Speak to an Advisor</button>
             </div>
         </div>
     </section>
 
     <!-- ── Globe + Aircraft (revealed on search) ──────────────────────────────────── -->
     <div class="home-planner hidden" id="home-planner">
-        <!-- Canvas sits behind everything as a full-height background layer.
-             Two viewports are rendered: globe (upper 740px) and tilted star
-             continuation (aircraft section below) — giving true 3D continuity. -->
         <canvas id="globe-canvas"></canvas>
 
         <!-- Hidden compat inputs for planner.js -->
@@ -134,7 +130,7 @@
             <button id="plan-btn"></button>
         </div>
 
-        <!-- Globe overlay (watermark + route label) — canvas is behind this -->
+        <!-- Globe overlay -->
         <div class="globe-wrapper" id="globe-wrapper">
             <span class="globe-watermark" aria-hidden="true">A</span>
             <div class="globe-route-overlay hidden" id="globe-route-header">
@@ -161,12 +157,12 @@
         </div>
     </div>
 
-    <!-- Quote modal (same as charter.html) -->
+    <!-- Quote modal -->
     <div class="quote-modal-overlay hidden" id="quote-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="qm-title">
         <div class="quote-modal">
             <button class="quote-modal-close" id="quote-modal-close" aria-label="Close">&times;</button>
             <div class="quote-modal-header">
-                <h2 class="quote-modal-title" id="qm-title">Request a Quote</h2>
+                <h2 class="quote-modal-title" id="qm-title">Request a Charter</h2>
                 <p class="quote-modal-route" id="quote-modal-route"></p>
             </div>
             <form class="quote-form" id="quote-form" novalidate>
@@ -218,90 +214,214 @@
         <div class="container">
             <div class="trust-strip-inner">
                 <div class="trust-item">
-                    <span class="trust-icon">✦</span>
-                    <span>FAA Part 135 Certified Operators</span>
+                    <span>FAA Part 135 Certified Operators Only</span>
                 </div>
                 <div class="trust-sep" aria-hidden="true"></div>
                 <div class="trust-item">
-                    <span class="trust-icon">✦</span>
                     <span>10,000+ Aircraft Worldwide</span>
                 </div>
                 <div class="trust-sep" aria-hidden="true"></div>
                 <div class="trust-item">
-                    <span class="trust-icon">✦</span>
                     <span>Quotes in Under 2 Hours</span>
                 </div>
                 <div class="trust-sep" aria-hidden="true"></div>
                 <div class="trust-item">
-                    <span class="trust-icon">✦</span>
-                    <span>24 / 7 Concierge Support</span>
+                    <span>24/7 Advisor Access</span>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- ── Empty Legs Preview ───────────────────────────────────────────────────── -->
-    <section class="home-section">
-        <div class="container">
-            <div class="home-section-header">
-                <div>
-                    <p class="home-section-eyebrow">Fly for Less</p>
-                    <h2 class="home-section-title">Empty Legs Available Now</h2>
-                    <p class="home-section-sub">Pre-positioned aircraft flying at a fraction of charter cost. Limited availability.</p>
-                </div>
-                <a href="empty-legs.html" class="section-text-link">View All <span aria-hidden="true">→</span></a>
-            </div>
-            <div class="leg-cards-preview" id="legs-preview"></div>
-            <div class="home-section-cta">
-                <a href="empty-legs.html" class="section-cta-button">Browse All Empty Legs</a>
-            </div>
-        </div>
-    </section>
 
     <!-- ── How It Works ─────────────────────────────────────────────────────────── -->
     <section class="home-section home-section--alt">
         <div class="container">
             <div class="home-section-header home-section-header--center">
                 <div>
-                    <p class="home-section-eyebrow">The Process</p>
-                    <h2 class="home-section-title">Book in Three Steps</h2>
+                    <p class="home-section-eyebrow">How We Work</p>
+                    <h2 class="home-section-title">Your advisor, start to finish</h2>
                 </div>
             </div>
             <div class="how-steps">
                 <div class="how-step">
                     <span class="how-step-num">01</span>
-                    <h3 class="how-step-title">Enter Your Route</h3>
-                    <p class="how-step-desc">Search any city pair or airport code. Depart from private terminals and skip commercial security entirely.</p>
+                    <h3 class="how-step-title">Tell Us Your Trip</h3>
+                    <p class="how-step-desc">Search a route or reach out directly. We ask the right questions — timing, passengers, preferences — so you don't have to think about aircraft specs.</p>
                 </div>
                 <div class="how-step-connector" aria-hidden="true"></div>
                 <div class="how-step">
                     <span class="how-step-num">02</span>
-                    <h3 class="how-step-title">Choose Your Aircraft</h3>
-                    <p class="how-step-desc">Select from Light, Midsize, or Heavy Jets based on range, passenger count, and budget. See estimated costs instantly.</p>
+                    <h3 class="how-step-title">We Source &amp; Negotiate</h3>
+                    <p class="how-step-desc">We search our network of vetted Part 135 operators, compare options, and negotiate pricing on your behalf. You see only curated recommendations.</p>
                 </div>
                 <div class="how-step-connector" aria-hidden="true"></div>
                 <div class="how-step">
                     <span class="how-step-num">03</span>
-                    <h3 class="how-step-title">We Handle Everything</h3>
-                    <p class="how-step-desc">Receive a confirmed quote within 2 hours. Catering, ground transport, and FBO handling arranged on request.</p>
+                    <h3 class="how-step-title">You Fly, Effortlessly</h3>
+                    <p class="how-step-desc">Catering, ground transport, FBO handling — coordinated for you. We stay available through departure and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Operator Vetting ──────────────────────────────────────────────────────── -->
+    <section class="vetting-section">
+        <div class="container">
+            <div class="vetting-inner">
+                <div class="vetting-text">
+                    <p class="vetting-eyebrow">Operator Standards</p>
+                    <h2 class="vetting-heading">We only work with operators who meet our standards</h2>
+                    <p class="vetting-body">Not every charter company holds itself to the same standard. As your broker, we pre-vet every operator before they ever appear on a quote — so you don't have to trust a stranger with your safety.</p>
+                    <div class="vetting-checks">
+                        <div class="vetting-check">
+                            <div class="vetting-check-mark"></div>
+                            <div class="vetting-check-text">
+                                <strong>FAA Part 135 Certification</strong>
+                                Every aircraft is operated under a current, active Part 135 air carrier certificate.
+                            </div>
+                        </div>
+                        <div class="vetting-check">
+                            <div class="vetting-check-mark"></div>
+                            <div class="vetting-check-text">
+                                <strong>ARGUS or Wyvern Rated</strong>
+                                We prioritize operators with third-party safety ratings and verified maintenance records.
+                            </div>
+                        </div>
+                        <div class="vetting-check">
+                            <div class="vetting-check-mark"></div>
+                            <div class="vetting-check-text">
+                                <strong>Liability Insurance Verified</strong>
+                                Minimum $100M coverage confirmed before any charter is arranged.
+                            </div>
+                        </div>
+                        <div class="vetting-check">
+                            <div class="vetting-check-mark"></div>
+                            <div class="vetting-check-text">
+                                <strong>Crew Experience Requirements</strong>
+                                Type-rated pilots with documented minimums on the specific aircraft you're flying.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vetting-stat-grid">
+                    <div class="vetting-stat">
+                        <div class="vetting-stat-number">10K<span>+</span></div>
+                        <div class="vetting-stat-label">Aircraft available through our operator network</div>
+                    </div>
+                    <div class="vetting-stat">
+                        <div class="vetting-stat-number">2<span>hr</span></div>
+                        <div class="vetting-stat-label">Average quote turnaround from initial request</div>
+                    </div>
+                    <div class="vetting-stat">
+                        <div class="vetting-stat-number">135<span></span></div>
+                        <div class="vetting-stat-label">FAA Part 135 certification required for every operator</div>
+                    </div>
+                    <div class="vetting-stat">
+                        <div class="vetting-stat-number">24<span>/7</span></div>
+                        <div class="vetting-stat-label">Advisor availability — before, during, and after your flight</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ── Fleet Preview ────────────────────────────────────────────────────────── -->
-    <section class="home-section">
+    <section class="home-section home-section--alt">
         <div class="container">
             <div class="home-section-header">
                 <div>
                     <p class="home-section-eyebrow">Aircraft Categories</p>
-                    <h2 class="home-section-title">The Right Jet for Every Route</h2>
+                    <h2 class="home-section-title">The right jet for every route</h2>
                 </div>
-                <a href="fleet.html" class="section-text-link">Full Fleet <span aria-hidden="true">→</span></a>
+                <a href="fleet.html" class="section-text-link">Full Fleet Guide <span aria-hidden="true">→</span></a>
             </div>
             <div class="fleet-preview-grid" id="fleet-preview"></div>
         </div>
     </section>
+
+    <!-- ── Testimonials ──────────────────────────────────────────────────────────── -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="home-section-header home-section-header--center">
+                <div>
+                    <p class="home-section-eyebrow">Client Experience</p>
+                    <h2 class="home-section-title">Trusted by discerning travelers</h2>
+                </div>
+            </div>
+            <div class="testimonials-grid">
+                <!-- PLACEHOLDER — replace with real testimonials -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                    </div>
+                    <p class="testimonial-quote">"Booked a last-minute flight from Miami to the Bahamas on a Friday afternoon. Quote in under an hour, aircraft confirmed by evening. Exactly what I needed."</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Client Name</span>
+                        <span class="testimonial-title">Miami, FL — [placeholder]</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                    </div>
+                    <p class="testimonial-quote">"We fly private several times a year. Aurelian consistently finds better options than we've gotten elsewhere — better aircraft, better pricing, no surprises."</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Client Name</span>
+                        <span class="testimonial-title">New York, NY — [placeholder]</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                        <div class="testimonial-star"></div>
+                    </div>
+                    <p class="testimonial-quote">"The level of detail they coordinate is remarkable. Catering preferences, ground transport, customs — all handled before we landed."</p>
+                    <div class="testimonial-author">
+                        <span class="testimonial-name">Client Name</span>
+                        <span class="testimonial-title">Los Angeles, CA — [placeholder]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Final CTA ─────────────────────────────────────────────────────────────── -->
+    <section class="final-cta-section">
+        <div class="container">
+            <p class="final-cta-eyebrow">Ready when you are</p>
+            <h2 class="final-cta-heading">Your next flight starts with a conversation</h2>
+            <p class="final-cta-sub">Tell us your route and timeline. We'll handle the rest — aircraft selection, operator vetting, pricing, and coordination.</p>
+            <div class="final-cta-buttons">
+                <a href="charter.html" class="btn-primary">Request a Charter</a>
+                <a href="contact.html" class="btn-secondary">Speak to an Advisor</a>
+            </div>
+            <p class="final-cta-note">No commitment. Quotes within 2 hours. Available 24/7.</p>
+        </div>
+    </section>
+
+    <!-- ── Empty Legs Callout (quiet, de-emphasized) ──────────────────────────────── -->
+    <div class="el-callout">
+        <div class="container">
+            <div class="el-callout-inner">
+                <div class="el-callout-text">
+                    <p class="el-callout-label">Opportunistic Savings</p>
+                    <p class="el-callout-heading">Empty leg flights available</p>
+                    <p class="el-callout-sub">Pre-positioned aircraft at a fraction of charter cost — flexible routing, limited availability.</p>
+                </div>
+                <a href="empty-legs.html" class="el-callout-link">Browse empty legs →</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
     <footer class="footer">
@@ -319,9 +439,9 @@
                     <div class="footer-col">
                         <h4 class="footer-col-title">Book</h4>
                         <ul class="footer-links">
-                            <li><a href="charter.html" class="footer-link">Charter a Flight</a></li>
+                            <li><a href="charter.html" class="footer-link">Request a Charter</a></li>
                             <li><a href="empty-legs.html" class="footer-link">Empty Legs</a></li>
-                            <li><a href="fleet.html" class="footer-link">Our Fleet</a></li>
+                            <li><a href="fleet.html" class="footer-link">Fleet Guide</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -335,8 +455,9 @@
                     <div class="footer-col">
                         <h4 class="footer-col-title">Contact</h4>
                         <ul class="footer-links">
+                            <!-- PHONE -->
                             <li><a href="mailto:charter@aurelianjets.com" class="footer-link">charter@aurelianjets.com</a></li>
-                            <li><span class="footer-link-plain">Available 24 / 7</span></li>
+                            <li><span class="footer-link-plain">Available 24/7</span></li>
                         </ul>
                     </div>
                 </div>
@@ -365,7 +486,7 @@
     <script src="planner.js" defer></script>
 
     <script>
-    // Quote modal logic (mirrors charter.html)
+    // Quote modal logic
     (function() {
         var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2bgGQRN3Kwjr1RVDH0FBrRX1CCFF5mubnA55meGOYfN84C8KuKrFEOObgKlICTKn6w/exec';
 
@@ -447,7 +568,6 @@
         window.scrollTo(0, 0);
         var AIRPORTS = window.AIRPORTS || [];
         var JETS     = window.JETS     || [];
-        var LEGS     = window.EMPTY_LEGS || [];
 
         var fromAirport = null;
         var toAirport   = null;
@@ -519,7 +639,6 @@
             function step(ts) {
                 if (!t0) t0 = ts;
                 var t = Math.min((ts - t0) / duration, 1);
-                // Sine ease-in-out: zero velocity at both ends, no inflection points
                 var ease = -(Math.cos(Math.PI * t) - 1) / 2;
                 window.scrollTo(0, startY + dist * ease);
                 if (t < 1) requestAnimationFrame(step);
@@ -534,8 +653,6 @@
             var paxVal  = document.getElementById('hsf-pax').value;
             setTimeout(function() {
                 var targetY = planner.getBoundingClientRect().top + window.scrollY;
-                // Slow scroll (1.4s). Globe starts immediately so it renders + zooms in during the descent.
-                // The globe's 1.5s pre-anim delay means the line starts ~100ms after the user arrives.
                 easedScrollTo(targetY, 1800);
                 if (typeof window.aurelianPlanRoute === 'function') {
                     window.aurelianPlanRoute(fromAirport, toAirport, dateVal, paxVal);
@@ -555,32 +672,6 @@
         var d = new Date(); d.setDate(d.getDate() + 1);
         document.getElementById('hsf-date').value = d.toISOString().split('T')[0];
 
-        // Empty legs preview
-        var legContainer = document.getElementById('legs-preview');
-        LEGS.slice(0, 3).forEach(function(leg) {
-            var dateObj = new Date(leg.date + 'T12:00:00');
-            var dateFmt = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-            var card = document.createElement('div');
-            card.className = 'leg-card-preview';
-            card.innerHTML =
-                '<div class="lcp-route">' +
-                    '<span class="lcp-code">' + leg.from + '</span>' +
-                    '<span class="lcp-arrow">→</span>' +
-                    '<span class="lcp-code">' + leg.to + '</span>' +
-                '</div>' +
-                '<div class="lcp-cities">' + leg.fromCity + ' → ' + leg.toCity + '</div>' +
-                '<div class="lcp-meta">' +
-                    '<span>' + dateFmt + ' · ' + leg.time + '</span>' +
-                    '<span class="lcp-aircraft">' + leg.aircraft + '</span>' +
-                '</div>' +
-                '<div class="lcp-footer">' +
-                    '<span class="lcp-seats">' + leg.seats + ' seats</span>' +
-                    '<span class="lcp-price">From $' + leg.price.toLocaleString() + '</span>' +
-                '</div>' +
-                '<a href="empty-legs.html" class="lcp-cta">View Details</a>';
-            legContainer.appendChild(card);
-        });
-
         // Fleet preview
         var fp = document.getElementById('fleet-preview');
         JETS.forEach(function(jet) {
@@ -592,11 +683,11 @@
                     '<h3 class="fpc-type">' + jet.type + '</h3>' +
                     '<div class="fpc-specs">' +
                         '<span>' + jet.passengers + ' pax</span>' +
-                        '<span>·</span>' +
+                        '<span>\xb7</span>' +
                         '<span>' + jet.range.toLocaleString() + ' nm</span>' +
                     '</div>' +
                     '<p class="fpc-desc">' + jet.desc + '</p>' +
-                    '<a href="charter.html" class="fpc-link">Charter Now →</a>' +
+                    '<a href="charter.html" class="fpc-link">Request a Charter →</a>' +
                 '</div>';
             fp.appendChild(card);
         });
