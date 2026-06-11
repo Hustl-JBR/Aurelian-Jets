@@ -7,13 +7,25 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="canonical" href="https://www.aurelianjets.com/fleet.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aurelian Jets">
+    <meta property="og:title" content="Our Fleet | Aurelian Jets">
+    <meta property="og:description" content="Browse Aurelian Jets aircraft categories — Light, Midsize, and Heavy Jets for every route and group size.">
+    <meta property="og:url" content="https://www.aurelianjets.com/fleet.html">
+    <meta property="og:image" content="https://www.aurelianjets.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Fleet | Aurelian Jets">
+    <meta name="twitter:description" content="Browse Aurelian Jets aircraft categories — Light, Midsize, and Heavy Jets for every route and group size.">
+    <meta name="twitter:image" content="https://www.aurelianjets.com/images/og-image.jpg">
     <meta name="description" content="Browse Aurelian Jets aircraft categories — Light, Midsize, and Heavy Jets for every route and group size.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-inner">
+<body class="page-inner has-mobile-cta">
 
     <header class="site-header" id="site-header">
         <div class="header-inner">
@@ -23,12 +35,12 @@
             </a>
             <nav class="header-nav-desktop" aria-label="Main navigation">
                 <a href="charter.html" class="header-link-desktop">Charter</a>
-                <a href="empty-legs.html" class="header-link-desktop">Empty Legs</a>
                 <a href="fleet.html" class="header-link-desktop is-active">Fleet</a>
                 <a href="about.html" class="header-link-desktop">About</a>
+                <a href="contact.html" class="header-link-desktop">Contact</a>
             </nav>
             <div class="header-right">
-                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <a href="charter.html" class="header-cta-desktop">Request a Charter</a>
                 <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -37,11 +49,10 @@
             </div>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
-                    <a href="charter.html" class="header-link">Charter a Flight</a>
-                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
                     <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
-                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                    <a href="contact.html" class="header-link">Contact</a>
+                    <a href="charter.html" class="header-link header-link--cta">Request a Charter</a>
                 </nav>
             </div>
         </div>
@@ -124,6 +135,7 @@
                     </tbody>
                 </table>
             </div>
+            <p class="rate-note">Hourly rates are indicative estimates. Your advisor confirms firm, all-in pricing for your exact itinerary.</p>
         </div>
     </section>
 
@@ -141,6 +153,8 @@
     </div>
 
     <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+    <a href="charter.html" class="mobile-cta-bar">Request a Charter</a>
+
     <footer class="footer">
         <div class="footer-bottom">
             <div class="container">
@@ -168,7 +182,7 @@
             {
                 category: 'light',
                 type: 'Light Jet',
-                image: 'images/pexels-katie-cerami-110690626-12820604.jpg',
+                image: 'images/jet-light.jpg',
                 desc: 'Efficient and nimble for domestic routes and short regional hops. Accesses thousands of smaller airports unavailable to larger aircraft.',
                 passengers: '4–7', range: '2,000 nm', speed: '440 kts', rate: 'From $4,800/hr',
                 examples: ['Cessna Citation CJ3+', 'Embraer Phenom 300E', 'Pilatus PC-24', 'Cessna Citation M2', 'Learjet 45XR'],
@@ -177,7 +191,7 @@
             {
                 category: 'midsize',
                 type: 'Midsize Jet',
-                image: 'images/pexels-babix-20640897.jpg',
+                image: 'images/jet-midsize.jpg',
                 desc: 'Stand-up cabin with transcontinental range and full cabin amenities. The most popular category for business and leisure travel.',
                 passengers: '6–9', range: '3,500 nm', speed: '470 kts', rate: 'From $6,800/hr',
                 examples: ['Citation XLS+', 'Hawker 900XP', 'Learjet 60XR', 'Challenger 350', 'Citation Latitude'],
@@ -186,7 +200,7 @@
             {
                 category: 'heavy',
                 type: 'Heavy Jet',
-                image: 'images/pexels-rama-febryan-1351711115-25724429.jpg',
+                image: 'images/jet-heavy.jpg',
                 desc: 'Intercontinental capability with luxury cabin, dedicated crew, and full-service amenities. For demanding itineraries and large groups.',
                 passengers: '8–16', range: '7,000 nm', speed: '500 kts', rate: 'From $11,500/hr',
                 examples: ['Gulfstream G550', 'Dassault Falcon 7X', 'Bombardier Global 6000', 'Challenger 604', 'Gulfstream G650'],
@@ -250,34 +264,6 @@
         render();
     })();
     </script>
-
-    <script>
-    (function() {
-        var btn = document.getElementById('hamburger-btn');
-        var dropdown = document.getElementById('nav-dropdown');
-        var header = document.querySelector('.site-header');
-        if (!btn || !dropdown) return;
-        btn.addEventListener('click', function() {
-            var isOpen = header.classList.contains('is-open');
-            btn.setAttribute('aria-expanded', String(!isOpen));
-            dropdown.setAttribute('aria-hidden', String(isOpen));
-            header.classList.toggle('is-open', !isOpen);
-        });
-        dropdown.querySelectorAll('.header-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (header.classList.contains('is-open') && !header.contains(e.target)) {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            }
-        });
-    })();
-    </script>
+    <script src="site.js" defer></script>
 </body>
 </html>

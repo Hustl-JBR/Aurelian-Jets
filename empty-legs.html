@@ -7,13 +7,25 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="canonical" href="https://www.aurelianjets.com/empty-legs.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aurelian Jets">
+    <meta property="og:title" content="Empty Leg Flights | Aurelian Jets">
+    <meta property="og:description" content="Browse available empty leg flights. Private jets flying at a fraction of full charter cost.">
+    <meta property="og:url" content="https://www.aurelianjets.com/empty-legs.html">
+    <meta property="og:image" content="https://www.aurelianjets.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Empty Leg Flights | Aurelian Jets">
+    <meta name="twitter:description" content="Browse available empty leg flights. Private jets flying at a fraction of full charter cost.">
+    <meta name="twitter:image" content="https://www.aurelianjets.com/images/og-image.jpg">
     <meta name="description" content="Browse available empty leg flights. Private jets flying at a fraction of full charter cost.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-inner">
+<body class="page-inner has-mobile-cta">
 
     <header class="site-header" id="site-header">
         <div class="header-inner">
@@ -23,12 +35,12 @@
             </a>
             <nav class="header-nav-desktop" aria-label="Main navigation">
                 <a href="charter.html" class="header-link-desktop">Charter</a>
-                <a href="empty-legs.html" class="header-link-desktop is-active">Empty Legs</a>
                 <a href="fleet.html" class="header-link-desktop">Fleet</a>
                 <a href="about.html" class="header-link-desktop">About</a>
+                <a href="contact.html" class="header-link-desktop">Contact</a>
             </nav>
             <div class="header-right">
-                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <a href="charter.html" class="header-cta-desktop">Request a Charter</a>
                 <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -37,18 +49,17 @@
             </div>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
-                    <a href="charter.html" class="header-link">Charter a Flight</a>
-                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
                     <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
-                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                    <a href="contact.html" class="header-link">Contact</a>
+                    <a href="charter.html" class="header-link header-link--cta">Request a Charter</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- ── Page Hero ────────────────────────────────────────────────────────────── -->
-    <div class="page-hero-sm">
+    <div class="page-hero-sm page-hero-sm--photo">
         <div class="container">
             <p class="page-hero-eyebrow">Exclusive Availability</p>
             <h1 class="page-hero-title">Empty Leg Flights</h1>
@@ -141,7 +152,7 @@
         <div class="quote-modal">
             <button class="quote-modal-close" id="leg-modal-close" aria-label="Close">&times;</button>
             <div class="quote-modal-header">
-                <h2 class="quote-modal-title" id="leg-modal-title">Claim This Empty Leg</h2>
+                <h2 class="quote-modal-title" id="leg-modal-title">Request This Empty Leg</h2>
                 <p class="quote-modal-route" id="leg-modal-route"></p>
             </div>
             <form class="quote-form" id="leg-claim-form" novalidate>
@@ -179,7 +190,7 @@
                 <div class="qf-selected-summary" id="lcf-summary"></div>
 
                 <div class="qf-actions">
-                    <button class="qf-submit" type="submit" id="lcf-submit">Claim This Leg</button>
+                    <button class="qf-submit" type="submit" id="lcf-submit">Request This Leg</button>
                     <p class="qf-assurance">We'll confirm availability and send pricing within 1 hour.</p>
                 </div>
                 <div class="qf-success hidden" id="lcf-success">
@@ -192,6 +203,8 @@
     </div>
 
     <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
+    <a href="charter.html" class="mobile-cta-bar">Request a Charter</a>
+
     <footer class="footer">
         <div class="footer-bottom">
             <div class="container">
@@ -289,7 +302,7 @@
                         '</div>' +
                         '<div class="el-card-footer">' +
                             '<span class="el-card-price">From $' + leg.price.toLocaleString() + '</span>' +
-                            '<button class="el-card-claim" data-id="' + leg.id + '">Claim This Leg</button>' +
+                            '<button class="el-card-claim" data-id="' + leg.id + '">Request This Leg</button>' +
                         '</div>' +
                     '</div>';
                 grid.appendChild(card);
@@ -390,10 +403,10 @@
                 .then(function() {
                     document.getElementById('lcf-success').classList.remove('hidden');
                     btn.style.display = 'none';
-                    setTimeout(function() { closeLegModal(); btn.disabled = false; btn.textContent = 'Claim This Leg'; btn.style.display = ''; }, 3000);
+                    setTimeout(function() { closeLegModal(); btn.disabled = false; btn.textContent = 'Request This Leg'; btn.style.display = ''; }, 3000);
                 })
                 .catch(function() {
-                    btn.disabled = false; btn.textContent = 'Claim This Leg';
+                    btn.disabled = false; btn.textContent = 'Request This Leg';
                     errEl.textContent = 'Something went wrong. Email charter@aurelianjets.com.';
                     errEl.classList.remove('hidden');
                 });
@@ -402,34 +415,6 @@
         renderLegs();
     })();
     </script>
-
-    <script>
-    (function() {
-        var btn = document.getElementById('hamburger-btn');
-        var dropdown = document.getElementById('nav-dropdown');
-        var header = document.querySelector('.site-header');
-        if (!btn || !dropdown) return;
-        btn.addEventListener('click', function() {
-            var isOpen = header.classList.contains('is-open');
-            btn.setAttribute('aria-expanded', String(!isOpen));
-            dropdown.setAttribute('aria-hidden', String(isOpen));
-            header.classList.toggle('is-open', !isOpen);
-        });
-        dropdown.querySelectorAll('.header-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (header.classList.contains('is-open') && !header.contains(e.target)) {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            }
-        });
-    })();
-    </script>
+    <script src="site.js" defer></script>
 </body>
 </html>

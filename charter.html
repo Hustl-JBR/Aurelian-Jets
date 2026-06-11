@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charter a Flight | Aurelian Jets</title>
+    <title>Request a Charter | Aurelian Jets</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="canonical" href="https://www.aurelianjets.com/charter.html">
-    <meta name="description" content="Plan your private jet charter. Enter your route, see available aircraft, and request a quote instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aurelian Jets">
+    <meta property="og:title" content="Request a Charter | Aurelian Jets">
+    <meta property="og:description" content="Tell us about your trip. An advisor responds with curated aircraft options and firm pricing — usually within 2 hours.">
+    <meta property="og:url" content="https://www.aurelianjets.com/charter.html">
+    <meta property="og:image" content="https://www.aurelianjets.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Request a Charter | Aurelian Jets">
+    <meta name="twitter:description" content="Tell us about your trip. An advisor responds with curated aircraft options and firm pricing — usually within 2 hours.">
+    <meta name="twitter:image" content="https://www.aurelianjets.com/images/og-image.jpg">
+    <meta name="description" content="Request a private jet charter. Tell us your route and dates — an advisor responds with curated aircraft options and firm pricing, usually within 2 hours.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,12 +35,12 @@
             </a>
             <nav class="header-nav-desktop" aria-label="Main navigation">
                 <a href="charter.html" class="header-link-desktop is-active">Charter</a>
-                <a href="empty-legs.html" class="header-link-desktop">Empty Legs</a>
                 <a href="fleet.html" class="header-link-desktop">Fleet</a>
                 <a href="about.html" class="header-link-desktop">About</a>
+                <a href="contact.html" class="header-link-desktop">Contact</a>
             </nav>
             <div class="header-right">
-                <a href="charter.html" class="header-cta-desktop">Book Now</a>
+                <a href="charter.html" class="header-cta-desktop">Request a Charter</a>
                 <button type="button" class="header-hamburger" aria-expanded="false" aria-controls="nav-dropdown" aria-label="Open menu" id="hamburger-btn">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -37,94 +49,214 @@
             </div>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
-                    <a href="charter.html" class="header-link">Charter a Flight</a>
-                    <a href="empty-legs.html" class="header-link">Empty Legs</a>
                     <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
-                    <a href="charter.html" class="header-link header-link--cta">Book Now</a>
+                    <a href="contact.html" class="header-link">Contact</a>
+                    <a href="charter.html" class="header-link header-link--cta">Request a Charter</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ── Charter Search Bar ───────────────────────────────────────────────────── -->
-    <div class="charter-search-bar">
+    <!-- ── Hero ─────────────────────────────────────────────────────────────────── -->
+    <section class="contact-hero">
         <div class="container">
-            <form class="csb-form" id="charter-search-form" novalidate>
-                <div class="csb-fields">
-                    <div class="csb-field csb-field--from">
-                        <label class="csb-label" for="csb-from">From</label>
-                        <input class="csb-input" id="csb-from" type="text" placeholder="Departure" autocomplete="off" spellcheck="false">
-                        <div class="hsf-dropdown csb-dropdown" id="csb-from-drop"></div>
-                    </div>
-                    <div class="csb-arrow" aria-hidden="true">→</div>
-                    <div class="csb-field csb-field--to">
-                        <label class="csb-label" for="csb-to">To</label>
-                        <input class="csb-input" id="csb-to" type="text" placeholder="Destination" autocomplete="off" spellcheck="false">
-                        <div class="hsf-dropdown csb-dropdown" id="csb-to-drop"></div>
-                    </div>
-                    <div class="csb-field csb-field--date">
-                        <label class="csb-label" for="csb-date">Date</label>
-                        <input class="csb-input" id="csb-date" type="date">
-                    </div>
-                    <div class="csb-field csb-field--pax">
-                        <label class="csb-label" for="csb-pax">Passengers</label>
-                        <select class="csb-input csb-select" id="csb-pax">
-                            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                            <option value="4" selected>4</option><option value="5">5</option><option value="6">6</option>
-                            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
-                            <option value="10">10</option><option value="12">12</option><option value="14">14</option>
-                            <option value="16">16</option>
-                        </select>
-                    </div>
-                    <button class="csb-btn" type="submit">Search</button>
-                </div>
-            </form>
+            <p class="contact-hero-eyebrow">Request a Charter</p>
+            <h1 class="contact-hero-heading">Tell us about your trip</h1>
+            <p class="contact-hero-sub">Share your route and dates. An advisor sources the right aircraft from vetted Part 135 operators and responds with curated options and pricing — usually within 2 hours.</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Hidden planner inputs (planner.js needs these IDs) -->
-    <div style="display:none" aria-hidden="true">
-        <input id="origin-input" type="text" autocomplete="off">
-        <div id="origin-dropdown"></div>
-        <input id="dest-input" type="text" autocomplete="off">
-        <div id="dest-dropdown"></div>
-        <button id="plan-btn"></button>
-    </div>
+    <!-- ── Request Layout ───────────────────────────────────────────────────────── -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-layout">
 
-    <!-- ── Globe: full width ─────────────────────────────────────────────────────── -->
-    <div class="charter-globe-full" id="charter-globe-section">
-        <div class="globe-wrapper hidden" id="globe-wrapper">
-            <span class="globe-watermark" aria-hidden="true">A</span>
-            <canvas id="globe-canvas"></canvas>
-            <!-- Route overlay inside the globe -->
-            <div class="globe-route-overlay hidden" id="globe-route-header">
-                <div class="gro-cities">
-                    <span class="gro-city" id="globe-origin-label"></span>
-                    <span class="gro-arrow">→</span>
-                    <span class="gro-city" id="globe-dest-label"></span>
+                <!-- Left column: what happens next -->
+                <div class="contact-info">
+                    <div class="crf-step">
+                        <span class="crf-step-num">01</span>
+                        <div>
+                            <p class="crf-step-title">You send your trip</p>
+                            <p class="crf-step-desc">Route, dates, and passengers — that's all we need to start. Notes on catering, pets, or ground transport help us tailor the options.</p>
+                        </div>
+                    </div>
+                    <div class="crf-step">
+                        <span class="crf-step-num">02</span>
+                        <div>
+                            <p class="crf-step-title">We source &amp; negotiate</p>
+                            <p class="crf-step-desc">We search our network of vetted Part 135 operators, compare aircraft, and negotiate pricing on your behalf.</p>
+                        </div>
+                    </div>
+                    <div class="crf-step">
+                        <span class="crf-step-num">03</span>
+                        <div>
+                            <p class="crf-step-title">You choose &amp; fly</p>
+                            <p class="crf-step-desc">You receive a short list of curated options with firm pricing. Pick one, and we handle every detail through landing.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-response-note">
+                        <strong>No commitment required</strong>
+                        Requesting a quote doesn't obligate you to book. Quotes in under 2 hours, advisors available 24/7.
+                    </div>
                 </div>
-                <div class="gro-dist" id="globe-distance"></div>
+
+                <!-- Right column: charter request form -->
+                <div class="contact-form-panel charter-request-panel">
+                    <h2 class="contact-form-heading">Request a quote</h2>
+                    <p class="contact-form-sub">Quotes in under 2 hours. No commitment required.</p>
+
+                    <form id="charter-request-form" novalidate>
+                        <div class="contact-form-grid">
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-from">From <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-from" type="text" placeholder="City or airport" autocomplete="off" spellcheck="false">
+                                <div class="hsf-dropdown" id="crf-from-drop"></div>
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-to">To <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-to" type="text" placeholder="City or airport" autocomplete="off" spellcheck="false">
+                                <div class="hsf-dropdown" id="crf-to-drop"></div>
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-date">Departure Date <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-date" type="date">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-return">Return Date <span class="qf-label-optional">(optional)</span></label>
+                                <input class="qf-input" id="crf-return" type="date">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-pax">Passengers <span aria-hidden="true">*</span></label>
+                                <select class="qf-input" id="crf-pax">
+                                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                    <option value="4" selected>4</option><option value="5">5</option><option value="6">6</option>
+                                    <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                                    <option value="10">10</option><option value="12">12</option><option value="14">14</option>
+                                    <option value="16">16</option>
+                                </select>
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-phone">Phone <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-phone" type="tel" autocomplete="tel">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-first">First Name <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-first" type="text" autocomplete="given-name">
+                            </div>
+                            <div class="qf-field">
+                                <label class="qf-label" for="crf-last">Last Name <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-last" type="text" autocomplete="family-name">
+                            </div>
+                            <div class="qf-field qf-field--full">
+                                <label class="qf-label" for="crf-email">Email <span aria-hidden="true">*</span></label>
+                                <input class="qf-input" id="crf-email" type="email" autocomplete="email">
+                            </div>
+                            <div class="qf-field qf-field--full">
+                                <label class="qf-label" for="crf-notes">Anything else? <span class="qf-label-optional">(optional)</span></label>
+                                <textarea class="qf-input qf-textarea" id="crf-notes" rows="3" placeholder="Catering preferences, ground transport, pets, accessibility needs, aircraft preferences…"></textarea>
+                            </div>
+                        </div>
+                        <div aria-hidden="true" class="hp-wrap"><label for="crf-website">Website</label><input class="hp-field" type="text" id="crf-website" name="website" tabindex="-1" autocomplete="off"></div>
+                        <p class="qf-form-error hidden" id="crf-error">Please fill in all required fields.</p>
+                        <div class="qf-success hidden" id="crf-success">
+                            <span class="qf-success-icon">✓</span>
+                            Request received. An advisor will be in touch within 2 hours.
+                        </div>
+                        <button class="qf-submit" type="submit" id="crf-submit">Request a Charter</button>
+                        <p class="qf-assurance" style="margin-top:0.75rem;text-align:center;">Quotes in under 2 hours. No commitment required.</p>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="charter-prompt" id="charter-prompt">
-            <p class="charter-prompt-icon">✈</p>
-            <p class="charter-prompt-text">Enter your departure and destination above to see available aircraft and pricing.</p>
-        </div>
-    </div>
+    </section>
 
-    <!-- ── Aircraft cards: below globe ──────────────────────────────────────────── -->
-    <div class="charter-aircraft-section">
+    <!-- ── Explore aircraft (secondary) ─────────────────────────────────────────── -->
+    <section class="home-section home-section--alt charter-explore" id="explore">
         <div class="container">
-            <div class="jet-results hidden" id="jet-results">
-                <div class="jet-results-header">
-                    <h2 class="jet-results-title">Available Aircraft</h2>
-                    <p class="jet-results-sub" id="jet-results-route"></p>
+            <div class="home-section-header home-section-header--center">
+                <div>
+                    <p class="home-section-eyebrow">Prefer to explore first?</p>
+                    <h2 class="home-section-title">See aircraft for your route</h2>
                 </div>
-                <div class="jet-results-grid" id="jet-results-grid"></div>
             </div>
         </div>
-    </div>
+
+        <div class="charter-search-bar">
+            <div class="container">
+                <form class="csb-form" id="charter-search-form" novalidate>
+                    <div class="csb-fields">
+                        <div class="csb-field csb-field--from">
+                            <label class="csb-label" for="csb-from">From</label>
+                            <input class="csb-input" id="csb-from" type="text" placeholder="Departure" autocomplete="off" spellcheck="false">
+                            <div class="hsf-dropdown csb-dropdown" id="csb-from-drop"></div>
+                        </div>
+                        <div class="csb-arrow" aria-hidden="true">→</div>
+                        <div class="csb-field csb-field--to">
+                            <label class="csb-label" for="csb-to">To</label>
+                            <input class="csb-input" id="csb-to" type="text" placeholder="Destination" autocomplete="off" spellcheck="false">
+                            <div class="hsf-dropdown csb-dropdown" id="csb-to-drop"></div>
+                        </div>
+                        <div class="csb-field csb-field--date">
+                            <label class="csb-label" for="csb-date">Date</label>
+                            <input class="csb-input" id="csb-date" type="date">
+                        </div>
+                        <div class="csb-field csb-field--pax">
+                            <label class="csb-label" for="csb-pax">Passengers</label>
+                            <select class="csb-input csb-select" id="csb-pax">
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                <option value="4" selected>4</option><option value="5">5</option><option value="6">6</option>
+                                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                                <option value="10">10</option><option value="12">12</option><option value="14">14</option>
+                                <option value="16">16</option>
+                            </select>
+                        </div>
+                        <button class="csb-btn" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Hidden planner inputs (planner.js needs these IDs) -->
+        <div style="display:none" aria-hidden="true">
+            <input id="origin-input" type="text" autocomplete="off">
+            <div id="origin-dropdown"></div>
+            <input id="dest-input" type="text" autocomplete="off">
+            <div id="dest-dropdown"></div>
+            <button id="plan-btn"></button>
+        </div>
+
+        <!-- Globe -->
+        <div class="charter-globe-full" id="charter-globe-section">
+            <div class="globe-wrapper hidden" id="globe-wrapper">
+                <span class="globe-watermark" aria-hidden="true">A</span>
+                <canvas id="globe-canvas"></canvas>
+                <div class="globe-route-overlay hidden" id="globe-route-header">
+                    <div class="gro-cities">
+                        <span class="gro-city" id="globe-origin-label"></span>
+                        <span class="gro-arrow">→</span>
+                        <span class="gro-city" id="globe-dest-label"></span>
+                    </div>
+                    <div class="gro-dist" id="globe-distance"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aircraft cards below globe -->
+        <div class="charter-aircraft-section">
+            <div class="container">
+                <div class="jet-results hidden" id="jet-results">
+                    <div class="jet-results-header">
+                        <h2 class="jet-results-title">Available Aircraft</h2>
+                        <p class="jet-results-sub" id="jet-results-route"></p>
+                        <p class="jet-results-note">Instant estimates — your advisor confirms firm pricing and availability.</p>
+                    </div>
+                    <div class="jet-results-grid" id="jet-results-grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ── Quote Request Modal ───────────────────────────────────────────────────── -->
     <div class="quote-modal-overlay hidden" id="quote-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
@@ -140,6 +272,7 @@
                 <input type="hidden" id="qf-date"     name="date">
                 <input type="hidden" id="qf-pax"      name="passengers">
                 <input type="hidden" name="source"     value="charter-page">
+                <div aria-hidden="true" class="hp-wrap"><label for="qf-website">Website</label><input class="hp-field" type="text" id="qf-website" name="website" tabindex="-1" autocomplete="off"></div>
 
                 <div class="qf-row">
                     <div class="qf-field">
@@ -184,8 +317,60 @@
         </div>
     </div>
 
+    <!-- ── Empty Legs Callout (quiet, de-emphasized) ──────────────────────────────── -->
+    <div class="el-callout">
+        <div class="container">
+            <div class="el-callout-inner">
+                <div class="el-callout-text">
+                    <p class="el-callout-label">Opportunistic Savings</p>
+                    <p class="el-callout-heading">Empty leg flights available</p>
+                    <p class="el-callout-sub">Pre-positioned aircraft at a fraction of charter cost — flexible routing, limited availability.</p>
+                </div>
+                <a href="empty-legs.html" class="el-callout-link">Browse empty legs →</a>
+            </div>
+        </div>
+    </div>
+
     <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
     <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-cols">
+                    <div class="footer-col footer-col--brand">
+                        <div class="footer-logo">
+                            <span class="footer-logo-mark">A</span>
+                            Aurelian Jets
+                        </div>
+                        <p class="footer-tagline">Private aviation arranged with precision. Available 24 hours a day, 7 days a week.</p>
+                        <a href="mailto:charter@aurelianjets.com" class="footer-email">charter@aurelianjets.com</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Book</h4>
+                        <ul class="footer-links">
+                            <li><a href="charter.html" class="footer-link">Request a Charter</a></li>
+                            <li><a href="empty-legs.html" class="footer-link">Empty Legs</a></li>
+                            <li><a href="fleet.html" class="footer-link">Fleet Guide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html" class="footer-link">About Us</a></li>
+                            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+                            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Contact</h4>
+                        <ul class="footer-links">
+                            <!-- PHONE -->
+                            <li><a href="mailto:charter@aurelianjets.com" class="footer-link">charter@aurelianjets.com</a></li>
+                            <li><span class="footer-link-plain">Available 24/7</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
@@ -208,82 +393,137 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
     <script src="airports.js" defer></script>
     <script src="planner.js" defer></script>
+    <script src="site.js" defer></script>
 
     <script>
-    // Charter page controller — URL param auto-init + quote modal
+    // Charter page controller — request form, URL param auto-init, search, quote modal
     (function() {
         var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2bgGQRN3Kwjr1RVDH0FBrRX1CCFF5mubnA55meGOYfN84C8KuKrFEOObgKlICTKn6w/exec';
 
-        // ── URL param init ────────────────────────────────────────────────────────
-        // Pre-fill the charter search bar from URL params (set by homepage search)
+        // ── Shared airport autocomplete ───────────────────────────────────────────
+        function searchAirports(q) {
+            var AIRPORTS = window.AIRPORTS || [];
+            if (!q || q.length < 2) return [];
+            q = q.toLowerCase();
+            return AIRPORTS.filter(function(a) {
+                return a[0].toLowerCase().startsWith(q) ||
+                       a[1].toLowerCase().includes(q) ||
+                       a[2].toLowerCase().includes(q);
+            }).slice(0, 7);
+        }
+
+        function buildDrop(drop, results, onSelect) {
+            drop.innerHTML = '';
+            if (!results.length) { drop.classList.remove('open'); return; }
+            results.forEach(function(a) {
+                var item = document.createElement('div');
+                item.className = 'hsf-drop-item';
+                item.innerHTML = '<span class="hsf-drop-code">' + a[0] + '</span><span class="hsf-drop-city">' + a[2] + '</span>';
+                item.addEventListener('mousedown', function(e) {
+                    e.preventDefault(); onSelect(a); drop.classList.remove('open');
+                });
+                drop.appendChild(item);
+            });
+            drop.classList.add('open');
+        }
+
+        function wireAutocomplete(inputId, dropId, setter) {
+            var inp = document.getElementById(inputId);
+            var drp = document.getElementById(dropId);
+            inp.addEventListener('input', function() {
+                setter(null);
+                buildDrop(drp, searchAirports(inp.value), function(a) {
+                    inp.value = a[2] + ' (' + a[0] + ')'; setter(a);
+                });
+            });
+            inp.addEventListener('blur', function() {
+                setTimeout(function() { drp.classList.remove('open'); }, 160);
+            });
+        }
+
+        // ── URL param init (links from homepage search or external) ──────────────
         var params = new URLSearchParams(window.location.search);
         var urlFrom = params.get('from'), urlFromCity = params.get('fromCity');
         var urlTo   = params.get('to'),   urlToCity   = params.get('toCity');
         var urlDate = params.get('date'), urlPax      = params.get('pax');
 
         window.addEventListener('DOMContentLoaded', function() {
-            if (urlDate) document.getElementById('csb-date').value = urlDate;
+
+            // ── Request form ──────────────────────────────────────────────────────
+            wireAutocomplete('crf-from', 'crf-from-drop', function() {});
+            wireAutocomplete('crf-to',   'crf-to-drop',   function() {});
+
+            if (!document.getElementById('crf-date').value) {
+                var d1 = new Date(); d1.setDate(d1.getDate() + 1);
+                document.getElementById('crf-date').value = d1.toISOString().split('T')[0];
+            }
+            if (urlFrom && urlFromCity) document.getElementById('crf-from').value = urlFromCity + ' (' + urlFrom + ')';
+            if (urlTo   && urlToCity)   document.getElementById('crf-to').value   = urlToCity   + ' (' + urlTo   + ')';
+            if (urlDate) document.getElementById('crf-date').value = urlDate;
             if (urlPax) {
-                var sel = document.getElementById('csb-pax');
-                for (var i = 0; i < sel.options.length; i++) {
-                    if (sel.options[i].value === urlPax) { sel.selectedIndex = i; break; }
+                var crfSel = document.getElementById('crf-pax');
+                for (var i = 0; i < crfSel.options.length; i++) {
+                    if (crfSel.options[i].value === urlPax) { crfSel.selectedIndex = i; break; }
                 }
             }
-            if (urlFrom && urlFromCity) document.getElementById('csb-from').value = urlFromCity + ' (' + urlFrom + ')';
-            if (urlTo   && urlToCity)   document.getElementById('csb-to').value   = urlToCity   + ' (' + urlTo   + ')';
 
-            if (urlFrom && urlTo) {
-                // Store route info for the results sub-heading
-                var routeStr = (urlFromCity || urlFrom) + ' → ' + (urlToCity || urlTo);
-                document.getElementById('jet-results-route').textContent = routeStr;
-            }
-        });
+            document.getElementById('charter-request-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var errEl = document.getElementById('crf-error');
+                var val = function(id) { return document.getElementById(id).value.trim(); };
+                var from  = val('crf-from'),  to    = val('crf-to');
+                var date  = val('crf-date'),  first = val('crf-first'), last = val('crf-last');
+                var email = val('crf-email'), phone = val('crf-phone');
+                function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+                function validPhone(v) { return v.replace(/\D/g, '').length >= 7; }
+                function mark(id, bad) { document.getElementById(id).classList.toggle('qf-input--error', bad); }
+                mark('crf-from', !from); mark('crf-to', !to); mark('crf-date', !date);
+                mark('crf-first', !first); mark('crf-last', !last);
+                mark('crf-email', !validEmail(email)); mark('crf-phone', !validPhone(phone));
+                if (!from || !to || !date || !first || !last) {
+                    errEl.textContent = 'Please fill in all required fields.';
+                    errEl.classList.remove('hidden'); return;
+                }
+                if (!validEmail(email)) { errEl.textContent = 'Please enter a valid email address.'; errEl.classList.remove('hidden'); return; }
+                if (!validPhone(phone)) { errEl.textContent = 'Please enter a valid phone number.'; errEl.classList.remove('hidden'); return; }
+                errEl.classList.add('hidden');
+                if (val('crf-website')) {
+                    document.getElementById('crf-success').classList.remove('hidden');
+                    document.getElementById('crf-submit').style.display = 'none';
+                    return;
+                }
+                var btn = document.getElementById('crf-submit');
+                btn.disabled = true; btn.textContent = 'Sending…';
+                var ret = val('crf-return');
+                var data = {
+                    firstName:  first,
+                    lastName:   last,
+                    email:      email,
+                    phone:      phone,
+                    aircraft:   'Advisor to recommend',
+                    route:      from + ' → ' + to + (ret ? ' (round trip, return ' + ret + ')' : ''),
+                    date:       date,
+                    passengers: val('crf-pax'),
+                    notes:      val('crf-notes'),
+                    source:     'charter-request-form'
+                };
+                fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) })
+                    .then(function() {
+                        document.getElementById('crf-success').classList.remove('hidden');
+                        btn.style.display = 'none';
+                        document.getElementById('crf-success').scrollIntoView({ block: 'nearest' });
+                    })
+                    .catch(function() {
+                        btn.disabled = false; btn.textContent = 'Request a Charter';
+                        errEl.textContent = 'Something went wrong. Please email charter@aurelianjets.com.';
+                        errEl.classList.remove('hidden');
+                    });
+            });
 
-        // ── Charter search bar autocomplete ───────────────────────────────────────
-        function initCharterSearch() {
-            var AIRPORTS = window.AIRPORTS || [];
+            // ── Explore search bar ────────────────────────────────────────────────
             var csbFrom = null, csbTo = null;
-
-            function searchAirports(q) {
-                if (!q || q.length < 2) return [];
-                q = q.toLowerCase();
-                return AIRPORTS.filter(function(a) {
-                    return a[0].toLowerCase().startsWith(q) ||
-                           a[1].toLowerCase().includes(q) ||
-                           a[2].toLowerCase().includes(q);
-                }).slice(0, 7);
-            }
-
-            function buildDrop(drop, results, onSelect) {
-                drop.innerHTML = '';
-                if (!results.length) { drop.classList.remove('open'); return; }
-                results.forEach(function(a) {
-                    var item = document.createElement('div');
-                    item.className = 'hsf-drop-item';
-                    item.innerHTML = '<span class="hsf-drop-code">' + a[0] + '</span><span class="hsf-drop-city">' + a[2] + '</span>';
-                    item.addEventListener('mousedown', function(e) {
-                        e.preventDefault(); onSelect(a); drop.classList.remove('open');
-                    });
-                    drop.appendChild(item);
-                });
-                drop.classList.add('open');
-            }
-
-            function wireCSB(inputId, dropId, setter) {
-                var inp = document.getElementById(inputId);
-                var drp = document.getElementById(dropId);
-                inp.addEventListener('input', function() {
-                    buildDrop(drp, searchAirports(inp.value), function(a) {
-                        inp.value = a[2] + ' (' + a[0] + ')'; setter(a);
-                    });
-                });
-                inp.addEventListener('blur', function() {
-                    setTimeout(function() { drp.classList.remove('open'); }, 160);
-                });
-            }
-
-            wireCSB('csb-from', 'csb-from-drop', function(a) { csbFrom = a; });
-            wireCSB('csb-to',   'csb-to-drop',   function(a) { csbTo   = a; });
+            wireAutocomplete('csb-from', 'csb-from-drop', function(a) { csbFrom = a; });
+            wireAutocomplete('csb-to',   'csb-to-drop',   function(a) { csbTo   = a; });
 
             document.getElementById('charter-search-form').addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -294,17 +534,86 @@
                     date: document.getElementById('csb-date').value,
                     pax:  document.getElementById('csb-pax').value
                 });
-                window.location.href = 'charter.html?' + p.toString();
+                window.location.href = 'charter.html?' + p.toString() + '#explore';
             });
-        }
 
-        // ── Quote modal ───────────────────────────────────────────────────────────
+            if (!document.getElementById('csb-date').value) {
+                var d2 = new Date(); d2.setDate(d2.getDate() + 1);
+                document.getElementById('csb-date').value = d2.toISOString().split('T')[0];
+            }
+            if (urlDate) document.getElementById('csb-date').value = urlDate;
+            if (urlPax) {
+                var sel = document.getElementById('csb-pax');
+                for (var j = 0; j < sel.options.length; j++) {
+                    if (sel.options[j].value === urlPax) { sel.selectedIndex = j; break; }
+                }
+            }
+            if (urlFrom && urlFromCity) document.getElementById('csb-from').value = urlFromCity + ' (' + urlFrom + ')';
+            if (urlTo   && urlToCity)   document.getElementById('csb-to').value   = urlToCity   + ' (' + urlTo   + ')';
+            if (urlFrom && urlTo) {
+                var routeStr = (urlFromCity || urlFrom) + ' → ' + (urlToCity || urlTo);
+                document.getElementById('jet-results-route').textContent = routeStr;
+            }
+
+            // ── Quote modal wiring ────────────────────────────────────────────────
+            document.getElementById('quote-modal-close').addEventListener('click', closeModal);
+            document.getElementById('quote-modal-overlay').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            document.getElementById('quote-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var errEl = document.getElementById('qf-form-error');
+                function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+                function validPhone(v) { return v.replace(/\D/g, '').length >= 7; }
+                function mark(id, bad) { document.getElementById(id).classList.toggle('qf-input--error', bad); }
+                var first = document.getElementById('qf-first').value.trim();
+                var last  = document.getElementById('qf-last').value.trim();
+                var email = document.getElementById('qf-email').value.trim();
+                var phone = document.getElementById('qf-phone').value.trim();
+                mark('qf-first', !first); mark('qf-last', !last);
+                mark('qf-email', !validEmail(email)); mark('qf-phone', !validPhone(phone));
+                if (!first || !last) { errEl.textContent = 'Please fill out all required fields.'; errEl.classList.remove('hidden'); return; }
+                if (!validEmail(email)) { errEl.textContent = 'Please enter a valid email address.'; errEl.classList.remove('hidden'); return; }
+                if (!validPhone(phone)) { errEl.textContent = 'Please enter a valid phone number.'; errEl.classList.remove('hidden'); return; }
+                errEl.classList.add('hidden');
+                if (document.getElementById('qf-website').value) {
+                    document.getElementById('qf-success').classList.remove('hidden');
+                    document.getElementById('qf-submit').style.display = 'none';
+                    return;
+                }
+                var btn = document.getElementById('qf-submit');
+                btn.disabled = true; btn.textContent = 'Sending…';
+                var data = {
+                    firstName:  first,
+                    lastName:   last,
+                    email:      email,
+                    phone:      phone,
+                    aircraft:   document.getElementById('qf-aircraft').value,
+                    route:      document.getElementById('qf-route').value,
+                    date:       document.getElementById('qf-date').value,
+                    passengers: document.getElementById('qf-pax').value,
+                    notes:      document.getElementById('qf-notes').value.trim(),
+                    source:     'charter-page'
+                };
+                fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) })
+                    .then(function() {
+                        document.getElementById('qf-success').classList.remove('hidden');
+                        btn.style.display = 'none';
+                    }).catch(function() {
+                        btn.disabled = false; btn.textContent = 'Submit Request';
+                        errEl.textContent = 'Something went wrong. Please email charter@aurelianjets.com.';
+                        errEl.classList.remove('hidden');
+                    });
+            });
+        });
+
+        // ── Quote modal open/close (planner.js calls openQuoteModal) ─────────────
         window.openQuoteModal = function(jetType, routeStr, dateVal, paxVal) {
             var overlay = document.getElementById('quote-modal-overlay');
-            document.getElementById('qf-aircraft').value = jetType;
-            document.getElementById('qf-route').value    = routeStr;
-            document.getElementById('qf-date').value     = dateVal;
-            document.getElementById('qf-pax').value      = paxVal;
             document.getElementById('quote-modal-route').textContent = jetType + ' · ' + routeStr;
             document.getElementById('qf-selected-summary').innerHTML =
                 '<div class="qf-summary-row"><span>Aircraft</span><strong>' + jetType + '</strong></div>' +
@@ -313,6 +622,8 @@
                 (paxVal  ? '<div class="qf-summary-row"><span>Passengers</span><strong>' + paxVal + '</strong></div>' : '');
             document.getElementById('qf-success').classList.add('hidden');
             document.getElementById('qf-form-error').classList.add('hidden');
+            var sb = document.getElementById('qf-submit');
+            sb.disabled = false; sb.textContent = 'Submit Request'; sb.style.display = '';
             document.getElementById('quote-form').reset();
             document.getElementById('qf-aircraft').value = jetType;
             document.getElementById('qf-route').value    = routeStr;
@@ -328,92 +639,6 @@
             overlay.classList.remove('visible');
             setTimeout(function() { overlay.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
         }
-
-        window.addEventListener('DOMContentLoaded', function() {
-            initCharterSearch();
-            if (!document.getElementById('csb-date').value) {
-                var d = new Date(); d.setDate(d.getDate() + 1);
-                document.getElementById('csb-date').value = d.toISOString().split('T')[0];
-            }
-
-            document.getElementById('quote-modal-close').addEventListener('click', closeModal);
-            document.getElementById('quote-modal-overlay').addEventListener('click', function(e) {
-                if (e.target === this) closeModal();
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') closeModal();
-            });
-
-            // Quote form submit
-            document.getElementById('quote-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                var form = this;
-                var errEl = document.getElementById('qf-form-error');
-                var first = document.getElementById('qf-first').value.trim();
-                var last  = document.getElementById('qf-last').value.trim();
-                var email = document.getElementById('qf-email').value.trim();
-                var phone = document.getElementById('qf-phone').value.trim();
-                if (!first || !last || !email || !phone) {
-                    errEl.classList.remove('hidden'); return;
-                }
-                errEl.classList.add('hidden');
-                var btn = document.getElementById('qf-submit');
-                btn.disabled = true; btn.textContent = 'Sending…';
-                var data = {
-                    firstName:  first,
-                    lastName:   last,
-                    email:      email,
-                    phone:      phone,
-                    aircraft:   document.getElementById('qf-aircraft').value,
-                    route:      document.getElementById('qf-route').value,
-                    date:       document.getElementById('qf-date').value,
-                    passengers: document.getElementById('qf-pax').value,
-                    notes:      document.getElementById('qf-notes').value.trim(),
-                    source:     'charter-page'
-                };
-                fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(data)
-                }).then(function() {
-                    document.getElementById('qf-success').classList.remove('hidden');
-                    btn.style.display = 'none';
-                    setTimeout(function() { closeModal(); btn.disabled = false; btn.textContent = 'Submit Request'; btn.style.display = ''; }, 3000);
-                }).catch(function() {
-                    btn.disabled = false; btn.textContent = 'Submit Request';
-                    errEl.textContent = 'Something went wrong. Please email charter@aurelianjets.com.';
-                    errEl.classList.remove('hidden');
-                });
-            });
-        });
-    })();
-    </script>
-
-    <script>
-    (function() {
-        var btn = document.getElementById('hamburger-btn');
-        var dropdown = document.getElementById('nav-dropdown');
-        var header = document.querySelector('.site-header');
-        if (!btn || !dropdown) return;
-        btn.addEventListener('click', function() {
-            var isOpen = header.classList.contains('is-open');
-            btn.setAttribute('aria-expanded', String(!isOpen));
-            dropdown.setAttribute('aria-hidden', String(isOpen));
-            header.classList.toggle('is-open', !isOpen);
-        });
-        dropdown.querySelectorAll('.header-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (header.classList.contains('is-open') && !header.contains(e.target)) {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            }
-        });
     })();
     </script>
 </body>

@@ -15,6 +15,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// Internal reference files — not part of the public site
+app.use('/docs', (req, res) => res.status(404).send('Not found'));
+
 app.use(express.static(path.join(__dirname), { index: 'index.html' }));
 
 app.listen(PORT, () => {
