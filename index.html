@@ -642,7 +642,11 @@
             var paxVal  = document.getElementById('hsf-pax').value;
             setTimeout(function() {
                 var targetY = planner.getBoundingClientRect().top + window.scrollY;
-                easedScrollTo(targetY, 1800);
+                if (window.matchMedia('(pointer: coarse)').matches) {
+                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                } else {
+                    easedScrollTo(targetY, 1800);
+                }
                 if (typeof window.aurelianPlanRoute === 'function') {
                     window.aurelianPlanRoute(fromAirport, toAirport, dateVal, paxVal);
                 }
