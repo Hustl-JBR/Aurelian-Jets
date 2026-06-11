@@ -78,7 +78,7 @@ window.JETS = [
     {
         type: 'Light Jet',
         speed: 440, ratePerHour: 4800, passengers: '4–7', range: 2000,
-        image: 'images/pexels-katie-cerami-110690626-12820604.jpg',
+        image: 'images/jet-light.jpg',
         desc: 'Efficient and nimble for domestic routes. Accesses smaller airports unavailable to larger aircraft.',
         examples: 'Citation CJ3+, Phenom 300E, PC-24',
         features: ['Up to 7 passengers','Domestic range','Galley & lavatory','Access to 5,000+ airports']
@@ -86,7 +86,7 @@ window.JETS = [
     {
         type: 'Midsize Jet',
         speed: 470, ratePerHour: 6800, passengers: '6–9', range: 3500,
-        image: 'images/pexels-babix-20640897.jpg',
+        image: 'images/jet-midsize.jpg',
         desc: 'Stand-up cabin with transcontinental range and full cabin amenities.',
         examples: 'Citation XLS+, Hawker 900XP, Learjet 60XR',
         features: ['Up to 9 passengers','Stand-up cabin','Transcontinental range','Full galley & lavatory']
@@ -94,7 +94,7 @@ window.JETS = [
     {
         type: 'Heavy Jet',
         speed: 500, ratePerHour: 11500, passengers: '8–16', range: 7000,
-        image: 'images/pexels-rama-febryan-1351711115-25724429.jpg',
+        image: 'images/jet-heavy.jpg',
         desc: 'Intercontinental capability with luxury cabin, dedicated crew, and full amenities.',
         examples: 'Gulfstream G550, Falcon 7X, Challenger 604',
         features: ['Up to 16 passengers','Intercontinental range','Flat-bed seating','Dedicated crew & full galley']

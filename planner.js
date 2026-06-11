@@ -79,38 +79,8 @@
     ];
 
     // ── Jet Configurations ─────────────────────────────────────────────────────
-    var JETS = [
-        {
-            type: 'Light Jet',
-            speed: 440,
-            ratePerHour: 4800,
-            passengers: '4–7',
-            range: 2000,
-            image: 'images/pexels-katie-cerami-110690626-12820604.jpg',
-            desc: 'Efficient and nimble for domestic routes. Accesses smaller airports unavailable to larger aircraft.',
-            examples: 'Citation CJ3+, Phenom 300E, PC-24'
-        },
-        {
-            type: 'Midsize Jet',
-            speed: 470,
-            ratePerHour: 6800,
-            passengers: '6–9',
-            range: 3500,
-            image: 'images/pexels-babix-20640897.jpg',
-            desc: 'Stand-up cabin with transcontinental range and full cabin amenities.',
-            examples: 'Citation XLS+, Hawker 900XP, Learjet 60XR'
-        },
-        {
-            type: 'Heavy Jet',
-            speed: 500,
-            ratePerHour: 11500,
-            passengers: '8–16',
-            range: 7000,
-            image: 'images/pexels-rama-febryan-1351711115-25724429.jpg',
-            desc: 'Intercontinental capability with luxury cabin, dedicated crew, and full amenities.',
-            examples: 'Gulfstream G550, Falcon 7X, Challenger 604'
-        }
-    ];
+    // Single source of truth: window.JETS in airports.js (always loaded first).
+    var JETS = window.JETS || [];
 
     // ── State ──────────────────────────────────────────────────────────────────
     var originAirport = null;
@@ -460,9 +430,11 @@
             if (arcTubeGeo)    arcTubeGeo.setDrawRange(0, segsVisible * RADIAL_SEGS * 6);
             if (shadowTubeGeo) shadowTubeGeo.setDrawRange(0, segsVisible * 6 * 6);
 
-            // Plane leads tube tip by a few segments so it visibly flies ahead
+            // Plane leads tube tip by a few segments so it visibly flies ahead.
+            // Driven by continuous pathProgress, not the segment-quantized tube
+            // tip — flooring to whole segments made the plane step instead of glide.
             if (planeGroup) {
-                var planeT = Math.min(0.999, (segsVisible + 4) / TUBE_SEGS);
+                var planeT = Math.min(0.999, pathProgress + 4 / TUBE_SEGS);
                 updatePlane(Math.max(0.001, planeT));
             }
 
@@ -653,6 +625,9 @@
         planePitchGrp = new THREE.Group();
         planeGroup.add(planePitchGrp);
         buildJetInto(planePitchGrp);
+        // Hover above the flight tube (radius 0.011): at the curve centerline the
+        // flat jet intersects the gold tube surface, causing white/gold flicker.
+        planePitchGrp.position.y = 0.022;
         planeGroup.scale.setScalar(0.72);
         scene.add(planeGroup);
         updatePlane(0);
@@ -745,15 +720,18 @@
         var geo = new THREE.ShapeGeometry(S);
         geo.rotateX(Math.PI / 2); // XY plane → XZ plane so wings spread along ±Z
 
-        // Gold border: slightly larger copy behind
+        // Gold border: slightly larger copy behind, dropped a hair below the body —
+        // coplanar shapes z-fight and shimmer between gold and white as the plane moves
         var borderGeo = new THREE.ShapeGeometry(S);
         borderGeo.rotateX(Math.PI / 2);
         borderGeo.scale(1.18, 1, 1.18);
+        borderGeo.translate(0, -0.0015, 0);
         g.add(new THREE.Mesh(borderGeo,
             new THREE.MeshBasicMaterial({ color: 0xc8981e, side: THREE.DoubleSide })
         ));
 
         // White body
+        geo.translate(0, 0.0015, 0);
         g.add(new THREE.Mesh(geo,
             new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide })
         ));
