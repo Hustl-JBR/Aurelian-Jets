@@ -8,13 +8,27 @@
     <link rel="alternate icon" href="favicon.ico">
     <link rel="canonical" href="https://www.aurelianjets.com/">
     <meta name="description" content="Private jet charter arranged with precision. We source the right aircraft from vetted Part 135 operators and handle every detail of your trip.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aurelian Jets">
+    <meta property="og:title" content="Aurelian Jets — Private Jet Charter Brokerage">
+    <meta property="og:description" content="Private aviation, arranged around you. Vetted Part 135 operators, quotes in under 2 hours, advisors available 24/7.">
+    <meta property="og:url" content="https://www.aurelianjets.com/">
+    <meta property="og:image" content="https://www.aurelianjets.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aurelian Jets — Private Jet Charter Brokerage">
+    <meta name="twitter:description" content="Private aviation, arranged around you. Vetted Part 135 operators, quotes in under 2 hours, advisors available 24/7.">
+    <meta name="twitter:image" content="https://www.aurelianjets.com/images/og-image.jpg">
+    <link rel="preload" as="image" href="images/hero-home.webp" type="image/webp" media="(min-width: 641px)">
+    <link rel="preload" as="image" href="images/hero-home-mobile.webp" type="image/webp" media="(max-width: 640px)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
 </head>
-<body class="page-home">
+<body class="page-home has-mobile-cta">
 
     <header class="site-header" id="site-header">
         <div class="header-inner">
@@ -26,6 +40,7 @@
                 <a href="charter.html" class="header-link-desktop">Charter</a>
                 <a href="fleet.html" class="header-link-desktop">Fleet</a>
                 <a href="about.html" class="header-link-desktop">About</a>
+                <a href="contact.html" class="header-link-desktop">Contact</a>
             </nav>
             <div class="header-right">
                 <a href="charter.html" class="header-cta-desktop">Request a Charter</a>
@@ -37,7 +52,6 @@
             </div>
             <div class="header-dropdown" id="nav-dropdown" aria-hidden="true">
                 <nav class="header-nav">
-                    <a href="charter.html" class="header-link">Charter a Flight</a>
                     <a href="fleet.html" class="header-link">Our Fleet</a>
                     <a href="about.html" class="header-link">About Us</a>
                     <a href="contact.html" class="header-link">Contact</a>
@@ -49,7 +63,7 @@
 
     <!-- ── Hero ──────────────────────────────────────────────────────────────────── -->
     <section class="home-hero">
-        <div class="home-hero-bg" style="background-image:url('images/jakob-rosen-Emvf_emPMdY-unsplash.jpg')"></div>
+        <div class="home-hero-bg"></div>
         <div class="home-hero-overlay"></div>
         <div class="home-hero-content">
             <p class="home-hero-eyebrow">Private Jet Charter Brokerage</p>
@@ -106,14 +120,7 @@
                 </div>
             </form>
 
-            <div class="hsf-or-divider">
-                <span class="hsf-or-line"></span>
-                <span class="hsf-or-text">OR</span>
-                <span class="hsf-or-line"></span>
-            </div>
-            <div class="hsf-contact-row">
-                <button class="hsf-btn hsf-contact-btn" type="button" id="hsf-contact-btn">Speak to an Advisor</button>
-            </div>
+            <a class="hsf-advisor-link" href="contact.html">or speak to an advisor <span aria-hidden="true">→</span></a>
         </div>
     </section>
 
@@ -150,6 +157,7 @@
                     <div class="jet-results-header">
                         <h2 class="jet-results-title">Available Aircraft</h2>
                         <p class="jet-results-sub" id="jet-results-route"></p>
+                        <p class="jet-results-note">Instant estimates — your advisor confirms firm pricing and availability.</p>
                     </div>
                     <div class="jet-results-grid" id="jet-results-grid"></div>
                 </div>
@@ -171,6 +179,7 @@
                 <input type="hidden" id="qf-date"     name="date">
                 <input type="hidden" id="qf-pax"      name="passengers">
                 <input type="hidden" name="source"     value="homepage">
+                <div aria-hidden="true" class="hp-wrap"><label for="qf-website">Website</label><input class="hp-field" type="text" id="qf-website" name="website" tabindex="-1" autocomplete="off"></div>
                 <div class="qf-row">
                     <div class="qf-field">
                         <label class="qf-label" for="qf-first">First Name *</label>
@@ -312,8 +321,8 @@
                         <div class="vetting-stat-label">Average quote turnaround from initial request</div>
                     </div>
                     <div class="vetting-stat">
-                        <div class="vetting-stat-number">135<span></span></div>
-                        <div class="vetting-stat-label">FAA Part 135 certification required for every operator</div>
+                        <div class="vetting-stat-number">100<span>%</span></div>
+                        <div class="vetting-stat-label">Of our operators hold current FAA Part 135 certification</div>
                     </div>
                     <div class="vetting-stat">
                         <div class="vetting-stat-number">24<span>/7</span></div>
@@ -338,60 +347,27 @@
         </div>
     </section>
 
-    <!-- ── Testimonials ──────────────────────────────────────────────────────────── -->
-    <section class="testimonials-section">
+    <!-- ── Testimonials ──────────────────────────────────────────────────────────────
+         Hidden until real client testimonials exist. To re-enable:
+         1. Remove style="display:none" from the section tag.
+         2. Add one .testimonial-card per quote inside .testimonials-grid:
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Quote text…"</p>
+                <div class="testimonial-author">
+                    <span class="testimonial-name">Real Name</span>
+                    <span class="testimonial-title">City, ST</span>
+                </div>
+            </div>
+         Never publish invented quotes. -->
+    <section class="testimonials-section" style="display:none">
         <div class="container">
             <div class="home-section-header home-section-header--center">
                 <div>
                     <p class="home-section-eyebrow">Client Experience</p>
-                    <h2 class="home-section-title">Trusted by discerning travelers</h2>
+                    <h2 class="home-section-title">What clients say</h2>
                 </div>
             </div>
-            <div class="testimonials-grid">
-                <!-- PLACEHOLDER — replace with real testimonials -->
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                    </div>
-                    <p class="testimonial-quote">"Booked a last-minute flight from Miami to the Bahamas on a Friday afternoon. Quote in under an hour, aircraft confirmed by evening. Exactly what I needed."</p>
-                    <div class="testimonial-author">
-                        <span class="testimonial-name">Client Name</span>
-                        <span class="testimonial-title">Miami, FL — [placeholder]</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                    </div>
-                    <p class="testimonial-quote">"We fly private several times a year. Aurelian consistently finds better options than we've gotten elsewhere — better aircraft, better pricing, no surprises."</p>
-                    <div class="testimonial-author">
-                        <span class="testimonial-name">Client Name</span>
-                        <span class="testimonial-title">New York, NY — [placeholder]</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                        <div class="testimonial-star"></div>
-                    </div>
-                    <p class="testimonial-quote">"The level of detail they coordinate is remarkable. Catering preferences, ground transport, customs — all handled before we landed."</p>
-                    <div class="testimonial-author">
-                        <span class="testimonial-name">Client Name</span>
-                        <span class="testimonial-title">Los Angeles, CA — [placeholder]</span>
-                    </div>
-                </div>
-            </div>
+            <div class="testimonials-grid"></div>
         </div>
     </section>
 
@@ -422,6 +398,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Sticky mobile CTA -->
+    <a href="charter.html" class="mobile-cta-bar">Request a Charter</a>
 
     <!-- ── Footer ───────────────────────────────────────────────────────────────── -->
     <footer class="footer">
@@ -484,6 +463,7 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
     <script src="airports.js" defer></script>
     <script src="planner.js" defer></script>
+    <script src="site.js" defer></script>
 
     <script>
     // Quote modal logic
@@ -504,6 +484,8 @@
                 (paxVal  ? '<div class="qf-summary-row"><span>Passengers</span><strong>' + paxVal + '</strong></div>' : '');
             document.getElementById('qf-success').classList.add('hidden');
             document.getElementById('qf-form-error').classList.add('hidden');
+            var sb = document.getElementById('qf-submit');
+            sb.disabled = false; sb.textContent = 'Submit Request'; sb.style.display = '';
             document.getElementById('quote-form').reset();
             document.getElementById('qf-aircraft').value = jetType;
             document.getElementById('qf-route').value    = routeStr;
@@ -530,12 +512,24 @@
             document.getElementById('quote-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 var errEl = document.getElementById('qf-form-error');
+                function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+                function validPhone(v) { return v.replace(/\D/g, '').length >= 7; }
+                function mark(id, bad) { document.getElementById(id).classList.toggle('qf-input--error', bad); }
                 var first = document.getElementById('qf-first').value.trim();
                 var last  = document.getElementById('qf-last').value.trim();
                 var email = document.getElementById('qf-email').value.trim();
                 var phone = document.getElementById('qf-phone').value.trim();
-                if (!first || !last || !email || !phone) { errEl.classList.remove('hidden'); return; }
+                mark('qf-first', !first); mark('qf-last', !last);
+                mark('qf-email', !validEmail(email)); mark('qf-phone', !validPhone(phone));
+                if (!first || !last) { errEl.textContent = 'Please fill out all required fields.'; errEl.classList.remove('hidden'); return; }
+                if (!validEmail(email)) { errEl.textContent = 'Please enter a valid email address.'; errEl.classList.remove('hidden'); return; }
+                if (!validPhone(phone)) { errEl.textContent = 'Please enter a valid phone number.'; errEl.classList.remove('hidden'); return; }
                 errEl.classList.add('hidden');
+                if (document.getElementById('qf-website').value) {
+                    document.getElementById('qf-success').classList.remove('hidden');
+                    document.getElementById('qf-submit').style.display = 'none';
+                    return;
+                }
                 var btn = document.getElementById('qf-submit');
                 btn.disabled = true; btn.textContent = 'Sending…';
                 var data = {
@@ -551,7 +545,6 @@
                     .then(function() {
                         document.getElementById('qf-success').classList.remove('hidden');
                         btn.style.display = 'none';
-                        setTimeout(function() { closeModal(); btn.disabled = false; btn.textContent = 'Submit Request'; btn.style.display = ''; }, 3000);
                     })
                     .catch(function() {
                         btn.disabled = false; btn.textContent = 'Submit Request';
@@ -628,10 +621,6 @@
             });
         });
 
-        document.getElementById('hsf-contact-btn').addEventListener('click', function() {
-            window.location.href = 'contact.html';
-        });
-
         function easedScrollTo(targetY, duration) {
             var startY = window.scrollY;
             var dist   = targetY - startY;
@@ -692,35 +681,6 @@
             fp.appendChild(card);
         });
     });
-    </script>
-
-    <script>
-    (function() {
-        var btn = document.getElementById('hamburger-btn');
-        var dropdown = document.getElementById('nav-dropdown');
-        var header = document.querySelector('.site-header');
-        if (!btn || !dropdown) return;
-        btn.addEventListener('click', function() {
-            var isOpen = header.classList.contains('is-open');
-            btn.setAttribute('aria-expanded', String(!isOpen));
-            dropdown.setAttribute('aria-hidden', String(isOpen));
-            header.classList.toggle('is-open', !isOpen);
-        });
-        dropdown.querySelectorAll('.header-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (header.classList.contains('is-open') && !header.contains(e.target)) {
-                btn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
-                header.classList.remove('is-open');
-            }
-        });
-    })();
     </script>
 </body>
 </html>
