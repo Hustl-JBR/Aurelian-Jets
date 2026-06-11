@@ -75,6 +75,12 @@ function doPost(e) {
         };
       }
     }
+
+    // Honeypot: bots fill the hidden "website" field — silently drop those submissions
+    if (data.website) {
+      return ContentService.createTextOutput(JSON.stringify({ status: 'ok' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
     
     // Get or create sheet
     const sheet = getOrCreateSheet();

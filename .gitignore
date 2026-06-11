@@ -20,3 +20,4 @@ npm-debug.log*
 
 # Node (if you add npm later)
 node_modules/
+*.bak
