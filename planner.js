@@ -236,12 +236,10 @@
         globeWrapper.classList.remove('hidden');
         jetResults.classList.remove('hidden');
 
-        // Charter page: show route header, hide placeholder prompt, update sub-heading
+        // Charter page: show route header, update sub-heading
         var routeHeader = document.getElementById('globe-route-header');
-        var prompt      = document.getElementById('charter-prompt');
         var routeEl     = document.getElementById('jet-results-route');
         if (routeHeader) routeHeader.classList.remove('hidden');
-        if (prompt)      prompt.classList.add('hidden');
         if (routeEl)     routeEl.textContent = (originAirport ? originAirport[2] : '') + ' → ' + (destAirport ? destAirport[2] : '');
 
         if (!globeReady) initGlobe();

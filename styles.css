@@ -23,10 +23,7 @@
     --black: #0c0a09;
     --charcoal: #1a1a1a;
     --graphite: #2a2a2a;
-    --light-gray: #3a3a3a;
-    --lighter-gray: #4a4a4a;
     --off-white: #f5f5f0;
-    --warm-white: #fafaf5;
     --gold: #d4af37;
     --gold-hover: #c9a52e;
     --gold-dark: #b8941f;
@@ -34,7 +31,6 @@
     --text-secondary: #e0e0e0;
     --text-light: #f0f0f0;
     --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -715,7 +711,7 @@ h4 {
 /* Override the blanket a:hover/button:hover opacity for new UI elements */
 .hsf-btn:hover, .csb-btn:hover, .section-cta-button:hover,
 .qf-submit:hover, .el-card-claim:hover, .fcc-cta:hover,
-.lcp-cta:hover, .fpc-link:hover { opacity: 1; }
+.fpc-link:hover { opacity: 1; }
 
 /* ── Updated header CTA & active link ───────────────────────────────────────── */
 .header-link-desktop.is-active { color: var(--gold); }
@@ -2551,19 +2547,6 @@ input[type="date"].csb-input { color-scheme: dark; }
     gap: 1.25rem;
 }
 
-.testimonial-stars {
-    display: flex;
-    gap: 0.25rem;
-}
-
-.testimonial-star {
-    width: 12px;
-    height: 12px;
-    background: var(--gold);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    opacity: 0.85;
-}
-
 .testimonial-quote {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem;
@@ -3242,7 +3225,6 @@ input[type="date"].csb-input { color-scheme: dark; }
 }
 
 /* ── Testimonials: upright quotes, no star rows (for when real quotes ship) ──── */
-.testimonial-stars { display: none; }
 .testimonial-quote {
     font-style: normal;
     font-size: 1.05rem;
