@@ -94,6 +94,7 @@
     var pathCurve     = null;
     var pathProgress  = 0;
     var animId        = null;
+    var globeOnScreen = true;
     var planeGroup    = null;
     var planePitchGrp = null;
     var TUBE_SEGS     = 500;
@@ -275,9 +276,19 @@
         camera = new THREE.PerspectiveCamera(22, _W / H, 0.1, 1000);
         camera.position.set(0, 0, 11);
 
-        renderer = new THREE.WebGLRenderer({ canvas: globeCanvas, antialias: true });
+        // Touch devices (iPhone DPR is 3): cap pixel ratio and skip antialiasing —
+        // full-DPR AA rendering is the main cause of globe jank on iOS.
+        var coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+        renderer = new THREE.WebGLRenderer({ canvas: globeCanvas, antialias: !coarsePointer });
         renderer.setSize(_W, H);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, coarsePointer ? 1.5 : 2));
+
+        // Pause rendering while the globe is off-screen (battery + iOS perf)
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                globeOnScreen = entries[0].isIntersecting;
+            }, { threshold: 0 }).observe(globeCanvas);
+        }
 
         // Lighting
         scene.add(new THREE.AmbientLight(0xffffff, 0.9));
@@ -406,6 +417,10 @@
 
     function loop(now) {
         animId = requestAnimationFrame(loop);
+        if (!globeOnScreen) {
+            if (animClock) animClock.last = (now && isFinite(now)) ? now : performance.now();
+            return;
+        }
         if (controls) controls.update();
 
         // Frame-rate-independent time delta (seconds)
@@ -466,6 +481,12 @@
                         var start  = window.pageYOffset;
                         var dist   = target - start;
                         if (Math.abs(dist) < 2) return;
+                        // Touch devices: rAF-driven scrolling fights iOS momentum scrolling
+                        // and the collapsing Safari toolbar — use native smooth scroll.
+                        if (window.matchMedia('(pointer: coarse)').matches) {
+                            window.scrollTo({ top: target, behavior: 'smooth' });
+                            return;
+                        }
                         var duration = 3200;
                         var t0 = null;
                         function step(ts) {
